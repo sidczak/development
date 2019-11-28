@@ -1,0 +1,63 @@
+application_tools_start:
+    pattern:  /{_locale}
+    defaults: { _controller: ApplicationToolsBundle:Start:index, _locale: en }
+    requirements:
+        _method:  GET
+        _locale: en|pl|ru
+
+application_tools_slider:
+    resource: "@ApplicationToolsBundle/Controller/SliderController.php"
+    type:     annotation
+    prefix:   /slider
+    
+application_tools_grid:
+    resource: "@ApplicationToolsBundle/Controller/GridController.php"
+    type:     annotation
+    prefix:   /grid
+    
+application_tools_elements:
+    resource: "@ApplicationToolsBundle/Controller/ElementsController.php"
+    type:     annotation
+    prefix:   /elements
+
+application_tools_gallery:
+    resource: "@ApplicationToolsBundle/Controller/GalleryController.php"
+    type:     annotation
+    prefix:   /gallery
+    
+application_tools_bootswatch:
+    resource: "@ApplicationToolsBundle/Controller/BootswatchController.php"
+    type:     annotation
+    prefix:   /bootswatch
+    
+application_tools_font:
+    resource: "@ApplicationToolsBundle/Controller/FontController.php"
+    type:     annotation
+    prefix:   /font
+    
+application_tools_exception:
+    resource: "@ApplicationToolsBundle/Controller/ExceptionController.php"
+    type:     annotation
+    prefix:   /exception
+
+_aboutUs:
+    resource: "@ApplicationToolsBundle/Controller/AboutUsController.php"
+    type:     annotation
+    prefix:   /aboutUs
+
+application_tools_ajax:
+    resource: "@ApplicationToolsBundle/Controller/AjaxController.php"
+    type:     annotation
+    prefix:   /ajax
+
+application_tools_googleMaps:
+    pattern:  /googleMaps
+    defaults: { _controller: ApplicationToolsBundle:GoogleMaps:index }
+    requirements:
+        _method:  GET
+
+application_tools_contact:
+    pattern:  /contact
+    defaults: { _controller: ApplicationToolsBundle:Contact:index }
+    requirements:
+        _method:  GET

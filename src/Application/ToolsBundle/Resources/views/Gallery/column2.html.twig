@@ -1,0 +1,41 @@
+{% extends 'ApplicationToolsBundle::layout.html.twig' %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block javascripts %}{% endblock %}
+
+{% block body %}
+
+<div class="section">
+    <div class="grid_16">
+        <h4>Gallery</h4>
+    </div>
+    <div class="clear"></div>
+</div>
+
+    <div id="grid">
+        <div class="grid_16">
+		
+            <div class="container">
+                <div class="row">
+                    <div class="col_2">
+						<div class="block">
+							<img src="{{ asset('bundles/applicationtools/images/800x600.jpg') }}" alt="" />
+						</div>
+                    </div>
+                    <div class="col_2">
+						<div class="block">
+							<img src="{{ asset('bundles/applicationtools/images/800x600.jpg') }}" alt="" />
+						</div>
+					</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+{% endblock %}

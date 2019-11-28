@@ -1,0 +1,1 @@
+textarea - automatyczne powiekszanie i pomniejszanie

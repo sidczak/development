@@ -1,0 +1,127 @@
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse-bs">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{{ path('application_bootstrap_start') }}">Bootstrap</a>
+    <a class="navbar-brand" href="{{ path('application_expert_start') }}">Expert</a>
+    <a class="navbar-brand" href="{{ path('application_tools_start') }}">Tools</a>
+</div>
+<div class="collapse navbar-collapse navbar-collapse-bs">
+    <ul class="nav navbar-nav">
+        <li class="dropdown">
+            <a href="#Examples" class="dropdown-toggle" data-toggle="dropdown">Examples <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li class="dropdown-header">Navbar</li>
+                <li><a href="{{ path('_examples_navbar') }}">Navbar (default)</a></li>
+                <li><a href="{{ path('_examples_navbar-static-top') }}">Navbar Static Top</a></li>
+                <li><a href="{{ path('_examples_navbar-fixed-top') }}">Navbar Fixed Top</a></li>
+                <li><a href="{{ path('_examples_navbar-fixed-bottom') }}">Navbar Fixed Bottom</a></li>
+                <li><a href="{{ path('_examples_navbar-justified') }}">Navbar Justified</a></li>
+                <li><a href="{{ path('_examples_sidebar-offcanvas') }}">Sidebar offcanvas</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Sticky footer</li>
+                <li><a href="{{ path('_examples_navbar-static-top-sticky-footer') }}">Navbar Static Top & Sticky footer</a></li>
+                <li><a href="{{ path('_examples_navbar-fixed-top-sticky-footer') }}">Navbar Fixed Top & Sticky footer</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Banner</li>
+                <li><a href="{{ path('_examples_carousel') }}">Carousel</a></li>
+                <li><a href="{{ path('_examples_jumbotron') }}">Jumbotron</a></li>
+                <li><a href="{{ path('_examples_jumbotron-narrow') }}">Jumbotron narrow</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Features</li>
+                <li><a href="{{ path('_examples_grid') }}">Grid</a></li>
+                <li><a href="{{ path('_examples_elements') }}">Elements</a></li>
+                <li><a href="{{ path('_examples_theme') }}">Theme</a></li>
+                <li><a href="{{ path('_examples_theme-off') }}">Theme off</a></li>
+                <li><a href="{{ path('_examples_non-responsive') }}">Non-responsive</a></li>
+                <li><a href="{{ path('_examples_tooltip-viewport') }}">Tooltip viewport</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Template</li>
+                <li><a href="{{ path('_examples_template-starter') }}">Starter</a></li>
+                <li><a href="{{ path('_examples_template-cover') }}">Cover</a></li>
+                <li><a href="{{ path('_examples_template-blog') }}">Blog</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Admin</li>
+                <li><a href="{{ path('_examples_admin-signin') }}">Signin</a></li>
+                <li><a href="{{ path('_examples_admin-dashboard') }}">Dashboard</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#Templates" class="dropdown-toggle" data-toggle="dropdown">Templates <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li class="dropdown-header">Navigation & Menus</li>
+                <li><a href="{{ path('_navigation-menus_scrollingNav') }}">Scrolling Nav</a></li>
+                <li><a href="{{ path('_navigation-menus_logoNav') }}">Logo Nav</a></li>
+                <li><a href="{{ path('_examples_navbar-fixed-top') }}">Navbar Fixed Top</a></li>
+                <li><a href="{{ path('_navigation-menus_simpleSidebar') }}">Simple Sidebar</a></li>
+                <li><a href="{{ path('_navigation-menus_simpleSidebarFluid') }}">Simple Sidebar Fluid</a></li>
+                <li><a href="{{ path('_navigation-menus_simpleSidebarOnTop') }}">Simple Sidebar On Top</a></li>
+                <li><a href="{{ path('_navigation-menus_simpleSidebarFluidOnTop') }}">Simple Sidebar Fluid On Top</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Blog</li>
+                <li><a href="{{ path('_blog_blog-home-one') }}">Blog Home 1</a></li>
+                <li><a href="{{ path('_blog_blog-home-two') }}">Blog Home 2</a></li>
+                <li><a href="{{ path('_blog_blog-post') }}">Blog Post</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Ecommerce</li>
+                <li><a href="{{ path('_ecommerce_heroic-features') }}">Heroic features</a></li>
+                <li><a href="{{ path('_ecommerce_shop-homepage') }}">Shop homepage</a></li>
+                <li><a href="{{ path('_ecommerce_shop-item') }}">Shop item</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Business</li>
+                <li><a href="{{ path('_business_business-frontpage') }}">Frontpage Business</a></li>
+                <li><a href="{{ path('_business_business-modern') }}">Modern Business</a></li>
+                <li><a href="{{ path('_business_business-small') }}">Small Business</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Portfolio</li>
+                <li><a href="{{ path('_portfolio_portfolio-col1') }}">Portfolio Column 1</a></li>
+                <li><a href="{{ path('_portfolio_portfolio-col2') }}">Portfolio Column 2</a></li>
+                <li><a href="{{ path('_portfolio_portfolio-col3') }}">Portfolio Column 3</a></li>
+                <li><a href="{{ path('_portfolio_portfolio-col4') }}">Portfolio Column 4</a></li>
+                <li><a href="{{ path('_portfolio_portfolio-item') }}">Single Portfolio Item</a></li>
+                <li><a href="{{ path('_portfolio_thumbnail-gallery') }}">Thumbnail gallery</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#Themes" class="dropdown-toggle" data-toggle="dropdown">Themes <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li><a href="{{ path('_themes_default') }}">Default</a></li>
+                <li><a href="{{ path('_themes_bootstrap-theme') }}">Bootstrap theme</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ path('_themes_amelia') }}">Amelia</a></li>
+                <li><a href="{{ path('_themes_cerulean') }}">Cerulean</a></li>
+                <li><a href="{{ path('_themes_cosmo') }}">Cosmo</a></li>
+                <li><a href="{{ path('_themes_cyborg') }}">Cyborg</a></li>
+                <li><a href="{{ path('_themes_darkly') }}">Darkly</a></li>
+                <li><a href="{{ path('_themes_flatly') }}">Flatly</a></li>
+                <li><a href="{{ path('_themes_journal') }}">Journal</a></li>
+                <li><a href="{{ path('_themes_lumen') }}">Lumen</a></li>
+                <li><a href="{{ path('_themes_paper') }}">Paper</a></li>
+                <li><a href="{{ path('_themes_readable') }}">Readable</a></li>
+                <li><a href="{{ path('_themes_sandstone') }}">Sandstone</a></li>
+                <li><a href="{{ path('_themes_simplex') }}">Simplex</a></li>
+                <li><a href="{{ path('_themes_slate') }}">Slate</a></li>
+                <li><a href="{{ path('_themes_spacelab') }}">Spacelab</a></li>
+                <li><a href="{{ path('_themes_superhero') }}">Superhero</a></li>
+                <li><a href="{{ path('_themes_united') }}">United</a></li>
+                <li><a href="{{ path('_themes_yeti') }}">Yeti</a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <form class="navbar-form navbar-right" role="form">
+        <div class="form-group">
+            <input type="text" placeholder="Email" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="password" placeholder="Password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Sign in</button>
+    </form>
+
+</div><!--/.nav-collapse -->

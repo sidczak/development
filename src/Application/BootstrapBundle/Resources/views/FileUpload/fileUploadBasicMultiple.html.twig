@@ -1,0 +1,74 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Sticky footer with fixed navbar</h1>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+            
+				{% for flashMessage in app.session.flashbag.get('contact-success') %}
+	                <div class="alert alert-success">
+	                    <strong>{{ flashMessage }}</strong>
+	                </div>
+				{% endfor %}
+				
+				{% for flashMessage in app.session.flashbag.get('contact-warning') %}
+	                <div class="alert alert-warning">
+	                    <strong>{{ flashMessage }}</strong>
+	                </div>
+				{% endfor %}
+				
+				{% for flashMessage in app.session.flashbag.get('contact-error') %}
+	                <div class="alert alert-danger">
+	                    <strong>{{ flashMessage }}</strong>
+	                </div>
+				{% endfor %}
+
+				<form role="form" action="{{ path('_file-upload-basic-multiple') }}" method="post" enctype="multipart/form-data">
+				    <div class="form-group">
+					    <input type="file" name="images[]" multiple>
+				    </div>
+				    <button class="btn btn-primary" type="submit">Zapisz</button>
+				</form>
+			
+		        <hr/>
+				
+				{% for file in files %}
+					{{ file }} 
+					<a href="{{ path('_file-upload-basic-multiple-delete', { 'file': file }) }}" onclick="if(!confirm('{% trans %}Are you sure?{% endtrans %}')) { return false; }">Delete</a> |
+					<a href="{{ path('_file-upload-basic-multiple-download', { 'file': file }) }}">Download</a><br/>
+					{#<a href="{{ asset('bundles/applicationbootstrap/uploads/basic/') }}{{ file }}" target="_blank">Download</a><br/>#}
+				{% endfor %}
+				
+			</div>
+		</div>
+		
+
+    </div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+	<style type="text/css">
+		.mce-edit-focus{
+			box-shadow: inset 0px 0px 20px 3px #ddd, inset 0 0 1px #000;
+			outline: medium none;
+			background: #eee;
+			cursor: text;
+		}
+	</style>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/editors/tinymce/tinymce.min.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        tinymce.init({
+            selector: "#wysiwig_simple"
+        });
+
+        tinymce.init({
+            selector: "#wysiwig_full",
+            theme: "modern",
+            plugins: [
+                "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+                "searchreplace wordcount visualblocks visualchars code fullscreen",
+                "insertdatetime media nonbreaking save table contextmenu directionality",
+                "emoticons template paste textcolor colorpicker textpattern"
+            ],
+            toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+            toolbar2: "print preview media | forecolor backcolor emoticons",
+            image_advtab: true,
+            templates: [
+                {title: 'Test template 1', content: 'Test 1'},
+                {title: 'Test template 2', content: 'Test 2'}
+            ]
+        });
+
+        tinymce.init({
+            selector: "h1.editable",
+            inline: true,
+            toolbar: "undo redo",
+            menubar: false
+        });
+
+        tinymce.init({
+            selector: "div.editable",
+            inline: true,
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        });
+
+    </script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+        
+        	<div class="col-lg-12">
+        	    <h1 class="page-header">TinyMCE</h1>
+				<form class="form-horizontal">
+				    <div class="form-group">
+				    	<label class="col-sm-2 control-label">Textarea simple</label>
+				        <div class="col-sm-10">
+				            <textarea id="wysiwig_simple" class="form-control" placeholder="Enter text ..."></textarea>
+				        </div>
+				    </div>
+				    <div class="form-group">
+				        <label class="col-sm-2 control-label">Textarea full</label>
+				        <div class="col-sm-10">
+				            <textarea id="wysiwig_full" class="form-control" placeholder="Enter text ...">
+							&lt;ol&gt;
+								&lt;li&gt;&lt;strong&gt;Command Module&lt;/strong&gt; with a cabin for the three astronauts which was the only part which landed back on Earth&lt;/li&gt;
+								&lt;li&gt;&lt;strong&gt;Service Module&lt;/strong&gt; which supported the Command Module with propulsion, electrical power, oxygen and water&lt;/li&gt;
+								&lt;li&gt;&lt;strong&gt;Lunar Module&lt;/strong&gt; for landing on the Moon.&lt;/li&gt;
+							&lt;/ol&gt;
+				            </textarea>
+				        </div>
+				    </div>
+				    <div class="col-sm-10 col-sm-offset-2">
+				        <button type="reset" class="btn btn-primary">Reset form!</button>
+				    </div>
+				</form>
+        	</div>
+        
+        </div>
+        <div class="row">
+        	<div class="col-lg-12 editable">
+        	    <h1 class="page-header">Editable header (edycja zaznaczonego tekstu)</h1>
+        	</div>
+        </div>
+        <div class="row editable">
+        	<div class="col-lg-6">
+                <p>This is an editable div element element.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt est ac dolor condimentum vitae laoreet ante accumsan. Nullam tincidunt tincidunt ante tempus commodo. Duis rutrum, magna non lacinia tincidunt, risus lacus tempus ipsum, sit amet euismod justo metus ut metus. Donec feugiat urna non leo laoreet in tincidunt lectus gravida. Sed semper ante sed dui consectetur eget commodo eros imperdiet. Mauris magna diam, scelerisque at ornare vel, dignissim ac sem. Fusce id congue lacus. Duis sit amet tellus erat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus mattis facilisis pretium. In in nibh eu urna ornare semper. Sed imperdiet felis vitae nibh sagittis eu pulvinar metus facilisis. Sed dolor orci, aliquet sagittis auctor id, faucibus at justo.</p>
+        	</div>
+        	<div class="col-lg-6">
+                <p>Vestibulum vestibulum velit nec magna lobortis elementum. Ut egestas ultrices tincidunt. Sed vestibulum mi vitae dui interdum eget rhoncus neque faucibus. Ut nec leo tellus. Nunc in metus sit amet purus bibendum dignissim pulvinar quis erat. Quisque vel ultricies nisi. Vestibulum eu ante risus. In ultrices dignissim massa, vel luctus dui consequat quis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dui nulla, venenatis at porttitor nec, sagittis et urna. Nulla facilisi. Integer bibendum porta urna porta suscipit. In condimentum quam quis justo accumsan molestie. Fusce accumsan vulputate mattis. Sed pharetra volutpat erat at convallis. Etiam tempus, est ac tincidunt scelerisque, mi elit pretium nulla, sit amet viverra nisl enim id lorem. Suspendisse ut enim ullamcorper tellus eleifend sagittis. Aenean mollis turpis eu nisl viverra laoreet. Mauris ante purus, tempor ut viverra eu, vestibulum eget tellus. Morbi vitae dolor tellus. Mauris sodales rutrum nunc, a imperdiet augue egestas vel. Nulla facilisi. Nulla venenatis tristique nisi ut blandit. Phasellus suscipit arcu adipiscing velit posuere nec lacinia urna mattis.</p>
+        	</div>
+        </div>
+        <div class="row">
+        	<div class="col-lg-6 editable">
+                <p>This is an editable div element element.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt est ac dolor condimentum vitae laoreet ante accumsan. Nullam tincidunt tincidunt ante tempus commodo. Duis rutrum, magna non lacinia tincidunt, risus lacus tempus ipsum, sit amet euismod justo metus ut metus. Donec feugiat urna non leo laoreet in tincidunt lectus gravida. Sed semper ante sed dui consectetur eget commodo eros imperdiet. Mauris magna diam, scelerisque at ornare vel, dignissim ac sem. Fusce id congue lacus. Duis sit amet tellus erat. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus mattis facilisis pretium. In in nibh eu urna ornare semper. Sed imperdiet felis vitae nibh sagittis eu pulvinar metus facilisis. Sed dolor orci, aliquet sagittis auctor id, faucibus at justo.</p>
+        	</div>
+        	<div class="col-lg-6 editable">
+                <p>Vestibulum vestibulum velit nec magna lobortis elementum. Ut egestas ultrices tincidunt. Sed vestibulum mi vitae dui interdum eget rhoncus neque faucibus. Ut nec leo tellus. Nunc in metus sit amet purus bibendum dignissim pulvinar quis erat. Quisque vel ultricies nisi. Vestibulum eu ante risus. In ultrices dignissim massa, vel luctus dui consequat quis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dui nulla, venenatis at porttitor nec, sagittis et urna. Nulla facilisi. Integer bibendum porta urna porta suscipit. In condimentum quam quis justo accumsan molestie. Fusce accumsan vulputate mattis. Sed pharetra volutpat erat at convallis. Etiam tempus, est ac tincidunt scelerisque, mi elit pretium nulla, sit amet viverra nisl enim id lorem. Suspendisse ut enim ullamcorper tellus eleifend sagittis. Aenean mollis turpis eu nisl viverra laoreet. Mauris ante purus, tempor ut viverra eu, vestibulum eget tellus. Morbi vitae dolor tellus. Mauris sodales rutrum nunc, a imperdiet augue egestas vel. Nulla facilisi. Nulla venenatis tristique nisi ut blandit. Phasellus suscipit arcu adipiscing velit posuere nec lacinia urna mattis.</p>
+        	</div>
+        </div>
+
+    </div> <!-- /container -->
+{% endblock %}

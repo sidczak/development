@@ -1,0 +1,109 @@
+{% extends 'ApplicationToolsBundle::layoutException.html.twig' %}
+
+{% block title %}Under Construction{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/animate/animate.min.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('bundles/applicationtools/css/exception/exception.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationtools/js/countdown/countdown.js') }}" type="text/javascript"></script>
+	<script type="text/javascript">
+	
+	    var end = new Date('2015/09/17 19:50:00');
+	
+	    var _second = 1000;
+	    var _minute = _second * 60;
+	    var _hour = _minute * 60;
+	    var _day = _hour * 24;
+	    var timer;
+	
+	    function showRemaining() {
+	        var now = new Date();
+	        var distance = end - now;
+	        if (distance < 0) {
+	
+	            clearInterval(timer);
+	            $('.days.countdown-item').find('.countdown-time').html(0);
+		        $('.hours.countdown-item').find('.countdown-time').html(0);
+		        $('.minutes.countdown-item').find('.countdown-time').html(0);
+		        $('.seconds.countdown-item').find('.countdown-time').html(0);
+	
+	            return;
+	        }
+	        var days = Math.floor(distance / _day);
+	        var hours = Math.floor((distance % _day) / _hour);
+	        var minutes = Math.floor((distance % _hour) / _minute);
+	        var seconds = Math.floor((distance % _minute) / _second);
+	        
+	        $('.days.countdown-item').find('.countdown-time').html(days);
+	        $('.hours.countdown-item').find('.countdown-time').html(hours);
+	        $('.minutes.countdown-item').find('.countdown-time').html(minutes);
+	        $('.seconds.countdown-item').find('.countdown-time').html(seconds);
+
+	    }
+	
+	    timer = setInterval(showRemaining, 100);
+	    
+	</script>
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper_page">
+        
+        <div class="grid_row">
+            <div class="grid_12">
+                <h1 class="code fadeInDown animated">
+                    <span>&#94;</span>
+                </h1>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="grid_row">
+            <div class="grid_12">
+                <h1 class="title fadeInLeft animated">Under construction</h1>
+                <p class="message fadeInRight animated">
+                    Don't worry, we're still working on it and we're coming soon!
+                </p>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="grid_row">
+            <div class="grid_12">
+                <div class="countdown fadeInDown animated">
+                    <div class="days countdown-item">
+                        <span class="countdown-time"></span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="hours countdown-item">
+                        <span class="countdown-time"></span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="minutes countdown-item">
+                        <span class="countdown-time"></span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="seconds countdown-item">
+                        <span class="countdown-time"></span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="grid_row">
+            <div class="grid_12">
+                <h2 class="logo fadeInUp animated">
+                    <a href="{{ path('application_tools_start') }}">Logo</a>
+                </h2>
+            </div>
+            <div class="clear"></div>
+        </div>
+        
+        <div class="clear"></div>
+    </div>
+{% endblock %}

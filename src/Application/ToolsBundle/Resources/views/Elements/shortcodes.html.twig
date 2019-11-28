@@ -1,0 +1,429 @@
+{% extends 'ApplicationToolsBundle::layout.html.twig' %}
+
+{% block title %}Shortcodes{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+			$(".load_html").click(function() {
+				//$("#loading").show();
+				$("#ajax_load_html").load("{{ asset('bundles/applicationtools/file/ajax.html') }}", function() {
+					//$("#loading").hide();
+				});
+			});
+			
+			$(".load_php").click(function() {
+				$("#ajax_load_php").load("{{ asset('bundles/applicationtools/file/ajax.php') }}", { 'choices[]': ["Jon", "Susan"] }); //przekazanie tablicy do pliku php
+				/*
+				$.get("test.php", { name: "John", time: "2pm" } );
+				$.get("test.php", { 'choices[]': ["Jon", "Susan"]} );
+				$.get("test.php", function(data) {
+					alert("Data Loaded: " + data);
+				});
+				*/
+				
+				/*
+				$.post("test.php");
+				$.post("test.php", { name: "John", time: "2pm" } );
+				$.post("test.php", { 'choices[]': ["Jon", "Susan"] });
+				$.post("test.php", $("#testform").serialize());
+				$.post("test.php", function(data) {
+					alert("Data Loaded: " + data);
+				});
+				$.post("test.php", { name: "John", time: "2pm" })
+				.done(function(data) {
+					alert("Data Loaded: " + data);
+				});
+				$.post("test.php", { "func": "getNameAndTime" },
+					function(data){
+						console.log(data.name); // John
+						console.log(data.time); //  2pm
+					}, "json");
+				
+				*/
+				
+			});
+			
+			$(".load_txt").click(function() {
+				//$("#ajax_load_txt").load("/bundles/applicationtools/file/ajax.txt", function(data) {
+				$("#ajax_load_txt").load("{{ asset('bundles/applicationtools/file/ajax.txt') }}", function(data) {
+					//$('#ajax_load_txt').text(data); //wyświetlenie ze znacznikami
+					//$('#ajax_load_txt').html(data); //wyświetlenie bez znaczników
+				});
+			});
+			
+			$(".load_json").click(function() {
+				
+				$.getJSON("{{ asset('bundles/applicationtools/file/ajax.json') }}", function(data) {
+				
+					for (i in data['list_items']) {
+						$('#ajax_load_json').append('<p>' + data['list_items'][i] + '</p>');
+					}
+				
+				});
+				
+			});
+			
+			
+			$(".ajax_html").click(function() {
+			
+				$.ajax({
+					url      : "{{ asset('bundles/applicationtools/file/ajax.html') }}",
+				success : function(msg) {
+					$("#ajax_html_content").html(msg);
+				},
+		
+				complete : function(r) {},
+		
+				error:    function(error) {}
+		
+				});
+			});
+			
+			
+			$(".ajax_php").click(function() {
+			
+				$.ajax({
+					type     : "POST",
+					url      : "{{ asset('bundles/applicationtools/file/ajax.php') }}",
+					//data     : {choices: 'xxx'},
+					data     : {'choices[]' : ['aaa', 'bbb']},
+		
+				success : function(msg) {
+					$("#ajax_php_content").html(msg);
+				},
+		
+				complete : function(r) {},
+		
+				error:    function(error) {}
+		
+				});
+			});
+			
+			$(".ajax_txt").click(function() {
+			
+				$.ajax({
+					url      : "{{ asset('bundles/applicationtools/file/ajax.txt') }}",
+					
+				success : function(msg) {
+					$("#ajax_txt_content").html(msg);
+					//$("#ajax_txt_content").text(msg);
+				},
+		
+				complete : function(r) {},
+		
+				error:    function(error) {}
+		
+				});
+			});
+			
+			$(".ajax_json").click(function() {
+			
+				$.ajax({
+					type     : "GET",
+					dataType : 'json',
+					url      : "{{ asset('bundles/applicationtools/file/ajax.json') }}",
+					beforeSend: function(){
+						//$("#ladowanie").show();
+					},
+		
+					success : function(data) {
+						//$("#ajax_json_content").html(msg);
+						for (i in data['list_items']) {
+							$('#ajax_json_content').append('<p>' + data['list_items'][i] + '</p>');
+						}
+					},
+			
+					complete : function() {
+						//$("#ladowanie").hide();
+					},
+			
+					error : function() {
+						alert("Error");
+					}
+		
+				});
+			});
+			
+			$(".ajax_xml").click(function() {
+			
+				$.ajax({
+					type     : "GET",
+					dataType : "xml",
+					url      : "{{ asset('bundles/applicationtools/file/samochody.xml') }}",
+					beforeSend: function(){
+						//$("#ladowanie").show();
+					},
+		
+					success : function(xml) {
+						//$("#ajax_xml_content").html(msg);
+					},
+			
+					complete : function() {
+						//$("#ladowanie").hide();
+					},
+			
+					error : function() {
+						alert("Error");
+					}
+		
+				});
+			});
+			
+			
+			$(".check_result").click(function() {
+
+			
+				$("#resultat").css('display','block');
+				question1=$('input:radio[name=q1]:checked').val();
+				question2=$('input:radio[name=q2]:checked').val();
+				question3=$('input:radio[name=q3]:checked').val();
+				question4=$('input:radio[name=q4]:checked').val();
+				
+				$.ajax({
+					type    : "POST", //jeśli nie ustawimy type to dane zostaną domyślnie wysłane metodą GET
+					url     : "{{ asset('bundles/applicationtools/file/check_test.php') }}",
+					data    : {
+						q_1 : question1,
+						q_2 : question2,
+						q_3 : question3,
+						q_4 : question4
+					},
+					
+					beforeSend: function(){
+						//$("#ladowanie").show();
+					},
+					
+					success : function(msg) {
+						$("#resultat").html(msg);
+					},
+					
+					complete : function() {
+						//$("#ladowanie").hide();
+					},
+					
+					error:    function(error) {}
+		
+				});
+				
+
+			});
+			
+			/* serialize
+			function showValues() {
+			  var str = $("form#testDemo").serialize();
+			  $("#resultat").text( str );
+			}
+			
+			$("input[type='checkbox'], input[type='radio']").on( "click", showValues );
+			$("select").on( "change", showValues );
+			showValues();
+			*/
+			
+			/*serializeArray*/
+			function showValues() {
+				var fields = $(":input").serializeArray();
+				$("#resultat").empty();
+				jQuery.each(fields, function(i, field){
+				  $("#resultat").append(field.value + " ");
+				});
+			}
+		 
+			$(":checkbox, :radio").click(showValues);
+			$("select").change(showValues);
+			showValues();
+
+			
+			
+			
+			
+			
+
+			
+		});
+	</script>
+{% endblock %}
+
+{% block body %}
+
+    <div class="grid_16">
+
+		<div class="container">
+		
+		
+
+				
+			<div class="row">
+				<div class="col_2">
+					<h3>load</h3>
+					<a class="load_html">load html</a>
+					<div id="ajax_load_html"></div>
+					<hr/>
+					
+					<a class="load_php">load php</a>
+					<div id="ajax_load_php"></div>
+					<hr/>
+				
+					<a class="load_txt">load txt</a>
+					<div id="ajax_load_txt"></div>
+					<hr/>
+					
+					<a class="load_json">load json</a>
+					<div id="ajax_load_json"></div>
+					<hr/>
+					
+					
+					
+					<h3>ajax</h3>
+					
+					<a class="ajax_html">ajax html</a>
+					<div id="ajax_html_content"></div>
+					<hr/>
+					
+					<a class="ajax_php">ajax php</a>
+					<div id="ajax_php_content"></div>
+					<hr/>
+					
+					<a class="ajax_txt">ajax txt</a>
+					<div id="ajax_txt_content"></div>
+					<hr/>
+					
+					<a class="ajax_json">ajax json</a>
+					<div id="ajax_json_content"></div>
+					<hr/>
+					
+					<a class="ajax_xml">ajax json</a>
+					<div id="ajax_xml_content"></div>
+					<hr/>
+					
+					
+					
+					<h3>GET</h3>
+					<p>example</p>
+					<h3>POST</h3>
+					<p>example</p>
+					
+				</div>
+				<div class="col_2">
+				
+					<h3>Example form AJAX</h3>
+					<form id="testDemo">
+		
+						<p>
+							1. Question number 1?<br />
+							<span>
+								<input type="radio" name="q1" value="1" /> q1-1 <br />
+								<input type="radio" name="q1" value="0" /> q1-2 <br />
+							</span>
+						</p>
+			
+						<p>
+							2. Question number 2? <br />
+							<span>
+								<input type="radio" name="q2" value="1" /> q2-1 <br />
+								<input type="radio" name="q2" value="0" /> q2-2 <br />
+							</span>
+						</p>
+			
+						<p>
+							3. Question number 3? <br />
+							<span>
+								<input type="radio" name="q3" value="1" /> q3-1 <br />
+								<input type="radio" name="q3" value="0" /> q3-2 <br />
+							</span>
+						</p>
+						
+						<p>
+							4. Question number 4? <br />
+							<span>
+								<input type="radio" name="q4" value="0" /> q4-1 <br />
+								<input type="radio" name="q4" value="1" /> q4-2 <br />
+								<input type="radio" name="q4" value="2" /> q4-3 <br />
+							</span>
+						</p>
+						
+						<a href="#" class="check_result awesome">show result</a><br/>
+						
+						<h5 id="resultat"></h5>
+		
+					</form>
+				
+				
+				</div>
+				
+				
+			</div>
+			
+			
+			<div class="row">
+				<div class="col_1">
+					
+					
+					<h4>Paragraphs</h4>
+					
+					<div class="box">
+						<h2>
+							<a href="#" id="toggle-paragraphs">Paragraphs</a>
+						</h2>
+						<div class="block" id="paragraphs">
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+							<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="col_1">
+					<h4>Ajax</h4>
+					
+					<div class="box">
+						<h2>
+							<a href="#" id="toggle-ajax" class="hidden"><img src="{{ asset('bundles/applicationtools/images/ajax-loader.gif') }}" id="loading" alt="Loading" />Ajax Content</a>
+						</h2>
+						<div class="block" id="ajax-content">
+							Content loaded dynamically
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		
+			<div class="row">
+				<div class="col_1">
+					<h4>Accordion</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col_1">
+					<h4>Toggle</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col_1">
+					<h4>Highlighter</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col_1">
+					<h4>Tabs</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col_1">
+					<h4>Testimonials</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col_1">
+					<h4>Message Box</h4>
+				</div>
+			</div>
+		</div>
+
+    </div>
+    <div class="clear"></div>
+
+{% endblock %}

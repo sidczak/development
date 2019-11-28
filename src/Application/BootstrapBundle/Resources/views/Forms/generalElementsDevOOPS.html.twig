@@ -1,0 +1,193 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ asset('bundles/applicationbootstrap/css/sliders/jquery-ui/sliders.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		$(function()
+		{
+	        //Activate tooltips
+	        $("[data-toggle='tooltip']").tooltip();
+	
+	        //Activate popovers
+	        $("[data-toggle='popover']").popover();
+		});
+	</script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>General registration form</h1>
+        </div>
+        <div class="row">
+        	<div class="col-lg-12">
+				<form class="form-horizontal" role="form">
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">First name</label>
+					    <div class="col-sm-4">
+					        <input type="text" class="form-control" placeholder="First name" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip for name">
+					    </div>
+					    <label class="col-sm-2 control-label">Last name</label>
+					    <div class="col-sm-4">
+					        <input type="text" class="form-control" placeholder="Last name" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip for last name">
+					    </div>
+					</div>
+					<div class="form-group has-success has-feedback">
+					    <label class="col-sm-2 control-label">Company</label>
+					    <div class="col-sm-4">
+					        <input type="text" class="form-control" placeholder="Company">
+					    </div>
+					    <label class="col-sm-2 control-label">Address</label>
+					    <div class="col-sm-4">
+					        <input type="text" class="form-control" placeholder="Address">
+					        <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+					    </div>
+					</div>
+					<div class="form-group has-warning has-feedback">
+					    <label class="col-sm-2 control-label">Residence</label>
+					    <div class="col-sm-2">
+					        <input type="text" class="form-control" placeholder="City">
+					        <span class="glyphicon glyphicon-pushpin form-control-feedback"></span>
+					    </div>
+					    <div class="col-sm-2">
+					        <input type="text" class="form-control" placeholder="Country">
+					        <span class="glyphicon glyphicon-remove form-control-feedback text-danger"></span>
+					    </div>
+					    <label class="col-sm-2 control-label">CODE</label>
+					    <div class="col-sm-2">
+					        <input type="text" class="form-control" placeholder="Another info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hello world!">
+					    </div>
+					    <div class="col-sm-2">
+					        <div class="checkbox">
+					        	<label>
+					                <input type="checkbox" checked> No exist
+					        	</label>
+					        </div>
+					    </div>
+					</div>
+					<div class="form-group has-warning">
+					    <label class="col-sm-2 control-label">Select you OS</label>
+					    <div class="col-sm-4">
+					        <select multiple class="form-control">
+							  <option>Linux</option>
+							  <option>Windows</option>
+							  <option>OpenSolaris</option>
+							  <option>FirefoxOS</option>
+							  <option>MeeGo</option>
+							  <option>Android</option>
+							  <option>Sailfish OS</option>
+							  <option>Plan9</option>
+							  <option>DOS</option>
+							  <option>AIX</option>
+							  <option>HP/UP</option>
+					        </select>
+					    </div>
+					    <label class="col-sm-2 control-label">Tooltip for inputs</label>
+					    <div class="col-sm-2">
+					        <input type="text" class="form-control" placeholder="Another info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hello world!">
+					    </div>
+					    <div class="col-sm-2">
+					    	<p class="help-block">only example</p>
+					    </div>
+					</div>
+					<div class="form-group has-error has-feedback">
+					    <label class="col-sm-2 control-label">Date</label>
+					    <div class="col-sm-2">
+					        <input type="text" class="form-control" placeholder="Date">
+					        <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
+					    </div>
+					    <div class="col-sm-2">
+					        <input type="text" class="form-control" placeholder="Time">
+					        <span class="glyphicon glyphicon-time form-control-feedback"></span>
+					    </div>
+					    <label class="col-sm-2 control-label">Disabled input</label>
+					    <div class="col-sm-2">
+					        <input type="text" class="form-control" placeholder="No info" data-toggle="tooltip" data-placement="top" title="" data-original-title="Hello world!" disabled>
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">Relative Sizing</label>
+					    <div class="col-sm-10">
+					        <div class="row">
+					        	<div class="col-sm-2">
+					        		<input type="text" class="form-control" placeholder=".col-sm-2">
+					        	</div>
+					        </div>
+					        <div class="row">
+					        	<div class="col-sm-12">
+					        		<p><small>Dynamic resizing col</small></p>
+									<div class="progress progress-ui">
+										<div class="progress-bar progress-bar-success" style="width: 10%;"></div>
+									</div>
+					        	</div>
+					        </div>
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">Textarea</label>
+					    <div class="col-sm-10">
+					        <textarea class="form-control" rows="5" placeholder="Enter text..."></textarea>
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">Extreme Textarea</label>
+					    <div class="col-sm-10">
+					        <textarea class="form-control" rows="5" placeholder="Enter text..."></textarea>
+					    </div>
+					</div>
+					<div class="form-group">
+					    <label class="col-sm-2 control-label">Input groups</label>
+					    <div class="col-sm-3">
+					        <div class="input-group">
+					        	<span class="input-group-addon"><i class="fa fa-github-square"></i></span>
+					        	<input type="text" class="form-control" placeholder="GitHub">
+					        </div>
+					    </div>
+					    <div class="col-sm-3">
+					        <div class="input-group">
+					            <input type="text" class="form-control" placeholder="Group">
+					            <span class="input-group-addon"><i class="fa fa-group"></i></span>
+					        </div>
+					    </div>
+					    <div class="col-sm-3">
+					        <div class="input-group">
+					            <span class="input-group-addon"><i class="fa fa-money"></i></span>
+					            <input type="text" class="form-control" placeholder="Money">
+					            <span class="input-group-addon"><i class="fa fa-usd"></i></span>
+					        </div>
+					    </div>
+					</div>
+					<div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					        <button type="cancel" class="btn btn-default"><i class="glyphicon glyphicon-time"></i> Cancel</button>
+					        <button type="reset" class="btn btn-warning"><i class="glyphicon glyphicon-warning-sign"></i> Reset</button>
+					        <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-envelope"></i> Send layer</button>
+					        <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-ok"></i> Submit</button>
+					    </div>
+					</div>
+				</form>
+        	</div>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

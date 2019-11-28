@@ -1,0 +1,31 @@
+{% extends 'ApplicationToolsBundle::layout.html.twig' %}
+
+{% block title %}Ajax{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+			$(".load_php").click(function() {
+				{# $("#ajax_load_php").load("{{ path("_security_check") }}"); #}
+
+				$("#ajax_load_php").load("{{ path('_security_check', { 'id': 28 }) }}"); //przekazanie tablicy do pliku php
+			});
+			
+		});
+	</script>
+
+
+{% endblock %}
+
+{% block body %}
+
+    <h1>Ajax</h1>
+	
+	<a class="load_php">load php</a>
+	<div id="ajax_load_php"></div>
+	<hr/>
+
+{% endblock %}

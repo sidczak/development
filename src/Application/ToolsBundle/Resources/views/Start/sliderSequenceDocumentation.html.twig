@@ -1,0 +1,40 @@
+{% extends 'ApplicationToolsBundle::layout12.html.twig' %}
+
+{% block title %}Slider Simple Animation{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/sequence/sequence-documentation-demo.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationtools/js/sequence/jquery.sequence.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationtools/js/sequence/sequence-documentation-demo.js') }}" type="text/javascript"></script>
+{% endblock %}
+    
+{% block body %}
+
+		<div id="sequence" class="sequence">
+			<ul class="sequence-canvas">
+				<li>
+					<div class="info1">
+						<p class="class">.info1</p>
+						<p class="sequence-class">.animate-in</p>
+					</div>
+				</li>
+				<li>
+					<div class="info2">
+						<p class="class">.info2</p>
+						<p class="sequence-class"></p>
+					</div>
+				</li>
+				<li>
+					<div class="info3">
+						<p class="class">.info3</p>
+						<p class="sequence-class"></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<p>Tip: press the left and right arrows on your keyboard to navigate</p>
+		
+{% endblock %}

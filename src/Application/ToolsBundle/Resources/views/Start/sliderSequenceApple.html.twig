@@ -1,0 +1,61 @@
+{% extends 'ApplicationToolsBundle::layout12.html.twig' %}
+
+{% block title %}Slider Simple Animation{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/sequence/sequence-apple-style.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationtools/js/sequence/jquery.sequence.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationtools/js/sequence/sequence-apple-style.js') }}" type="text/javascript"></script>
+{% endblock %}
+    
+{% block body %}
+
+		<div id="sequence-theme">
+			<div id="sequence">
+
+				<ul class="controls">
+					<li class="status"></li>
+					<li class="sequence-prev"></li>
+					<li class="sequence-pause"></li>
+					<li class="sequence-next"></li>
+				</ul>
+
+				<ul class="sequence-canvas">
+					<li class="animate-in">
+						<div class="intro">
+							<h2>Built using Sequence.js</h2>
+							<h3>The Responsive Slider with Advanced CSS3 Transitions</h3>
+						</div>
+						<img class="iphone" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/iphone.png') }}" alt="iPhone4" />
+						<img class="iphone-shadow" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/iphone-shadow.png') }}" />
+					</li>
+					<li>
+						<img class="ipad" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/ipad.png') }}" alt="iPad" />
+						<div class="slide2">
+							<h2>Creative Control</h2>
+							<p>Create unique sliders using CSS3 transitions</p>
+						</div>
+						<img class="ipad-shadow" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/ipad-shadow.png') }}" />
+					</li>
+					<li>
+						<div class="slide3">
+							<h2>Cutting Edge</h2>
+							<p>Supports modern browsers, old browsers (IE7+), touch devices and responsive designs</p>
+						</div>
+						<img class="iphone2" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/iphone.png') }}" alt="iPhone4" />
+						<img class="iphone2-shadow" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/iphone-shadow.png') }}" />
+						<img class="iphone3" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/iphone.png') }}" alt="iPhone4" />
+						<img class="iphone3-shadow" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/iphone-shadow.png') }}" />
+						<img class="iphone4" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/iphone.png') }}" alt="iPhone4" />
+						<img class="iphone4-shadow" src="{{ asset('bundles/applicationtools/images/sequence/apple-style/iphone-shadow.png') }}" />
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<p>Tip: press "P" to pause/unpause</p>
+
+{% endblock %}

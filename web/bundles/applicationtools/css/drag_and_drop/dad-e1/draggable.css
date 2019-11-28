@@ -1,0 +1,64 @@
+#wrap-left div {
+  background-color:black;
+  margin:2px;
+  float:left;
+  border:1px solid white;
+  color:white;
+  padding:5px 10px;
+  width:100px;
+  height:100px;
+}
+
+#wrap-left div strong {
+  display:block;
+  background-color:darkmagenta;
+  color:white !important;
+  padding:5px 10px;
+  margin:0 -5px 5px;
+  overflow:hidden;
+}
+
+#wrap-left div strong a {
+  color:violet;
+  text-decoration:none;
+  font-weight:bold;
+  float:right;
+}
+
+#wrap-left .draggable {
+  background-color:yellow;
+  border-color:black;
+  color:black;
+  z-index:9999; /* move the z-index to the CSS */
+}
+
+pre {
+  clear:both;
+  margin:0 0;
+  overflow:auto;
+  white-space:pre;
+  word-wrap:normal;
+  background-color:white;
+  border:1px dashed #aaa;
+  padding:1em 1.5em;
+  font:bold 11px/14px "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+}
+
+#wrap-left {
+  float:left;
+  width:45%;
+}
+
+#wrap-right {
+  float:right;
+  width:55%;
+}
+
+@media screen and (max-width:800px) {
+	#wrap-left,
+	#wrap-right {
+	  float:none;
+	  width:auto;
+	  margin:0 0 30px;
+	}
+}

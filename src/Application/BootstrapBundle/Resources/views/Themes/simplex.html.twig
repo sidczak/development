@@ -1,0 +1,16 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Bootswatch: Simplex{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/bootswatch/bootswatch.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+      {% include 'ApplicationBootstrapBundle:Themes:_body.html.twig' %}
+    </div><!-- /container -->
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Notice{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ asset('bundles/applicationbootstrap/css/notifications/notice/jquery.notice.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('bundles/applicationbootstrap/js/notifications/notice/jquery.notice.js') }}" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(document).ready( function(){ 
+
+		$('.example2_default').click(function(){
+			jQuery.noticeAdd({
+				text: 'Turning standard Bootstrap alerts into "Growl-like" notifications. <hr/>Turning standard Bootstrap alerts into "<a href="" class="alert-link">Growl-like</a>" notifications.',
+				stay: true,
+				type: 'alert-default'
+			});
+		});
+		$('.example2_success').click(function(){
+			jQuery.noticeAdd({
+				text: 'Turning standard Bootstrap alerts into "Growl-like" notifications.',
+				stay: true,
+				type: 'alert-success'
+			});
+		});
+		$('.example2_info').click(function(){
+			jQuery.noticeAdd({
+				text: 'Turning standard Bootstrap alerts into...',
+				type: 'alert-info'
+			});
+		});
+		$('.example2_warning').click(function(){
+			jQuery.noticeAdd({
+				text: 'Turning standard Bootstrap alerts into "Growl-like" notifications. <hr/>Turning standard Bootstrap alerts into "<a href="" class="alert-link">Growl-like</a>" notifications.',
+				type: 'alert-warning'
+			});
+		});
+		$('.example2_danger').click(function(){
+			jQuery.noticeAdd({
+				text: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+				type: 'alert-danger'
+			});
+		});
+
+		$('.example3_default').click(function(){
+			jQuery.noticeAdd({
+				icon: 'fa fa-check-circle',
+				title: ' <strong>Bootstrap Growl</strong><br/>',
+				text: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+				type: 'alert-default',
+				stayTime: 5000
+			});
+		});
+		$('.example3_success').click(function(){
+			jQuery.noticeAdd({
+				icon: 'fa fa-check-circle',
+				title: ' <strong>Bootstrap Growl</strong><br/>',
+				text: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+				type: 'alert-success',
+				stayTime: 5000
+			});
+		});
+		$('.example3_info').click(function(){
+			jQuery.noticeAdd({
+				//inEffect: {opacity: 'toggle', fontSize: "18px" },
+				icon:  'fa fa-info-circle',
+				title: ' <strong>Bootstrap Growl</strong><br/>',
+				text:  'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+				type:  'alert-info',
+				stayTime: 5000
+			});
+		});
+		$('.example3_warning').click(function(){
+			jQuery.noticeAdd({
+				icon:  'fa fa-warning',
+				title: ' <strong>Bootstrap Growl</strong><br/>',
+				text:  'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+				type:  'alert-warning',
+				stayTime: 5000
+			});
+		});
+		$('.example3_danger').click(function(){
+			jQuery.noticeAdd({
+				icon:  'fa fa-exclamation-circle',
+				title: ' <strong>Bootstrap Growl</strong><br/>',
+				text:  'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+				type:  'alert-danger',
+				stayTime: 5000
+			});
+		});
+	});
+	</script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Notice</h1>
+        </div>
+        <div class="row">
+	        <div class="col-lg-12">
+	        	<h4>Example</h4>
+	        	<!-- <button class="btn btn-default example2_default">Default</button> -->
+		        <button class="btn btn-success example2_success">Success</button>
+		        <button class="btn btn-info example2_info">Info</button>
+		        <button class="btn btn-warning example2_warning">Warning</button>
+		        <button class="btn btn-danger example2_danger">Danger</button>
+			</div>
+		</div>
+        <div class="row">
+	        <div class="col-lg-12">
+	        	<h4>Example Icons</h4>
+	        	<!-- <button class="btn btn-default example3_default">Default</button> -->
+		        <button class="btn btn-success example3_success">Success</button>
+		        <button class="btn btn-info example3_info">Info</button>
+		        <button class="btn btn-warning example3_warning">Warning</button>
+		        <button class="btn btn-danger example3_danger">Danger</button>
+			</div>
+		</div>
+    </div> <!-- /container -->
+{% endblock %}

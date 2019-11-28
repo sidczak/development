@@ -1,0 +1,375 @@
+{% extends 'ApplicationToolsBundle::layout.html.twig' %}
+
+{% block title %}Responsive Grid System{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/34gs_col.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationtools/js/screen_size.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block body %}
+
+<div class="grid_row">
+    <div class="grid_16">
+        <h4>Responsive Grid System</h4>
+        <h5 id="console"></h5>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="grid_row">
+    <div class="grid_16">
+
+        <!--
+        ====
+        ============================= MAIN WRAPPER FOR CONTENT ====
+        -->
+        <div class="container">
+            <!--row of 16's (16 columns)-->
+            <div class="row">
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16"><div class="cell">col_16</div></div>
+            </div>
+    
+            <!--row of 15's-->
+            <div class="row">
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15"><div class="cell">col_15</div></div>
+            </div>
+    
+            <!--row of 14's-->
+            <div class="row">
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14"><div class="cell">col_14</div></div>
+            </div>
+    
+            <!--row of 13's-->
+            <div class="row">
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13"><div class="cell">col_13</div></div>
+            </div>
+    
+            <!--row of 12's-->
+            <div class="row">
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12"><div class="cell">col_12</div></div>
+            </div>
+    
+            <!--row of 11's-->
+            <div class="row">
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11"><div class="cell">col_11</div></div>
+            </div>
+    
+            <!--row of 10's-->
+            <div class="row">
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10"><div class="cell">col_10</div></div>
+            </div>
+    
+            <!--row of 9's-->
+            <div class="row">
+                <div class="col_9"><div class="cell">col_9</div></div>
+                <div class="col_9"><div class="cell">col_9</div></div>
+                <div class="col_9"><div class="cell">col_9</div></div>
+                <div class="col_9"><div class="cell">col_9</div></div>
+                <div class="col_9"><div class="cell">col_9</div></div>
+                <div class="col_9"><div class="cell">col_9</div></div>
+                <div class="col_9"><div class="cell">col_9</div></div>
+                <div class="col_9"><div class="cell">col_9</div></div>
+                <div class="col_9"><div class="cell">col_9</div></div>
+            </div>
+    
+            <!--row of 8's-->
+            <div class="row">
+                <div class="col_8"><div class="cell">col_8</div></div>
+                <div class="col_8"><div class="cell">col_8</div></div>
+                <div class="col_8"><div class="cell">col_8</div></div>
+                <div class="col_8"><div class="cell">col_8</div></div>
+                <div class="col_8"><div class="cell">col_8</div></div>
+                <div class="col_8"><div class="cell">col_8</div></div>
+                <div class="col_8"><div class="cell">col_8</div></div>
+                <div class="col_8"><div class="cell">col_8</div></div>
+            </div>
+    
+            <!--row of 7's-->
+            <div class="row">
+                <div class="col_7"><div class="cell">col_7</div></div>
+                <div class="col_7"><div class="cell">col_7</div></div>
+                <div class="col_7"><div class="cell">col_7</div></div>
+                <div class="col_7"><div class="cell">col_7</div></div>
+                <div class="col_7"><div class="cell">col_7</div></div>
+                <div class="col_7"><div class="cell">col_7</div></div>
+                <div class="col_7"><div class="cell">col_7</div></div>
+            </div>
+    
+            <!--row of 6's-->
+            <div class="row">
+                <div class="col_6"><div class="cell">col_6</div></div>
+                <div class="col_6"><div class="cell">col_6</div></div>
+                <div class="col_6"><div class="cell">col_6</div></div>
+                <div class="col_6"><div class="cell">col_6</div></div>
+                <div class="col_6"><div class="cell">col_6</div></div>
+                <div class="col_6"><div class="cell">col_6</div></div>
+            </div>
+    
+            <!--row of 5's-->
+            <div class="row">
+                <div class="col_5"><div class="cell">col_5</div></div>
+                <div class="col_5"><div class="cell">col_5</div></div>
+                <div class="col_5"><div class="cell">col_5</div></div>
+                <div class="col_5"><div class="cell">col_5</div></div>
+                <div class="col_5"><div class="cell">col_5</div></div>
+            </div>
+    
+            <!--row of 4's-->
+            <div class="row">
+                <div class="col_4"><div class="cell">col_4</div></div>
+                <div class="col_4"><div class="cell">col_4</div></div>
+                <div class="col_4"><div class="cell">col_4</div></div>
+                <div class="col_4"><div class="cell">col_4</div></div>
+            </div>
+    
+            <!--row of 3's-->
+            <div class="row">
+                <div class="col_3"><div class="cell">col_3</div></div>
+                <div class="col_3"><div class="cell">col_3</div></div>
+                <div class="col_3"><div class="cell">col_3</div></div>
+            </div>
+    
+            <!--row of 2's-->
+            <div class="row">
+                <div class="col_2"><div class="cell">col_2</div></div>
+                <div class="col_2"><div class="cell">col_2</div></div>
+            </div>
+    
+            <!--row of 1 (single column)-->
+            <div class="row">
+                <div class="col_1"><div class="cell">col_1</div></div>
+            </div>
+    
+        </div><!--eof container-->
+
+        <!--
+        ====
+        ================ MAIN WRAPPER FOR CONTENT, COMPLEMENTS ====
+        -->
+        <div class="container">
+
+            <!--16 & 16's complement-->
+            <div class="row">
+
+                <div class="col_16"><div class="cell">col_16</div></div>
+                <div class="col_16c"><div class="cell">col_16c</div></div>
+
+            </div>
+
+            <!--15 & 15's complement-->
+            <div class="row">
+
+                <div class="col_15"><div class="cell">col_15</div></div>
+                <div class="col_15c"><div class="cell">col_15c</div></div>
+
+            </div>
+
+            <!--14 & 14's complement-->
+            <div class="row">
+
+                <div class="col_14"><div class="cell">col_14</div></div>
+                <div class="col_14c"><div class="cell">col_14c</div></div>
+
+            </div>
+
+            <!--13 & 13's complement-->
+            <div class="row">
+
+                <div class="col_13"><div class="cell">col_13</div></div>
+                <div class="col_13c"><div class="cell">col_13c</div></div>
+
+            </div>
+
+            <!--12 & 12's complement-->
+            <div class="row">
+
+                <div class="col_12"><div class="cell">col_12</div></div>
+                <div class="col_12c"><div class="cell">col_12c</div></div>
+
+            </div>
+
+            <!--11 & 11's complement-->
+            <div class="row">
+
+                <div class="col_11"><div class="cell">col_11</div></div>
+                <div class="col_11c"><div class="cell">col_11c</div></div>
+
+            </div>
+
+            <!--10 & 10's complement-->
+            <div class="row">
+
+                <div class="col_10"><div class="cell">col_10</div></div>
+                <div class="col_10c"><div class="cell">col_10c</div></div>
+
+            </div>
+
+            <!--9 & 9's complement-->
+            <div class="row">
+
+                <div class="col_9"><div class="cell">col_9</div></div>
+                <div class="col_9c"><div class="cell">col_9c</div></div>
+
+            </div>
+
+            <!--8 & 8's complement-->
+            <div class="row">
+
+                <div class="col_8"><div class="cell">col_8</div></div>
+                <div class="col_8c"><div class="cell">col_8c</div></div>
+
+            </div>
+
+            <!--7 & 7's complement-->
+            <div class="row">
+
+                <div class="col_7"><div class="cell">col_7</div></div>
+                <div class="col_7c"><div class="cell">col_7c</div></div>
+
+            </div>
+
+            <!--6 & 6's complement-->
+            <div class="row">
+
+                <div class="col_6"><div class="cell">col_6</div></div>
+                <div class="col_6c"><div class="cell">col_6c</div></div>
+
+            </div>
+
+            <!--5 & 5's complement-->
+            <div class="row">
+
+                <div class="col_5"><div class="cell">col_5</div></div>
+                <div class="col_5c"><div class="cell">col_5c</div></div>
+
+            </div>
+
+            <!--4 & 4's complement-->
+            <div class="row">
+
+                <div class="col_4"><div class="cell">col_4</div></div>
+                <div class="col_4c"><div class="cell">col_4c</div></div>
+
+            </div>
+
+            <!--3 & 3's complement-->
+            <div class="row">
+
+                <div class="col_3"><div class="cell">col_3</div></div>
+                <div class="col_3c"><div class="cell">col_3c</div></div>
+
+            </div>
+
+            <!--2 & 2's complement-->
+            <div class="row">
+
+                <div class="col_2"><div class="cell">col_2</div></div>
+                <div class="col_2"><div class="cell">col_2c (same width as col_2)</div></div>
+
+            </div>
+
+            <!--1's complement-->
+            <div class="row">
+
+                <div class="col_1"><div class="cell">col_1 (no complement)</div></div>
+
+            </div>
+
+        </div><!--eof container, complements-->
+    
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+
+
+{% endblock %}

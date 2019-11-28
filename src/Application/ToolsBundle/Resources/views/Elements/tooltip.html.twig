@@ -1,0 +1,147 @@
+{% extends 'ApplicationToolsBundle::layout.html.twig' %}
+
+{% block title %}Tooltip{% endblock %}
+
+{% block stylesheets %}
+
+	<style type="text/css">
+		/*--Tooltip Styles--*/
+		.xtip,
+		.tip {
+			color: #fff;
+			background:#1d1d1d;
+			display:none; /*--Hides by default--*/
+			padding:10px;
+			position:absolute;
+			z-index:1000;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+		.close_xtip{
+			color: #FFF;
+			
+		}
+	</style>
+{% endblock %}
+
+{% block javascripts %}
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//Tooltips
+			$(".tip_trigger").hover(function(){
+				tip = $(this).find('.tip');
+				tip.show(); //Show tooltip
+			}, function() {
+				tip.hide(); //Hide tooltip		  
+			}).mousemove(function(e) {
+				var mousex = e.pageX + 20; //Get X coodrinates
+				var mousey = e.pageY + 20; //Get Y coordinates
+				var tipWidth = tip.width(); //Find width of tooltip
+				var tipHeight = tip.height(); //Find height of tooltip
+				
+				//Distance of element from the right edge of viewport
+				var tipVisX = $(window).width() - (mousex + tipWidth);
+				//Distance of element from the bottom of viewport
+				var tipVisY = $(window).height() - (mousey + tipHeight);
+				  
+				if ( tipVisX < 20 ) { //If tooltip exceeds the X coordinate of viewport
+					mousex = e.pageX - tipWidth - 20;
+				} if ( tipVisY < 20 ) { //If tooltip exceeds the Y coordinate of viewport
+					mousey = e.pageY - tipHeight - 20;
+				} 
+				tip.css({  top: mousey, left: mousex });
+			});
+			
+			$(".xtip_trigger").click(function (e) {
+				
+				//tip = $('.xtip');
+				tip = $(this).next().css("color", "red");
+				tip.fadeIn();
+				
+				var mousex = e.pageX + 20; //Get X coodrinates
+				var mousey = e.pageY + 20; //Get Y coordinates
+				var tipWidth = tip.width(); //Find width of tooltip
+				var tipHeight = tip.height(); //Find height of tooltip
+				
+				//Distance of element from the right edge of viewport
+				var tipVisX = $(window).width() - (mousex + tipWidth);
+				//Distance of element from the bottom of viewport
+				var tipVisY = $(window).height() - (mousey + tipHeight);
+				  
+				if ( tipVisX < 20 ) { //If tooltip exceeds the X coordinate of viewport
+					mousex = e.pageX - tipWidth - 20;
+				} if ( tipVisY < 20 ) { //If tooltip exceeds the Y coordinate of viewport
+					mousey = e.pageY - tipHeight - 20;
+				} 
+				tip.css({  top: mousey, left: mousex });
+				
+			});
+			$(".close_xtip").click(function () {
+				$(".xtip").fadeOut(500);
+				return false;
+			});
+			
+			$(".tip").click(function () {
+				$(".tip").fadeOut(500);
+				return false;
+			});
+			
+			
+		});
+	</script>
+{% endblock %}
+
+{% block body %}
+<div class="section">
+    <div class="grid_16">
+        <h4>Tooltip</h4>
+		
+		<div class="container">
+			<h1><span>Simple Tooltips</span> w/ CSS &amp; jQuery <small>Tutorial by Soh Tanaka</small></h1>
+			<a href="http://www.designbombs.com/design-firm/struck-axiom/" target="_blank" class="tip_trigger" style="float: left; margin: 5px 20px 20px 0; padding: 10px; border: 1px dashed #ddd;">
+				<img src="{{ asset('bundles/applicationtools/images/tooltip/4_s.jpeg') }}" alt=""/>
+				<span class="tip"><img src="{{ asset('bundles/applicationtools/images/tooltip/4_b.jpg') }}" height="250" alt="" /></span> 
+			</a>
+
+			<p>Ut dolus ullamcorper, gravis ad eu typicus. Similis nulla augue aliquam importunus eu, dolor erat letalis persto. Autem qui, vel patria elit refero si. Letalis augue accumsan vulputate aptent vel aptent iusto ullamcorper vero. delenit hos dolore occuro tation euismod eum quadrum si nulla saepius nutus wisi foras. 
+			Commodo <a class="tip_trigger" href="#">Paulatim <span class="tip" style="width: 400px;"><img src="{{ asset('bundles/applicationtools/images/tooltip/pic_mont.jpg') }}" style="float: left; margin-right: 20px;" alt="" />Welcome to Grandpeople. We specialize in graphic design, photography, illustration and creative direction. Feel free to have a look at our selected work for clients and collaborators from around the globe.</span></a></p>
+			
+			<p>Jumentum in, premo pertineo valde mara velit haero ulciscor abigo commodo vulputate volutpat. In typicus luptatum, nutus, ne letalis vel ventosus. 
+			Hendrerit <a class="tip_trigger" href="#">aliquam <span class="tip" style="width: 450px;"><img src="{{ asset('bundles/applicationtools/images/tooltip/pic_mgmt.jpg') }}" style="float: left; margin-right: 20px;" alt="" />
+			We build fresh websites and amazing community solutions. Amazee Labs at your service! Based on the modern open source framework Drupal we bring your brand to the online world. With competence, confidence and a dash of spice! </span></a> eros eum eu laoreet, minim, probo. Duis nibh in huic abico duis enim oppeto. </p>	
+			
+			<p>Jumentum in, premo pertineo valde mara velit haero ulciscor abigo commodo vulputate volutpat. In typicus luptatum, nutus, ne letalis vel ventosus. Hendrerit aliquam eros eum eu laoreet, minim, probo. Duis nibh in huic abico duis enim oppeto. <a href="#" class="tip_trigger">Your Link Key Word <span class="tip">This will show up in the tooltip</span></a></p>	
+			
+
+			<div class="clear"></div>
+			<a href="#" class="xtip_trigger" style="float: left; margin: 5px 20px 20px 0; padding: 10px; border: 1px dashed #ddd;">
+				<img src="{{ asset('bundles/applicationtools/images/tooltip/4_s.jpeg') }}" alt=""/>
+			</a>
+			<span class="tip"><img src="{{ asset('bundles/applicationtools/images/tooltip/4_b.jpg') }}" height="250" alt="" /></span> 
+
+			<p>Ut dolus ullamcorper, gravis ad eu typicus. Similis nulla augue aliquam importunus eu, dolor erat letalis persto. Autem qui, vel patria elit refero si. Letalis augue accumsan vulputate aptent vel aptent iusto ullamcorper vero. delenit hos dolore occuro tation euismod eum quadrum si nulla saepius nutus wisi foras. 
+			Commodo <a class="xtip_trigger" href="#">Paulatim </a>
+			<span class="tip" style="width: 400px;"><img src="{{ asset('bundles/applicationtools/images/tooltip/pic_mont.jpg') }}" style="float: left; margin-right: 20px;" alt="" />Welcome to Grandpeople. We specialize in graphic design, photography, illustration and creative direction. Feel free to have a look at our selected work for clients and collaborators from around the globe.</span>
+			</p>
+			
+			<p>Jumentum in, premo pertineo valde mara velit haero ulciscor abigo commodo vulputate volutpat. In typicus luptatum, nutus, ne letalis vel ventosus. 
+			Hendrerit <a class="xtip_trigger" href="#">aliquam</a> 
+			<span class="tip" style="width: 450px;"><img src="{{ asset('bundles/applicationtools/images/tooltip/pic_mgmt.jpg') }}" style="float: left; margin-right: 20px;" alt="" />We build fresh websites and amazing community solutions. Amazee Labs at your service! Based on the modern open source framework Drupal we bring your brand to the online world. With competence, confidence and a dash of spice! </span>
+			
+			eros eum eu laoreet, minim, probo. Duis nibh in huic abico duis enim oppeto. </p>	
+			
+			<p>Jumentum in, premo pertineo valde mara velit haero ulciscor abigo commodo vulputate volutpat. In typicus luptatum, nutus, ne letalis vel ventosus. Hendrerit aliquam eros eum eu laoreet, minim, probo. Duis nibh in huic abico duis enim oppeto. <a href="#" class="xtip_trigger">Your Link Key Word </a><span class="xtip">This will show up in the tooltip <a href="#" class="close_xtip">x</a></span></p>
+			
+			
+		</div>
+		
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+
+
+
+{% endblock %}

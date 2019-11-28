@@ -1,0 +1,346 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% form_theme form _self %}
+ 
+{% block form_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+        {% for error in errors %}
+            <i class="glyphicon glyphicon-remove form-control-feedback"></i>
+            <small class="help-block">{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</small>
+        {% endfor %}
+    {% endif %}
+{% endspaceless %}
+{% endblock form_errors %}
+
+{% block choice_widget_expanded %}
+{% spaceless %}
+    <div {{ block('widget_container_attributes') }} class="my-form-choices">
+    {% for child in form %}
+        {{ form_widget(child) }}
+    {% endfor %}
+    </div>
+{% endspaceless %}
+{% endblock choice_widget_expanded %}
+
+{% block checkbox_widget %}
+{% spaceless %}
+    <label class="checkbox-inline" for="{{ id }}"><input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />{{ label|trans({}, translation_domain) }}</label>
+{% endspaceless %}
+{% endblock checkbox_widget %}
+
+{% block radio_widget %}
+{% spaceless %}
+    <label class="radio-inline" for="{{ id }}"><input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />{{ label|trans({}, translation_domain) }}</label>
+{% endspaceless %}
+{% endblock radio_widget %}
+
+{% block datetime_widget %}
+{% spaceless %}
+    <div {{ block('widget_container_attributes') }} class="select-inline-datetime">
+    {% for child in form %}
+        {{ form_widget(child) }}
+    {% endfor %}
+    </div>
+{% endspaceless %}
+{% endblock datetime_widget %}
+
+{% block date_widget %}
+{% spaceless %}
+    {% if widget == 'single_text' %}
+        {{ block('field_widget') }}
+    {% else %}
+    <div {{ block('widget_container_attributes') }} class="select-inline date">
+        {# {{ date_pattern|replace({ #}
+        {{ '{{ day }} / {{ month }} / {{ year }}'|replace({
+            '{{ year }}' : form_widget(form.year, { 'attr': {'class': 'form-control'} }),
+            '{{ month }}' : form_widget(form.month, { 'attr': {'class': 'form-control'} }),
+            '{{ day }}' : form_widget(form.day, { 'attr': {'class': 'form-control'} }),
+        })|raw }}
+    </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock date_widget %}
+
+{% block time_widget %}
+{% spaceless %}
+    {% if widget == 'single_text' %}
+        {{ block('field_widget') }}
+    {% else %}
+    <div {{ block('widget_container_attributes') }} class="select-inline time">
+        {{ form_widget(form.hour, { 'attr': { 'class': 'form-control' } }) }} :
+        {{ form_widget(form.minute, { 'attr': { 'class': 'form-control' } }) }}
+        {% if with_seconds %}:
+        {{ form_widget(form.second, { 'attr': { 'class': 'form-control' } }) }}
+        {% endif %}
+    </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock time_widget %}
+
+{#
+{% block field_widget %}
+    {% set type = type|default('text') %}
+
+    {% if type == 'file' %}
+        <div class="bootstrap-filestyle input-group">
+            <span class="group-span-filestyle " tabindex="0">
+                <label for="filestyle-0" class="btn btn-default">
+                    <span class="glyphicon glyphicon-folder-open"></span> Choose file 
+                    <span class="badge">1</span>
+                </label>
+            </span>
+        </div> 
+    {% endif %}
+
+    {{ block('form_widget_simple') }}
+{% endblock %}
+#}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+	<style type="text/css">
+	
+		.select-inline .form-control{
+		  display: inline-block;
+		  width: auto;
+		  /*width: 100px;*/
+		}
+		.select-inline-datetime .select-inline.date,
+		.select-inline-datetime .select-inline.time{
+		  display: inline-block;
+		  margin-bottom: 0;
+		  font-weight: normal;
+		  vertical-align: middle;
+		  cursor: pointer;
+		}
+		.select-inline-datetime .select-inline.date{
+		  margin-right: 15px;
+		}
+		.select-inline-datetime .select-inline.time{
+		  margin-right: 0px;
+		  /*margin-top: 5px;*/
+		}
+		.has-feedback .select-inline .form-control{
+		  padding-right: 12px;
+		}
+		/*
+		.form-horizontal .has-feedback .form-control-feedback{
+		    right: -15px;
+		}*/
+		
+		/*FILE*/
+		.form-control.file{
+		  height: auto;
+		  padding-top: 4px;
+		  padding-bottom: 4px;
+		  line-height: 1.42857143;
+		}
+		.form-control.input-lg.file{
+          padding-top: 7px;
+		  padding-bottom: 7px;
+		  font-size: 18px;
+		  line-height: 1.7;
+		}
+		.form-control.input-sm.file{
+          padding-top: 2px;
+		  padding-bottom: 2px;
+		  font-size: 12px;
+		  line-height: 2;
+		}
+	</style>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/forms/filestyle/bootstrap-filestyle.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+	$(document).ready(function() {
+		$('.input01').filestyle({
+			buttonText : ' File',
+			buttonName : 'btn-success',
+			iconName : 'glyphicon-folder-open',
+			buttonBefore : true
+		});
+	});
+    </script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Bootstrap vlidations jobeet job</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-9">
+                <form class="form-horizontal" role="form" action="{{ path('_validations_bootstrap-vlidations-jobeet-job') }}" method="post" {{ form_enctype(form) }} novalidate>
+					{{ form_errors(form) }}
+					<div class="form-group {% if form_errors(form.company) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.company, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.company, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.company) }}
+                        </div>
+                    </div>
+					<div class="form-group {% if form_errors(form.logo) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.logo, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-7">
+                            <input class="input01" type="file">
+                            {{ form_errors(form.logo) }}
+                        </div>
+                        <div class="col-sm-2">
+                          <a class="btn btn-primary btn-sm" href="http://markusslima.github.io/bootstrap-filestyle" target="_blank"><i class="fa fa-link"></i></a>
+                          <a class="btn btn-primary btn-sm" href="https://github.com/markusslima/bootstrap-filestyle" target="_blank"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+					<div class="form-group {% if form_errors(form.logo) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.logo, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.logo, { 'attr': {'class': 'form-control file'} }) }}
+                            {{ form_errors(form.logo) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.category) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.category, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.category, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.category) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.programming_languages) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.programming_languages, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.programming_languages, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.programming_languages) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.type) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.type, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.type) }}
+                            <small class="text-muted">Select</small>
+                            {{ form_errors(form.type) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.gender) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.gender, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.gender) }}
+                            <small class="text-muted">Select</small>
+                            {{ form_errors(form.gender) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.email) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.email, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.url) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.url, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.url, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.url) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.expires_at) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.expires_at, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.expires_at) }}
+                            <small class="text-muted">Select</small>
+                            {{ form_errors(form.expires_at) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.created_at) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.created_at, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.created_at) }}
+                            <small class="text-muted">Select</small>
+                            {{ form_errors(form.created_at) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.updated_at) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.updated_at, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.updated_at, { 'attr': {'class': 'form-control'} }) }}
+                            <small class="text-muted">The required date format (YYYY/MM/DD HH:MM)</small>
+                            {{ form_errors(form.updated_at) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.description) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.description, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.description, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.description) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.how_to_apply) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.how_to_apply, 'How to apply?', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.how_to_apply, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.how_to_apply) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.is_public) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.is_public, 'Public?', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            <div>{{ form_widget(form.is_public) }}</div>
+                            <small class="text-muted">Whether the job can also be published on affiliate websites or not.</small> 
+                            {{ form_errors(form.is_public) }}
+                        </div>
+                    </div>
+					<div class="form-group {% if form_errors(form.is_activated) %} has-feedback has-error {% endif %}">
+						<div class="col-sm-offset-3 col-sm-9">
+							<div>{{ form_widget(form.is_activated) }}</div>
+							{{ form_errors(form.is_activated) }}
+						</div>
+					</div>
+					<div class="form-group {% if form_errors(form.position) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.position, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.position, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.position) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.location) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.location, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.location, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.location) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.token) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.token, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-9">
+                            {{ form_widget(form.token, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.token) }}
+                        </div>
+                    </div>
+					{{ form_rest(form) }}
+					<div class="form-group">
+					    <div class="col-sm-offset-3 col-sm-9">
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+         </div>
+    </div> <!-- /container -->
+{% endblock %}

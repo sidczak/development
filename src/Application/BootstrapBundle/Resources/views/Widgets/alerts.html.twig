@@ -1,0 +1,120 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+{% block stylesheets %}
+  <style type="text/css">
+    /*body {
+      padding-top: 71px;
+    }*/
+  </style>  
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h2>Alerts</h2>
+        </div>
+        <div class="row">
+        	<div class="col-lg-6">
+                            <div class="alert alert-success">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-info">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-warning">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-danger">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+        	</div>
+        	<div class="col-lg-6">
+                            <div class="alert alert-success alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-info alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-warning alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+                            <div class="alert alert-danger alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+        	</div>
+        </div>
+        
+        <div class="page-header"><h2>Blockquotes</h2></div>
+        <div class="row">
+          <div class="col-lg-6">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+              <blockquote class="alert-success">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+              <blockquote class="alert-info">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+              <blockquote class="alert-warning">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+              <blockquote class="alert-danger">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+          </div>
+          <div class="col-lg-6">
+              <blockquote class="pull-right">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+              <blockquote class="pull-right alert-success">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+              <blockquote class="pull-right alert-info">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+              <blockquote class="pull-right alert-warning">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+              <blockquote class="pull-right alert-danger">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+              </blockquote>
+          </div>
+        </div>
+        
+        
+        
+    </div> <!-- /container -->
+{% endblock %}

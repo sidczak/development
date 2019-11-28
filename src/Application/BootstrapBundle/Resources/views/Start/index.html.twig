@@ -1,0 +1,786 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Start Bootstrap{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+            
+                <h3>Themes & Templates</h3>
+                <p>Bootstrap:
+                    <a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a>,
+                    <a href="https://github.com/twbs/bootstrap/" target="_blank">github</a>
+                </p>
+                <p>Bootswatch: 
+                    <a href="http://bootswatch.com/" target="_blank">bootswatch.com</a>,
+                    <a href="https://github.com/thomaspark/bootswatch" target="_blank">github</a>
+                </p>
+                <p>Start Bootstrap:
+                    <a href="http://startbootstrap.com/" target="_blank">startbootstrap.com</a>,
+                    <a href="https://github.com/ironsummitmedia/startbootstrap" target="_blank">github</a>
+                </p>
+                <p>Bootstrap Zero:
+                    <a href="http://www.bootstrapzero.com/" target="_blank">www.bootstrapzero.com</a>,
+                    <a href="https://github.com/iatek/bootstrap-zero" target="_blank">github</a>
+                </p>
+                <p>Prepbootstrap:
+                    <a href="http://www.prepbootstrap.com/" target="_blank">www.prepbootstrap.com</a>
+                </p>
+        
+            </div>
+            <div class="col-lg-6">
+            
+                <h3>Fonts</h3>
+                <p>Bootstrap:
+                    <a href="http://getbootstrap.com/components/" target="_blank">getbootstrap.com</a>,
+                    <a href="https://github.com/twbs/bootstrap/" target="_blank">github</a>
+                </p>
+                <p>Font Awesome:
+                    <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a>,
+                    <a href="https://github.com/FortAwesome/Font-Awesome/" target="_blank">github</a>
+                </p>
+                <p>flaticon:
+                    <a href="http://www.flaticon.com/" target="_blank">flaticon</a>
+                </p>
+                <h3>JavaScript Bootstrap</h3>
+                <p>Bootstrap:
+                    <a href="http://jasny.github.io/bootstrap/2.3.1/index.html" target="_blank">JavaScript</a>,
+                    <a href="https://github.com/jasny/bootstrap" target="_blank">github</a>
+                </p>
+        
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>Navigation & Menus</h3>
+                <ul>
+                    <li><a href="{{ path('_examples_navbar') }}">Navbar (default)</a></li>
+                    <li><a href="{{ path('_examples_navbar-static-top') }}">Navbar Static Top</a></li>
+                    <li><a href="{{ path('_examples_navbar-fixed-top') }}">Navbar Fixed Top</a></li>
+                    <li><a href="{{ path('_examples_navbar-fixed-bottom') }}">Navbar Fixed Bottom</a></li>
+                    <li><a href="{{ path('_examples_navbar-justified') }}">Navbar Justified</a></li>
+                    <li><a href="{{ path('_examples_sidebar-offcanvas') }}">Sidebar offcanvas</a></li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_navigation-menus_scrollingNav') }}">Scrolling Nav</a></li>
+                    <li><a href="{{ path('_navigation-menus_logoNav') }}">Logo Nav</a></li>
+                    <li><a href="{{ path('_navigation-menus_simpleSidebar') }}">Simple Sidebar</a></li>
+                    <li><a href="{{ path('_navigation-menus_simpleSidebarFluid') }}">Simple Sidebar Fluid</a></li>
+                    <li><a href="{{ path('_navigation-menus_simpleSidebarOnTop') }}">Simple Sidebar On Top</a></li>
+                    <li><a href="{{ path('_navigation-menus_simpleSidebarFluidOnTop') }}">Simple Sidebar Fluid On Top</a></li>
+                    
+                </ul>
+                <h4>Project Scrolling Nav:</h4>
+                <p>Agency, Freelancer, Grayscale, Stylish Portfolio</p>
+                <h4>Other menu</h4>
+                <ul>
+                    <li>Minimal Menu
+                        <a class="btn btn-primary btn-xs" href="http://bootsnipp.com/snippets/featured/minimal-menu" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                    <li>SVBTL Menu
+                        <a class="btn btn-primary btn-xs" href="http://bootsnipp.com/snippets/featured/svbtle-inspired-menu" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                    <li>Tabs vertical
+                        <a class="btn btn-primary btn-xs" href="http://bootsnipp.com/snippets/featured/vertical-admin-menu-single-page-jquery" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                    <li>Navbar lateral
+                        <a class="btn btn-primary btn-xs" href="http://bootsnipp.com/snippets/featured/navbar-lateral-slide-menu" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Sticky footer</h3>
+                <ul>
+                    <li><a href="{{ path('_examples_navbar-static-top-sticky-footer') }}">Navbar Static Top & Sticky footer</a></li>
+                    <li><a href="{{ path('_examples_navbar-fixed-top-sticky-footer') }}">Navbar Fixed Top & Sticky footer</a></li>
+                </ul>
+                <h3>Multilevel menu</h3>
+                <ul>
+                    <li><a href="{{ path('_multilevel-menu_admin-dashboard') }}">Multilevel Menu SB Admin</a></li>
+                    <li><a href="{{ path('_multilevel-menu_brand') }}">Multilevel Menu Brand</a></li>
+                    <li>Multilevel Menu AdminLTE</li>
+                </ul>
+                <ul>
+                    <li><a href="{{ path('_multilevel-menu_bcore') }}">Multilevel Menu BCORE</a></li>
+                    <li><a href="{{ path('_multilevel-menu_devoops') }}">Multilevel Menu DevOOPS</a></li>
+                    <li><a href="{{ path('_multilevel-menu_admin-dashboard2') }}">Multilevel Menu SB Admin2</a> <span class="label label-success">js</span></li>
+                    <li>Multilevel Menu Porto</li>
+                </ul>
+                <h4>Bootstrap submenu</h4>
+                <ul>
+                    <li>
+                        <a href="{{ path('_multilevel-menu_navbar') }}">NavBar</a>
+                        <a class="btn btn-primary btn-xs" href="http://bootsnipp.com/snippets/featured/multi-level-navbar-menu" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_dropdown-submenu') }}">Dropdown-submenu</a>
+                      <a class="btn btn-primary btn-xs" href="http://bootsnipp.com/snippets/featured/multi-level-dropdown-menu-bs3" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_bootstrap-submenu') }}">Bootstrap submenu</a>
+                      <a class="btn btn-primary btn-xs" href="http://vsn4ik.github.io/bootstrap-submenu" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="https://github.com/vsn4ik/bootstrap-submenu" target="_blank"><i class="fa fa-github"></i></a>
+                      <span class="label label-success">js</span>
+                    </li>
+                </ul>
+                <h4>Huge menu</h4>
+                <ul>
+                    <li>
+                      <a href="{{ path('_mega-menu') }}">Mega Menu</a>
+                      <a class="btn btn-primary btn-xs" href="http://bootsnipp.com/snippets/featured/mega-menu-with-carousel-for-stores" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_large-dropdown-menu') }}">Large Dropdown Menu</a>
+                      <a class="btn btn-primary btn-xs" href="http://bootsnipp.com/snippets/featured/large-dropdown-menu" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_mega-menu-nike') }}">Mega Menu Nike with Tabs</a>
+                      <a class="btn btn-primary btn-xs" href="http://bootsnipp.com/snippets/featured/mega-menu-with-tabs-navigation" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Banner & Full Page</h3>
+                <ul>
+                    <li><a href="{{ path('_examples_carousel') }}">Carousel</a></li>
+                    <li><a href="{{ path('_examples_jumbotron') }}">Jumbotron</a></li>
+                    <li><a href="{{ path('_examples_jumbotron-narrow') }}">Jumbotron narrow</a></li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_full-banner_full') }}">Full</a></li>
+                    <li><a href="{{ path('_full-banner_full-slider') }}">Full Slider</a></li>
+                    <li><a href="{{ path('_full-banner_full-width-pics') }}">Full Width Pics</a></li>
+                    <li><a href="{{ path('_full-banner_half-slider') }}">Half Slider</a></li>
+                    <li><a href="{{ path('_full-banner_the-big-picture') }}">The big picture</a></li>
+                </ul>
+                <h4>Project:</h4>
+                <p>Grayscale, Stylish Portfolio</p>
+            </div>
+            <div class="col-lg-3">
+                <h3>Template</h3>
+                <ul>
+                    <li><a href="{{ path('_examples_template-starter') }}">Starter</a></li>
+                    <li><a href="{{ path('_examples_template-cover') }}">Cover</a></li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_starter-template_one-page-wonder') }}">One page wonder</a></li>
+                    <li><a href="{{ path('_starter-template_round-about') }}">Round about</a></li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_business_business-modern') }}">Modern Business</a></li>
+                    <li><a href="{{ path('_starter-template_about') }}">About</a></li>
+                    <li><a href="{{ path('_starter-template_services') }}">Services</a></li>
+                    <li><a href="{{ path('_starter-template_contact') }}">Contact</a></li>
+                    <li><a href="{{ path('_starter-template_full-width-page') }}">Full Width Page</a></li>
+                    <li><a href="{{ path('_starter-template_sidebar') }}">Sidebar</a></li>
+                    <li><a href="{{ path('_starter-template_FAQ') }}">FAQ</a></li>
+                    <li><a href="{{ path('_starter-template_error-404') }}">404</a></li>
+                    <li><a href="{{ path('_starter-template_pricing') }}">Pricing table</a></li>
+                    <li><a href="{{ path('_starter-template-contact-devoops') }}">Contact - DevOOPS</a></li>
+                    <li><a href="{{ path('_starter-template-search-results-devoops') }}">Search results - DevOOPS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>Portfolio</h3>
+                <ul>
+                    <li><a href="{{ path('_portfolio_portfolio-col1') }}">Portfolio Column 1</a></li>
+                    <li><a href="{{ path('_portfolio_portfolio-col2') }}">Portfolio Column 2</a></li>
+                    <li><a href="{{ path('_portfolio_portfolio-col3') }}">Portfolio Column 3</a></li>
+                    <li><a href="{{ path('_portfolio_portfolio-col4') }}">Portfolio Column 4</a></li>
+                    <li><a href="{{ path('_portfolio_portfolio-item') }}">Single Portfolio Item</a></li>
+                    <li><a href="{{ path('_portfolio_thumbnail-gallery') }}">Thumbnail gallery</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Blog</h3>
+                <ul>
+                    <li><a href="{{ path('_examples_template-blog') }}">Blog</a></li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_blog_blog-home-one') }}">Blog Home 1</a></li>
+                    <li><a href="{{ path('_blog_blog-home-two') }}">Blog Home 2</a></li>
+                    <li><a href="{{ path('_blog_blog-post') }}">Blog Post</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Ecommerce</h3>
+                <ul>
+                    <li><a href="{{ path('_ecommerce_heroic-features') }}">Heroic features</a></li>
+                    <li><a href="{{ path('_ecommerce_shop-homepage') }}">Shop homepage</a></li>
+                    <li><a href="{{ path('_ecommerce_shop-item') }}">Shop item</a></li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_ecommerce_pricing-devoops') }}">Pricing - DevOOPS</a></li>
+                    <li><a href="{{ path('_ecommerce_pricing-bcore') }}">Pricing - BCORE</a></li>
+                    <li><a href="{{ path('_ecommerce_invoice-adminLTE') }}">Invoice - AdminLTE</a></li>
+                    <li><a href="{{ path('_ecommerce_invoice-devoops') }}">Invoice - DevOOPS</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Business</h3>
+                <ul>
+                    <li><a href="{{ path('_business_business-frontpage') }}">Frontpage Business</a></li>
+                    <li><a href="{{ path('_business_business-modern') }}">Modern Business</a></li>
+                    <li><a href="{{ path('_business_business-small') }}">Small Business</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>Admin</h3>
+                <ul>
+                    <li><a href="{{ path('_examples_admin-signin') }}">Signin</a></li>
+                    <li><a href="{{ path('_examples_admin-dashboard') }}">Dashboard</a></li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_admin-dashboard_index') }}">SB Admin</a></li>
+                    <li><a href="{{ path('_admin-dashboard2_index') }}">SB Admin2</a></li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li>Bcore</li>
+                    <li>AdminLTE</li>
+                    <li>DevOOPS</li>
+                    <li>DashGum</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Features</h3>
+                <ul>
+                    <li><a href="{{ path('_examples_grid') }}">Grid</a></li>
+                    <li><a href="{{ path('_examples_elements') }}">Elements</a></li>
+                    <li><a href="{{ path('_examples_theme') }}">Theme</a></li>
+                    <li><a href="{{ path('_examples_theme-off') }}">Theme off</a></li>
+                    <li><a href="{{ path('_examples_non-responsive') }}">Non-responsive</a></li>
+                    <li><a href="{{ path('_examples_tooltip-viewport') }}">Tooltip viewport</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>One Page Websites</h3>
+                <ul>
+                    <li><a href="{{ path('_one-page-websites_agency') }}">Agency</a> <span class="label label-primary">Scrolling Nav</span></li>
+                    <li><a href="{{ path('_one-page-websites_freelancer') }}">Freelancer</a> <span class="label label-primary">Scrolling Nav</span></li>
+                    <li><a href="{{ path('_one-page-websites_grayscale') }}">Grayscale</a> <span class="label label-primary">Scrolling Nav</span></li>
+                    {# <li>Landing Page</li> #}
+                    <li><a href="{{ path('_one-page-stylish-portfolio') }}">Stylish Portfolio</a> <span class="label label-primary">Scrolling Nav</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Page Project</h3>
+                <ul>
+                    <li>Modern Business</li>
+                    <li>Business Casuall</li>
+                </ul>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>Charts</h3>
+                <ul>
+                    <li>
+                      <a href="{{ path('_charts_morris') }}">Morris charts</a>
+                      <a class="btn btn-primary btn-xs" href="http://morrisjs.github.io/morris.js/" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="https://github.com/morrisjs/morris.js/" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_charts_chartjs') }}">Chartjs</a>
+                      <a class="btn btn-primary btn-xs" href="http://www.chartjs.org/" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="https://github.com/nnnick/Chart.js" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    
+                    <li>
+                      <a href="{{ path('_charts_xcharts') }}">xCharts</a>
+                      <a class="btn btn-primary btn-xs" href="http://tenxer.github.io/xcharts/" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="https://github.com/tenXer/xcharts/" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_charts_flot') }}">Flot charts</a>
+                      <a class="btn btn-primary btn-xs" href="http://www.flotcharts.org/" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="https://github.com/flot/flot" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_charts_google') }}">Google charts</a>
+                      <a class="btn btn-primary btn-xs" href="https://google-developers.appspot.com/chart/interactive/docs/gallery" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                    <li>CoinDesk realtime</li>
+                    <hr/>
+                    <li>
+                      <a href="{{ path('_charts_sparkline') }}">Sparkline charts</a> (Inline charts) 
+                      <a class="btn btn-primary btn-xs" href="http://omnipotent.net/jquery.sparkline/#s-about" target="_blank"><i class="fa fa-link"></i></a
+                    </li>
+                    <li>
+                      <a href="{{ path('_charts_knob') }}">jQuery Knob</a>
+                      <a class="btn btn-primary btn-xs" href="http://anthonyterrien.com/knob/" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="https://github.com/aterrien/jQuery-Knob" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_charts_knob-movie') }}">jQuery Knob Movie</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Editors</h3>
+                <ul>
+                    <li>
+                      <a href="{{ path('_editors_tinymce') }}">tinymce</a>
+                      <a class="btn btn-primary btn-xs" href="http://www.tinymce.com/index.php" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="http://www.tinymce.com/download/download.php" target="_blank"><i class="fa fa-cloud-download"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_editors_ckeditor') }}">CKEditor</a> 
+                      <a class="btn btn-primary btn-xs" href="http://ckeditor.com" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="http://ckeditor.com/download" target="_blank"><i class="fa fa-cloud-download"></i></a> 
+                    </li>
+                    <li>
+                      <a href="{{ path('_editors_wysiHTML5') }}">wysiHTML5</a>
+                      <a class="btn btn-primary btn-xs" href="http://xing.github.io/wysihtml5/" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="https://github.com/xing/wysihtml5" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                      <a href="{{ path('_editors_wysiHTML5Bootstrap') }}">wysiHTML5 bootstrap</a>
+                      <a class="btn btn-primary btn-xs" href="http://jhollingworth.github.io/bootstrap-wysihtml5/" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="https://github.com/schnawel007/bootstrap3-wysihtml5" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    
+                    <li>CLEditor</li>
+                    <li>Markdown</li>
+                    <li>Richeditor</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Tables</h3>
+                <ul>
+                    <li><a href="{{ path('_table_basic') }}">Basic table</a></li>
+                    <li><a href="{{ path('_table_responsive') }}">Responsive table</a></li>
+                    <li><a href="{{ path('_table_hidden-col') }}">Hidden column table</a></li>
+                    <li>
+                        <a href="{{ path('_table_bootstrap-table') }}">Bootstrap Table</a>
+                        <a class="btn btn-primary btn-xs" href="http://wenzhixin.net.cn/p/bootstrap-table/docs/index.html" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/wenzhixin/bootstrap-table" target="_blank"><i class="fa fa-cloud-download"></i></a> 
+                    </li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li>
+                        <a href="{{ path('_table_datatables') }}">Datatables</a> 
+                        <a class="btn btn-primary btn-xs" href="http://www.datatables.net" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="http://www.datatables.net/download/index" target="_blank"><i class="fa fa-cloud-download"></i></a> 
+                        <a class="btn btn-primary btn-xs" href="http://www.datatables.net/manual/styling/bootstrap#Installation" target="_blank">Bootstrap</a><br/>
+                        (AdminLTE, BCORE)
+                    </li>
+                    <li>Editor Datatables</li>
+                    <li><a href="{{ path('_table_beauty') }}">BeautyTable (editor)</a> (DevOOPS)</li>
+                    <li><a href="{{ path('_table_buttons') }}">Table buttons</a> (AdminLTE DevOOPS)</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Widgets</h3>
+                <ul>
+                    <li><a href="{{ path('_widgets_alerts') }}">Alerts</a></li>
+                    <li><a href="{{ path('_widgets_modals') }}">Modals (popup)</a></li>
+                    <li><a href="{{ path('_widgets_tooltip_popover') }}">Tooltips and Popovers</a></li>
+                    <li><a href="{{ path('_widgets_notice') }}">Notice</a></li>
+                    <li><a href="{{ path('_widgets_growl-notifications') }}">Notifications bootstrap-growl</a></li>
+                    <li>Notification:
+                        <ul>
+                            <li><a href="{{ path('_widgets_notice') }}">Notice</a></li>
+                            <li>
+                                <a href="{{ path('_widgets_growl-notifications') }}">Notifications bootstrap-growl</a>
+                                <a class="btn btn-primary btn-xs" href="http://bootstrap-growl.remabledesigns.com/" target="_blank"><i class="fa fa-link"></i></a>
+                                <a class="btn btn-primary btn-xs" href="https://github.com/mouse0270/bootstrap-growl" target="_blank"><i class="fa fa-github"></i></a>
+                            </li>
+                            <li>pNotify</li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('_widgets_panels') }}">Panels</a></li>
+                    <li><a href="{{ path('_widgets_boxes') }}">Boxes</a> (AdminLTE)</li>
+                    <li><a href="{{ path('_widgets_tabs') }}">Custom Tabs</a> (AdminLTE)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>Form Elements CSS</h3>
+                <ul>
+                    <li><a href="{{ path('_forms_bootstrap-basic') }}">Bootstrap basic forms</a></li>
+                    <li><a href="{{ path('_forms_general-elements-LTE') }}">General elements AdminLTE</a></li>
+                    <li><a href="{{ path('_forms_general-elements-DevOOPS') }}">General elements DevOOPS</a></li>
+                    <li><a href="{{ path('_forms_advanced-elements-DevOOPS') }}">Advanced elements DevOOPS</a></li>
+                    <li>BCORE</li>
+                </ul>
+                <h4>Select</h4>
+                <ul>
+                    <li>
+                        <a href="{{ path('_forms_select2Bootstrap') }}">Select2 Bootstrap</a>
+                        <a class="btn btn-primary btn-xs" href="https://fk.github.io/select2-bootstrap-css" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/t0m/select2-bootstrap-css/tree/bootstrap3" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                </ul>
+                <h4>Checkbox and Radio</h4>
+                <ul>
+                    <li>
+                        <a href="{{ path('_forms_iCheck') }}">iCheck</a> (AdminLTE)
+                        <a class="btn btn-primary btn-xs" href="http://fronteed.com/iCheck" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/fronteed/iCheck" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li><a href="{{ path('_forms_checkbox-radio-DevOOPS') }}">Checkbox and Radio DevOOPS</a></li>
+                    <li><a href="{{ path('_forms_toggle') }}">Toggle</a> (DevOOPS)</li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_admin-dashboard_forms') }}">SB Admin Form</a></li>
+                    <li><a href="{{ path('_admin-dashboard2_forms') }}">SB Admin2 Form</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Validation</h3>
+                <ul>
+                    <li><a href="{{ path('_validations_bootstrap-vlidations-PHP') }}">bootstrap vlidations PHP</a> <span class="label label-success">sf2</span></li>
+                    <li>
+                        <a href="{{ path('_validations_bootstrap-vlidations-jQuery') }}">bootstrap vlidations jQuery</a>
+                        <a class="btn btn-primary btn-xs" href="http://bootstrapvalidator.com/" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/nghuuphuoc/bootstrapvalidator" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li><a href="{{ path('_validations_bootstrap-vlidations-PHP-DevOOPS') }}">bootstrap vlidations PHP</a> <span class="label label-success">sf2</span> (DevOOPS)</li>
+                    <li><a href="{{ path('_validations_bootstrap-vlidations-jQuery-DevOOPS') }}">bootstrap vlidations jQuery</a> (DevOOPS)</li>
+                    <li><a href="{{ path('_validations_bootstrap-vlidations-jobeet-job') }}">bootstrap vlidations jobeet</a> <span class="label label-success">sf2</span></li>
+                </ul>
+                <h4>Bootstrap Bundle</h4>
+                <ul>
+                    <li>Mopa Bootstrap Bundle
+                        <a class="btn btn-primary btn-xs" href="http://bootstrap.mohrenweiserpartner.de" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/phiamo/MopaBootstrapBundle" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>Braincrafted Bootstrap Bundle
+                        <a class="btn btn-primary btn-xs" href="http://bootstrap.braincrafted.com" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/braincrafted/bootstrap-bundle" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Data format and Mask</h3>
+                <ul>
+                    <li><a href="{{ path('_forms_datetimepicker') }}">bootstrap-datetimepicker</a>
+                        <a class="btn btn-primary btn-xs" href="http://eonasdan.github.io/bootstrap-datetimepicker" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/Eonasdan/bootstrap-datetimepicker" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('_forms_daterangepicker') }}">Date Range Picker for Bootstrap</a>
+                        <a class="btn btn-primary btn-xs" href="http://www.dangrossman.info/2012/08/20/a-date-range-picker-for-twitter-bootstrap" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/dangrossman/bootstrap-daterangepicker" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('_forms_datepicker-jqueryui') }}">Datepicker jQuery UI</a>
+                        <a class="btn btn-primary btn-xs" href="http://trentrichardson.com/examples/timepicker" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/trentrichardson/jQuery-Timepicker-Addon" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('_forms_inputmask') }}">Inputmask</a>
+                        <a class="btn btn-primary btn-xs" href="http://robinherbots.github.io/jquery.inputmask" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/RobinHerbots/jquery.inputmask" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Maps</h3>
+                <ul>
+                    <li>
+                        <a href="{{ path('_maps_google-maps') }}">Google Maps</a> (BCORE)
+                        <a class="btn btn-primary btn-xs" href="http://hpneo.github.io/gmaps" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/hpneo/gmaps" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    
+                    <li><a href="{{ path('_maps_google-maps-fullscreen') }}">Google Maps Fullscreen</a> <span class="label label-danger">difficult</span></li>
+                    <li><a href="{{ path('_maps_google-maps-sattelite') }}">Google Maps Sattelite</a> <span class="label label-danger">difficult</span></li>
+                    <li>
+                        <a href="{{ path('_maps_jVectorMap') }}">jVectorMap</a>
+                        <a class="btn btn-primary btn-xs" href="http://jvectormap.com" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/bjornd/jvectormap" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_one-page-websites_grayscale') }}#contact">Grayscale</a></li>
+                    <li><a href="{{ path('_one-page-stylish-portfolio') }}#contact">Stylish Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>Scrollbars</h3>
+                <ul>
+                    <li>
+                        <a href="{{ path('_scrollbars_jscrollpane') }}">jScrollPane</a>
+                        <a class="btn btn-primary btn-xs" href="http://jscrollpane.kelvinluck.com" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/vitch/jScrollPane" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('_chat_chat-LTE') }}">Chat LTE</a>
+                        <a class="btn btn-primary btn-xs" href="http://rocha.la/jQuery-slimScroll" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/rochal/jQuery-slimScroll" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('_scrollbars_nicescroll') }}">Nicescroll</a>
+                        <a class="btn btn-primary btn-xs" href="http://areaaperta.com/nicescroll/index.html" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/inuyaksa/jquery.nicescroll" target="_blank"><i class="fa fa-github"></i></a>
+                     </li>
+                </ul>
+                <ul>
+                    <li><a href="{{ path('_chat_chat-LTE') }}">Chat LTE</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Sliders</h3>
+                <ul>
+                    <li><a href="{{ path('_sliders_jQueryUiSlider') }}">Slider jQuery Ui</a> (DevOOPS)</li>
+                    <li>Bootstrap Slider (AdminLTE)</li>
+                    <li>IonSlider - ionden.com(AdminLTE)</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Calendar</h3>
+                <ul>
+                    <li>
+                      <a href="{{ path('_calendar_fullcalendar') }}">Fullcalendar</a>
+                      <a class="btn btn-primary btn-xs" href="http://fullcalendar.io" target="_blank"><i class="fa fa-link"></i></a>
+                      <a class="btn btn-primary btn-xs" href="http://fullcalendar.io/download" target="_blank"><i class="fa fa-cloud-download"></i></a> 
+                    </li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li>DevOOPS - calendar</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Timeline</h3>
+                <ul>
+                    <li><a href="{{ path('_timeline_timeline-LTE') }}">Timeline AdminLTE</a></li>
+                    <li><a href="{{ path('_timeline_timeline-BCORE') }}">Timeline BCORE</</li>
+                    <hr/>
+                    <li><a href="{{ path('_one-page-websites_agency') }}">Agency</a></li>
+                    <li><a href="{{ path('_admin-dashboard2_index') }}">SB Admin2</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>Wizard</h3>
+                <ul>
+                    <li><a href="{{ path('_wizard_wizard-bcore') }}">Wizard BCORE</a> <span class="label label-success">js</span></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Mailbox</h3>
+                <ul>
+                    <li><a href="{{ path('_mailbox_mailbox-AdminLTE') }}">Mailbox AdminLTE</a></li>
+                    <li><a href="{{ path('_mailbox_mailbox-DevOOPS') }}">Mailbox DevOOPS</a></li>
+                    <li><a href="{{ path('_mailbox_feed-DevOOPS') }}">Feed DevOOPS</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Social Page</h3>
+                <ul>
+                    <li><a href="{{ path('_chat_chat-BCORE') }}">Chat BCORE</a></li>
+                    <li><a href="{{ path('_chat_chat-LTE') }}">Chat LTE</a></li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li><a href="{{ path('_admin-dashboard2_index') }}">SB Admin2</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Login and Register</h3>
+                <ul>
+                    <li><a href="{{ path('_starter-template_basic-login') }}">Login basic</a></li>
+                    <li><a href="{{ path('_starter-template_basic-register') }}">Register basic</a></li>
+                    <li><a href="{{ path('_starter-template_basic-remind') }}">Remind basic</a></li>
+                </ul>
+                <ul>
+                    <li>Login - AdminLTE, DevOOPS</li>
+                    <li>Register - AdminLTE, DevOOPS</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>Error Pages</h3>
+                <ul>
+                    <li><a href="{{ path('_error-pages_error-404-basic') }}">Error 404</a></li>
+                    <li><a href="{{ path('_error-pages_error-500-basic') }}">Error 500</a></li>
+                    <li><a href="{{ path('_error-pages_offline-basic') }}">Offline</a></li>
+                    <li><a href="{{ path('_error-pages_under-construction-basic') }}">Under Construction</a></li>
+                    <li><a href="{{ path('_error-pages_under-construction-bcore') }}">Under Construction BCORE</a></li>
+                    <li><a href="{{ path('_error-pages_lockscreen-basic') }}">Lockscreen</a></li>
+                </ul>
+                <ul>
+                    <li>Error 403 - BCORE</li>
+                    <li>Error 404 - BCORE, AdminLTE</li>
+                    <li>Error 405 - BCORE</li>
+                    <li>Error 500 - BCORE, AdminLTE</li>
+                    <li>Error 503 - BCORE</li>
+                    <li>Offline - BCORE</li>
+                    <li>Under Construction - BCORE</li>
+                    <li>Lockscreen - Dashgum, AdminLTE</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Upload and Download</h3>
+                <ul>
+                    <li><a href="{{ path('_file-upload-basic') }}">File Upload Basic</a> <span class="label label-success">PHP</span></li>
+                    <li><a href="{{ path('_file-upload-basic-multiple') }}">File Upload Basic Multiple</a> <span class="label label-success">PHP</span></li>
+                    <li><a href="{{ path('_file-upload-entity') }}">File Upload Basic</a> <span class="label label-success">sf2</span></li>
+                    <li><a href="{{ path('_file-upload-entity-multiple') }}">File Upload Basic Multiple</a> <span class="label label-success">sf2</span></li>
+                    <li>
+                        <a href="{{ path('_file-upload-jquery-ui-bootstrop-basic') }}">File Upload jQuery-ui Bootstrap</a>
+                        <a class="btn btn-primary btn-xs" href="http://blueimp.github.io/jQuery-File-Upload" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/blueimp/jQuery-File-Upload" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('_file-upload-dropzone') }}">File Upload Dropzone</a>
+                        <a class="btn btn-primary btn-xs" href="http://www.dropzonejs.com/" target="_blank"><i class="fa fa-link"></i></a>
+                        <a class="btn btn-primary btn-xs" href="https://github.com/enyo/dropzone" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                    <li>
+                        <a href="{{ path('_file-upload-dropzone-bootstrop') }}">File Upload Dropzone Bootstrap</a>
+                        <a class="btn btn-primary btn-xs" href="http://www.dropzonejs.com/bootstrap.html" target="_blank"><i class="fa fa-link"></i></a>
+                    </li>
+                </ul>
+                <hr/>
+                <ul>
+                    <li>AdminLTE</li>
+                    <li>BCORE</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Drag and Droup</h3>
+                <ul>
+                    <li>DevOOPS</li>
+                </ul>
+                <ul>
+                    <li>http://johnny.github.io/jquery-sortable/#home</li>
+                    <li>http://www.jqueryrain.com/?4qSzh9Yo</li>
+                    <li>http://www.jqueryrain.com/?cVRmId6U</li>
+
+                    <li>http://web1.cs-computing.com/apps/demo/bootstrap/bootstrap_demo.nsf/dnd.xsp</li>
+                </ul>
+            </div>
+            <div class="col-lg-3">
+                <h3>Page Project</h3>
+                <ol>
+                    <li>Gallery</li>
+                    <li>Blog</li>
+                    <li>Forum</li>
+                    <li>Personal</li>
+                    <li>Company</li>
+                    <li>Shop</li>
+                </ol>
+                <h3>Tutorials</h3>
+                <ul>
+                    <li>
+                        <a href="http://tutorialzine.com/posts/" target="_blank">tutorialzine</a>
+                    </li>
+                    <li>
+                        <a href="http://tympanus.net/codrops" target="_blank">codrops</a>
+                    </li>
+                    <li>
+                        <a href="http://easings.net/pl" target="_blank">easings</a>
+                    </li>
+                </ul>
+                <h3>Select code</h3>
+                <ul>
+                    <li><a href="http://jmblog.github.io/color-themes-for-highlightjs/" target="_blank">highlight.js</a> (tutorialzine)</li>
+                    <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/" target="_blank">Syntax Highlighter</a> (ENS)</li>
+                    <li><a href="https://wordpress.org/plugins/crayon-syntax-highlighter/" target="_blank">Crayon Syntax Highlighter</a> (intelligentbee.com)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <h3>themeforest</h3>
+                <ul>
+                    <li>
+                        <a href="http://switcher.oklerthemes.com/?theme=Porto" target="_blank">Porto</a>
+                    </li>
+                    <li>
+                        <a href="http://switcher.oklerthemes.com/?theme=Porto-Admin" target="_blank">Porto Admin</a>
+                    </li>
+                    <li>
+                        <a href="http://newsmartwave.net/preview.html?porto_mg" target="_blank">Porto eCommerce</a>
+                    </li>
+                    <li>
+                        <a href="http://themeforest.net/item/porto-responsive-email-themebuilder-access/8766074" target="_blank">Porto Newsletter</a>
+                    </li>
+                    <li>
+                        <a href="http://themeforest.net/item/vinto-one-page-parallax-responsive-template/6799895" target="_blank">vinto</a>
+                    </li>
+                    <li>
+                        <a href="http://themeforest.net/item/alaska-seo-whmcs-hosting-shop-business-theme/full_screen_preview/10068801" target="_blank">alaska</a>
+                    </li>
+                    <li>
+                        <a href="http://themeforest.net/item/focuz-multipurpose-business-html5-template/full_screen_preview/10095650" target="_blank">focuz</a>
+                    </li>
+                </ul>
+                <h4>Blog</h4>
+                <ul>
+                    <li>
+                        <a href="http://kopatheme.com/demo/gammar-html5-magazine-website-template" target="_blank">gammar</a>
+                    </li>
+                    <li>
+                        <a href="http://themeforest.net/item/compass-magazine-theme-for-wordpress-/full_screen_preview/11155511" target="_blank">compass</a>
+                    </li>
+                </ul>
+                <h4>Forum</h4>
+                <ul>
+                    <li>
+                        <a href="http://themeforest.net/item/wide-phpbb3-theme-with-control-panel/full_screen_preview/7949289" target="_blank">vVide</a>
+                    </li>
+                </ul>
+                <h4>Shop</h4>
+                <ul>
+                    <li>
+                        <a href="http://munmarket.premiumcoding.com/demo.php" target="_blank">munmarket</a>
+                    </li>
+                    <li>
+                        <a href="http://www.plazathemes.com/demo/ma_boloba/index.php/computer/dell.html" target="_blank">boloba</a>
+                    </li>
+                    <li>
+                        <a href="http://magento.usthemes.com/ogence/index.php/women/shoes/run.html" target="_blank">ogence</a>
+                    </li>
+                    <li>
+                        <a href="http://themeforest.net/item/shopkeeper-responsive-wordpress-theme/9553045" target="_blank">shopkeeper</a>
+                    </li>
+                    <li>
+                        <a href="http://themeforest.net/item/thefox-responsive-multipurpose-wordpress-theme/11099136" target="_blank">thefox</a>
+                    </li>
+                    <li>
+                        <a href="http://lamby.myshopify.com" target="_blank">Lamby</a>
+                    </li>
+                    <li>
+                        <a href="http://venedor.promokit.eu/en/4-electronics" target="_blank">venedor</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <hr/>
+        
+    </div><!-- /container -->
+{% endblock %}

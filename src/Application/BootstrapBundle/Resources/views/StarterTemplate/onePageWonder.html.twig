@@ -1,0 +1,77 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}One Page Wonder - Start Bootstrap Template{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/starter-template/one-page-wonder.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+
+    <!-- Full Width Image Header -->
+    <header class="header-image">
+        <div class="headline">
+            <div class="container">
+                <h1>One Page Wonder</h1>
+                <h2>Will Knock Your Socks Off</h2>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <hr class="featurette-divider" />
+
+        <!-- First Featurette -->
+        <div class="featurette" id="about">
+            <img class="featurette-image img-circle img-responsive pull-right" src="{{ asset('bundles/applicationbootstrap/images/500x500.png') }}">
+            <h2 class="featurette-heading">This First Heading
+                <span class="text-muted">Will Catch Your Eye</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <!-- Second Featurette -->
+        <div class="featurette" id="services">
+            <img class="featurette-image img-circle img-responsive pull-left" src="{{ asset('bundles/applicationbootstrap/images/500x500.png') }}">
+            <h2 class="featurette-heading">The Second Heading
+                <span class="text-muted">Is Pretty Cool Too.</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <!-- Third Featurette -->
+        <div class="featurette" id="contact">
+            <img class="featurette-image img-circle img-responsive pull-right" src="{{ asset('bundles/applicationbootstrap/images/500x500.png') }}">
+            <h2 class="featurette-heading">The Third Heading
+                <span class="text-muted">Will Seal the Deal.</span>
+            </h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+
+        <hr class="featurette-divider" />
+        
+    </div> <!-- /container -->
+{% endblock %}

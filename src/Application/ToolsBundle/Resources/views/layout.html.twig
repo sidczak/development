@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}"/>
+        <meta name="robots" content="noindex,nofollow" />
+        
+        <!-- znacznik meta dla responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <title>{% block title %}Tools Page{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('xfavicon.ico') }}" />
+        <link href="{{ asset('bundles/applicationtools/css/reset.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/applicationtools/css/text.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/applicationtools/css/layout.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/applicationtools/css/nav.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/applicationtools/css/grid_fluid.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/applicationtools/css/34gs.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link href="{{ asset('bundles/applicationtools/css/34gs-queries.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <style type="text/css">
+                        @media only screen and (min-width: 768px) {
+                            
+                            /* user styles goes here */
+                            .container_16,
+                            .container_16_footer{
+                                /*max-width: 750px;*/
+                            }
+                        }  
+                        @media only screen and (min-width: 992px) {
+                            
+                            /* user styles goes here */
+                            .container_16,
+                            .container_16_footer{
+                                /*max-width: 970px;*/
+                            }
+                        }
+                        @media only screen and (min-width: 1200px) {
+                            
+                            /* user styles goes here */
+                            .container_16,
+                            .container_16_footer{
+                                /*max-width: 1170px;*/
+                            }
+                        }
+        </style>  
+        {% block stylesheets %}
+
+        {% endblock %}
+        <!--[if IE 6]><link href="{{ asset('bundles/applicationtools/css/ie6.css') }}" rel="stylesheet" type="text/css" media="all" /><![endif]-->
+        <!--[if IE 7]><link href="{{ asset('bundles/applicationtools/css/ie.css') }}" rel="stylesheet" type="text/css" media="all" /><![endif]-->
+        {% block jquery_version %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+        {#
+        <script>
+         if (typeof jQuery == 'undefined'){
+            document.write(unescape('%3Cscript src="../../scripts/jquery-min.js" %3E%3C/script%3E'));
+         }
+        </script>
+        #}
+        {% endblock %}
+            {# FancyBox and jScrollPane#}
+            <script src="{{ asset('bundles/applicationtools/js/jquery.mousewheel-3.0.6.pack.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('bundles/applicationtools/js/jquery-fluid16.js') }}" type="text/javascript"></script>
+        
+        {% block javascripts %}
+            
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container_16">
+            <div class="grid_row">
+                <div class="grid_16">
+                    <h1 id="branding">
+                        <a href="../../../">Fluid Grid System</a>
+                        <a href="{{ path('application_tools_start', {'_locale': 'en'}) }}">en</a> 
+                        <a href="{{ path('application_tools_start', {'_locale': 'pl'}) }}">pl</a>
+                    </h1>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="grid_row">
+                <div class="grid_16">
+                    {% block navigation %}
+                    <ul class="nav main">
+                        <li>
+                            <a href="{{ path('application_tools_start') }}">Home</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('_slider_bootstrap') }}">Slider Bootstrap</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_slider_bootstrap_animation') }}">Slider Bootstrap Animation</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_slider_flexslider') }}">Slider Flexslider</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_slider_flexslider_animation') }}">Slider Flexslider Animation</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_slider_sequence_modern') }}">Slider Sequence Modern</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_slider_sequence_horizontal_parallax') }}">Slider Sequence Horizontal Parallax</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_slider_sequence_apple') }}">Slider Sequence Apple</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_slider_sequence_documentation') }}">Slider Sequence Documentation</a>
+                                </li>
+                                {#
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">Slider Alt</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">No Slider</a>
+                                </li>
+                                #}
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path('_aboutUs_experience') }}">About</a>
+                        </li>
+    {#
+                        <li>
+                            <a href="{{ path('application_tools_start') }}">Portflio</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">4 Column</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">3 Column</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">2 Column</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">Portflio Alt</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">Project Page</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path('application_tools_start') }}">Gallery</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">4 Column</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">3 Column</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">2 Column</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path('application_tools_start') }}">About</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('application_tools_start') }}">Blog</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">Post</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path('application_tools_start') }}">Contact</a>
+                        </li>
+    #}
+                        <li>
+                            <a href="{{ path('_grid_fluid16') }}">Grid</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('_grid_fluid12') }}">Fluid 12</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_grid_fluid16') }}">Fluid 16</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_grid_fixed12') }}">Fixed 12</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_grid_fixed16') }}">Fixed 16</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_grid_responsive') }}">Responsive</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_grid_fluid16_responsive') }}">Fluid 16 Responsive</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_grid_responsive_views') }}">Iframe Responsive Views</a>
+                                </li>
+    
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path('application_tools_start') }}">Elements</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('_elements_buttons') }}">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_pagination') }}">Pagination</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_typography') }}">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_shortcodes') }}">Shortcodes (js)</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_jquerytools') }}">jqueryTools</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_fancybox') }}">Fancybox</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_tables') }}">Tables</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_notice') }}">Notice</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_forms') }}">Forms</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_scrollbars') }}">Scrollbars</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_dragAndDrop') }}">Drag and drop</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_tooltip') }}">Tooltip</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_elements_scrollable') }}">Scrollable</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="{{ path('_ajax') }}">Ajax</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('application_tools_googleMaps') }}">Google Maps</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('application_tools_start') }}">Pages</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('_gallery_column2') }}">2 Column</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_gallery_column3') }}">3 Column</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_gallery_column4') }}">4 Column</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">Full Width Page</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">Page with Right Sidebar</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">Page with Left Sidebar</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">Page with Left Sidebar</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_page_404_error') }}">404 Error</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_page_500_error') }}">500 Error</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_page_coming_soon') }}">Coming soon</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_page_under_construction') }}">Under construction</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('application_tools_start') }}">FAQ</a>
+                                </li>
+    
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Themes</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('_bootswatch_default') }}">Default</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_amelia') }}">Amelia</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_cerulean') }}">Cerulean</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_cosmo') }}">Cosmo</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_cyborg') }}">Cyborg</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_darkly') }}">Darkly</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_flatly') }}">Flatly</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_journal') }}">Journal</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_lumen') }}">Lumen</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_paper') }}">Paper</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_readable') }}">Readable</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_sandstone') }}">Sandstone</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_simplex') }}">Simplex</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_slate') }}">Slate</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_spacelab') }}">Spacelab</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_superhero') }}">Superhero</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_united') }}">United</a></li>
+                                <li>
+                                    <a href="{{ path('_bootswatch_yeti') }}">Yeti</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Fonts</a>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('_font_fontBootstrap') }}">Font Bootstrap</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_font_fontAwesome') }}">Font Awesome</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('_font_flaticon') }}">Flaticon</a>
+                                </li>
+                            </ul>
+                        </li>
+    
+                        <li class="secondary">
+                            <a href="{{ path('application_tools_contact') }}" title="960.gs | A CSS grid system developed by Nathan Smith">Contact</a>
+                        </li>
+                    </ul>
+                    {% endblock %}
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div class="grid_row">
+                <div class="grid_16">
+                    <h2 id="page-heading">Templates for Rapid Interactive Prototyping</h2>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            
+  
+    
+                    {% block body %}
+                        {#
+                        {% block content_header %}{% endblock %}
+                        {% block content %}{% endblock %} 
+                        #}
+                    {% endblock %}
+          
+
+            <div class="clear"></div>
+            <div class="container_16_bufor"></div>
+        </div>
+
+        <div class="container_16_footer">
+            <div class="grid_row">
+                <div class="grid_16" id="site_info">
+                    <div class="box">
+                        <p>Fluid 960 Grid System, created by <a href="http://www.domain7.com/WhoWeAre/StephenBau.html">Stephen Bau</a>, based on the <a href="http://960.gs/">960 Grid System</a> by <a href="http://sonspring.com/journal/960-grid-system">Nathan Smith</a>. Released under the <a href="../../../licenses/GPL_license.txt">GPL</a> / <a href="../../../licenses/MIT_license.txt">MIT</a> <a href="../../../README.txt">Licenses</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+    </body>
+</html>

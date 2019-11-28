@@ -1,0 +1,84 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/google/combochart.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/google/piechart.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/google/linechart.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/google/donutchart.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/google/geochart.js') }}" type="text/javascript"></script>
+	
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    
+    
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Google Chart API</h2>
+            </div>
+        </div>
+        <!-- /.row -->
+     
+        <div class="row">
+        	<div class="col-lg-6">
+                <h3 class="page-header">Combo Chart</h3>
+                
+                <div id="combochart" style="min-height: 200px;"></div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="page-header">Pie Chart</h3>
+                
+                <div id="piechart" style="min-height: 200px;"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+        	<div class="col-lg-6">
+                <h3 class="page-header">Line Chart</h3>
+                
+                <div id="linechart" style="min-height: 200px;"></div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="page-header">Donut Chart</h3>
+                
+                <div id="donutchart" style="min-height: 200px;"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+        	<div class="col-lg-12">
+                <h3 class="page-header">Geochart</h3>
+                
+                <div id="geochart" style="min-height: 400px;"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+    
+    </div> <!-- /container -->
+{% endblock %}

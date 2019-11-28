@@ -1,0 +1,152 @@
+.web-font .radio,
+.web-font .checkbox{
+    position: relative;
+}
+.web-font .radio label,
+.web-font .checkbox label{
+    position: relative;
+    padding-left: 25px;
+}
+.web-font .radio.size-sm label,
+.web-font .checkbox.size-sm label{
+    padding-left: 22px;
+}
+.web-font .radio.size-lg label,
+.web-font .checkbox.size-lg label{
+    padding-left: 26px;
+}
+.web-font .radio input[type="radio"],
+.web-font .radio-inline input[type="radio"],
+.web-font .checkbox input[type="checkbox"],
+.web-font .checkbox-inline input[type="checkbox"] {
+    margin-left: -22px;
+    opacity: 0;
+    filter:alpha(opacity=0);
+}
+.web-font .radio.size-sm input[type="radio"],
+.web-font .radio-inline.size-sm input[type="radio"],
+.web-font .checkbox.size-sm input[type="checkbox"],
+.web-font .checkbox-inline.size-sm input[type="checkbox"] {
+    margin-left: -21px;
+    margin-top: 1px;
+}
+.web-font .radio.size-lg input[type="radio"],
+.web-font .radio-inline.size-lg input[type="radio"],
+.web-font .checkbox.size-lg input[type="checkbox"],
+.web-font .checkbox-inline.size-lg input[type="checkbox"] {
+    margin-top: 5px;
+}
+.web-font .radio-inline,
+.web-font .checkbox-inline {
+    position: relative;
+    padding-left: 25px;
+}
+.web-font .radio-inline.size-sm,
+.web-font .checkbox-inline.size-sm{
+    padding-left: 22px;
+}
+.web-font .radio-inline.size-lg,
+.web-font .checkbox-inline.size-lg{
+    padding-left: 26px;
+}
+.web-font .radio-inline.disabled i,
+.web-font .checkbox-inline.disabled i,
+.web-font .radio-inline.disabled,
+.web-font .checkbox-inline.disabled,
+fieldset[disabled] .radio-inline,
+fieldset[disabled] .checkbox-inline {
+    cursor: not-allowed;
+}
+.web-font .radio.disabled i,
+.web-font .checkbox.disabled i,
+.web-font .radio.disabled label,
+.web-font .checkbox.disabled label,
+fieldset[disabled] .radio label,
+fieldset[disabled] .checkbox label {
+    cursor: not-allowed;
+}
+.web-font .radio.disabled label,
+.web-font .checkbox.disabled label,
+.web-font .radio-inline.disabled,
+.web-font .checkbox-inline.disabled{
+    color: #ccc;
+}
+.web-font .radio.disabled i,
+.web-font .checkbox.disabled i,
+.web-font .radio-inline.disabled i,
+.web-font .checkbox-inline.disabled i{
+    color: #c8c8c8 !important;
+}       
+.web-font .radio i,
+.web-font .checkbox i,
+.web-font .radio-inline i,
+.web-font .checkbox-inline i{
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+}
+.web-font .radio.size-sm,
+.web-font .checkbox.size-sm,
+.web-font .radio-inline.size-sm,
+.web-font .checkbox-inline.size-sm{
+    font-size: 12px;
+}
+.web-font .radio.size-sm i,
+.web-font .checkbox.size-sm i,
+.web-font .radio-inline.size-sm i,
+.web-font .checkbox-inline.size-sm i{
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+.web-font .radio.size-lg,
+.web-font .checkbox.size-lg,
+.web-font .radio-inline.size-lg,
+.web-font .checkbox-inline.size-lg{
+    font-size: 18px;
+}
+.web-font .radio.size-lg i,
+.web-font .checkbox.size-lg i,
+.web-font .radio-inline.size-lg i,
+.web-font .checkbox-inline.size-lg i{
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+.web-font .checkbox .check i:before,
+.web-font label.checkbox-inline.check i:before{
+    content:"\f046";
+}
+.web-font .checkbox input[type=checkbox]:checked + i:before, 
+.web-font .checkbox-inline input[type=checkbox]:checked + i:before {
+    content:"\f046";
+}
+.web-font .radio .check i:before,
+.web-font label.radio-inline.check i:before{
+    content:"\f192";
+}
+.web-font .radio input[type=radio]:checked + i:before,
+.web-font .radio-inline input[type=radio]:checked + i:before {
+    content:"\f192";
+}
+/* color */
+.web-font .radio.purple i,
+.web-font .checkbox.purple i,
+.web-font .radio-inline.purple i,
+.web-font .checkbox-inline.purple i,
+.web-font .radio.purple label.check:hover i,
+.web-font .checkbox.purple label.check:hover i,
+.web-font .radio-inline.purple label.check:hover i,
+.web-font .checkbox-inline.purple label.check:hover i{
+    color: #9588b2;
+}
+.web-font .radio.purple label:hover i,
+.web-font .checkbox.purple label:hover i,
+.web-font .radio-inline.purple label:hover i,
+.web-font .checkbox-inline.purple label:hover i{
+    color: #af7ac5;
+}

@@ -1,0 +1,197 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/knob/jquery.knob.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+	  //
+	  //Function for Draw Knob Charts
+	  //
+	  function DrawKnob(elem){
+	  elem.knob({
+	  	change : function (value) {
+	  		//console.log("change : " + value);
+	  	},
+	  	release : function (value) {
+	  		//console.log(this.$.attr('value'));
+	  		console.log("release : " + value);
+	  	},
+	  	cancel : function () {
+	  		console.log("cancel : ", this);
+	  	},
+	  	draw : function () {
+	  		// "tron" case
+	  		if(this.$.data('skin') == 'tron') {
+	  			var a = this.angle(this.cv);  // Angle
+	  			var sa = this.startAngle;          // Previous start angle
+	  			var sat = this.startAngle;         // Start angle
+	  			var ea;                            // Previous end angle
+	  			var eat = sat + a;                 // End angle
+	  			var r = 1;
+	  			this.g.lineWidth = this.lineWidth;
+	  			this.o.cursor
+	  				&& (sat = eat - 0.3)
+	  				&& (eat = eat + 0.3);
+	  			if (this.o.displayPrevious) {
+	  				ea = this.startAngle + this.angle(this.v);
+	  				this.o.cursor
+	  					&& (sa = ea - 0.3)
+	  					&& (ea = ea + 0.3);
+	  				this.g.beginPath();
+	  				this.g.strokeStyle = this.pColor;
+	  				this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+	  				this.g.stroke();
+	  			}
+	  			this.g.beginPath();
+	  			this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+	  			this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+	  			this.g.stroke();
+	  			this.g.lineWidth = 2;
+	  			this.g.beginPath();
+	  			this.g.strokeStyle = this.o.fgColor;
+	  			this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+	  			this.g.stroke();
+	  			return false;
+	  		}
+	  	}
+	  });
+	  // Example of infinite knob, iPod click wheel
+	  var v;
+	  var up = 0;
+	  var down=0;
+	  var i=0;
+	  var $idir = $("div.idir");
+	  var $ival = $("div.ival");
+	  var incr = function() { i++; $idir.show().html("+").fadeOut(); $ival.html(i); };
+	  var decr = function() { i--; $idir.show().html("-").fadeOut(); $ival.html(i); };
+	  $("input.infinite").knob(
+	  	{
+	  		min : 0,
+	  		max : 20,
+	  		stopper : false,
+	  		change : function () {
+	  			if(v > this.cv){
+	  				if(up){
+	  					decr();
+	  					up=0;
+	  				} else {
+	  					up=1;down=0;
+	  				}
+	  			} else {
+	  				if(v < this.cv){
+	  					if(down){
+	  						incr();
+	  						down=0;
+	  					} else {
+	  						down=1;up=0;
+	  					}
+	  				}
+	  			}
+	  			v = this.cv;
+	  		}
+	  	});
+	  }
+	  //
+	  //Redraw Knob charts on Dashboard (panel- servers)
+	  //
+	  function RedrawKnob(elem){
+	  	elem.animate({
+	  		value: Math.floor(100*Math.random())
+	  	},{
+	  		duration: 3000,
+	  		easing:'swing',
+	  		progress: function()
+	  		{
+	  			$(this).val(parseInt(Math.ceil(elem.val()))).trigger('change');
+	  		}
+	  	});
+	  }
+	  //
+	  //Draw Knob Charts for Dashboard (for servers)
+	  //
+	  function DrawKnobDashboard(){
+	  	var srv_monitoring_selectors = [
+	  		$("#knob-srv-1"),$("#knob-srv-2"),$("#knob-srv-3"),
+	  		$("#knob-srv-4"),$("#knob-srv-5"),$("#knob-srv-6")
+	  	];
+	  	srv_monitoring_selectors.forEach(DrawKnob);
+	  	setInterval(function(){
+	  		srv_monitoring_selectors.forEach(RedrawKnob);
+	  	}, 3000);
+	  }
+	  
+	  $(document).ready(function() {
+		// Load Knob plugin and run callback for draw Knob charts for dashboard(tab-servers)
+		  DrawKnobDashboard();
+	  });
+    
+    </script>
+
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">jQuery Knob examples</h2>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-4">
+			    <div class="knob-slider">
+			        <input id="knob-srv-1" class="knob" data-width="60"  data-height="60" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value="">CPU Load
+			    </div>
+			</div>
+			<div class="col-sm-4">
+			    <div class="knob-slider">
+				    <input id="knob-srv-2" class="knob" data-width="60"  data-height="60" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value="">CPU Load
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="knob-slider">
+					<input id="knob-srv-3" class="knob" data-width="60"  data-height="60" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value="">CPU Load
+				</div>
+			</div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-4">
+			    <div class="knob-slider">
+			        <input id="knob-srv-4" class="knob" data-width="60"  data-height="60" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value="">CPU Load
+			    </div>
+			</div>
+			<div class="col-sm-4">
+			    <div class="knob-slider">
+				    <input id="knob-srv-5" class="knob" data-width="60"  data-height="60" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value="">CPU Load
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="knob-slider">
+					<input id="knob-srv-6" class="knob" data-width="60"  data-height="60" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value="">CPU Load
+				</div>
+			</div>
+        </div>
+        <!-- /.row -->
+    </div> <!-- /container -->
+{% endblock %}

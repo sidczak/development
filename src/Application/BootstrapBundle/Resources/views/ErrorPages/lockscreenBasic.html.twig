@@ -1,0 +1,89 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Error 404!{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <style type="text/css">
+      .box{
+        background-color:#00c0ef;
+        margin:15px 0px;
+        padding: 15px 0px;
+        color: #fff;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+      }
+      .countdown-time{
+        display:block;
+        font-size:38px;
+      }
+      .countdown-label{
+        display:block;
+      }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/countdown/basic/countdown.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/countdown/basic/demo.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block navigation %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        
+        <div class="row text-center">
+            <div class="col-lg-offset-2 col-xs-2">
+                <div class="box">
+                    <div class="days countdown-item">
+                        <span class="countdown-time"></span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="box">
+                    <div class="hours countdown-item">
+                        <span class="countdown-time"></span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="box">
+                    <div class="minutes countdown-item">
+                        <span class="countdown-time"></span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="box">
+                    <div class="seconds countdown-item">
+                        <span class="countdown-time"></span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <h1>Unlock</h1>
+                <h3><i class="fa fa-lock"></i></h3>
+            </div>
+        </div>
+        
+
+        
+    </div> <!-- /container -->
+    
+
+    
+{% endblock %}

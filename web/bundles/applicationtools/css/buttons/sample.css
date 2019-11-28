@@ -1,0 +1,28 @@
+.btn {
+	float: left;
+	clear: both;
+	background: url(../../images/buttons/btn_left.png) no-repeat;
+	padding: 0 0 0 10px;
+	margin: 5px 0;
+}
+.btn a{
+	float: left;
+	height: 40px;
+	background: url(../../images/buttons/btn_stretch.png) repeat-x left top;
+	line-height: 40px;
+	padding: 0 10px;
+	color: #fff;
+	font-size: 1em;
+	text-decoration: none;
+}
+.btn span {
+	background: url(../../images/buttons/btn_right.png) no-repeat;
+	float: left;
+	width: 10px;
+	height: 40px;
+}
+.btn_addtocart { background-color: green; }
+.btn_addtocart:hover { background-color: red; }
+.btn_checkout { background-color: red; }
+.btn_learnmore { background-color: orange; }
+.btn_try { background-color: #002c85; }

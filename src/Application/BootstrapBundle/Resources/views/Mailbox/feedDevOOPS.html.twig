@@ -1,0 +1,141 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/mailbox/mailbox-devoops/devoops.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        .container.feed{
+            background: #ebebeb;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container feed">
+        <div class="page-header">
+          <h1>Feed DevOOPS</h1>
+        </div>
+		<div class="row">
+			<div class="col-xs-12 page-feed">
+				<div class="box">
+					<div class="avatar">
+						<img src="{{ asset('bundles/applicationbootstrap/images/50x50.png') }}" alt="Jane" />
+					</div>
+					<div class="page-feed-content">
+						<small class="time">Jane Devops, 12 min ago</small>
+						<p>Linux is a Unix-like and POSIX-compliant computer operating system assembled under the model of free and open source software development and distribution. Maemo - Software platform developed by Nokia and then handed over to Hildon Foundation for smartphones and Internet tablets</p>
+						<div class="likebox">
+							<ul class="nav navbar-nav">
+								<li><i class="fa fa-thumbs-up"></i> 138</li>
+								<li><i class="fa fa-thumbs-down"></i> 47</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="avatar">
+						<img src="{{ asset('bundles/applicationbootstrap/images/50x50.png') }}" alt="Jane" />
+					</div>
+					<div class="page-feed-content">
+						<small class="time">Jane Devops, 12 min ago</small>
+						<p>Linux is a Unix-like and POSIX-compliant computer operating system assembled under the model of free and open source software development and distribution. Maemo - Software platform developed by Nokia and then handed over to Hildon Foundation for smartphones and Internet tablets</p>
+						<div class="likebox">
+							<ul class="nav navbar-nav">
+								<li><i class="fa fa-thumbs-up"></i> 138</li>
+								<li><i class="fa fa-thumbs-down"></i> 47</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-11 col-xs-offset-1 page-feed">
+				<div class="box">
+					<div class="avatar">
+						<img src="{{ asset('bundles/applicationbootstrap/images/50x50.png') }}" alt="Jane" />
+					</div>
+					<div class="page-feed-content">
+						<small class="time">Jane Devops, 12 min ago</small>
+						<p>Linux is a Unix-like and POSIX-compliant computer operating system assembled under the model of free and open source software development and distribution. Maemo - Software platform developed by Nokia and then handed over to Hildon Foundation for smartphones and Internet tablets</p>
+						<div class="likebox">
+							<ul class="nav navbar-nav">
+								<li><i class="fa fa-thumbs-up"></i> 138</li>
+								<li><i class="fa fa-thumbs-down"></i> 47</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="avatar">
+						<img src="{{ asset('bundles/applicationbootstrap/images/50x50.png') }}" alt="Jane" />
+					</div>
+					<div class="page-feed-content">
+						<small class="time">Jane Devops, 12 min ago</small>
+						<p>Linux is a Unix-like and POSIX-compliant computer operating system assembled under the model of free and open source software development and distribution. Maemo - Software platform developed by Nokia and then handed over to Hildon Foundation for smartphones and Internet tablets</p>
+						<div class="likebox">
+							<ul class="nav navbar-nav">
+								<li><i class="fa fa-thumbs-up"></i> 138</li>
+								<li><i class="fa fa-thumbs-down"></i> 47</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-10 col-xs-offset-2 page-feed">
+				<div class="box">
+					<div class="avatar">
+						<img src="{{ asset('bundles/applicationbootstrap/images/50x50.png') }}" alt="Jane" />
+					</div>
+					<div class="page-feed-content">
+						<small class="time">Jane Devops, 12 min ago</small>
+						<p>Linux is a Unix-like and POSIX-compliant computer operating system assembled under the model of free and open source software development and distribution. Maemo - Software platform developed by Nokia and then handed over to Hildon Foundation for smartphones and Internet tablets</p>
+						<div class="likebox">
+							<ul class="nav navbar-nav">
+								<li><i class="fa fa-thumbs-up"></i> 138</li>
+								<li><i class="fa fa-thumbs-down"></i> 47</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="box">
+					<div class="avatar">
+						<img src="{{ asset('bundles/applicationbootstrap/images/50x50.png') }}" alt="Jane" />
+					</div>
+					<div class="page-feed-content">
+						<small class="time">Jane Devops, 12 min ago</small>
+						<p>Linux is a Unix-like and POSIX-compliant computer operating system assembled under the model of free and open source software development and distribution. Maemo - Software platform developed by Nokia and then handed over to Hildon Foundation for smartphones and Internet tablets</p>
+						<div class="likebox">
+							<ul class="nav navbar-nav">
+								<li><i class="fa fa-thumbs-up"></i> 138</li>
+								<li><i class="fa fa-thumbs-down"></i> 47</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,96 @@
+.expand-panel{
+  overflow-y:scroll;
+  border: 0;
+  z-index: 3000 !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding:50px;
+  background: rgba(0, 0, 0, 0.7);
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s;
+}
+.panel-filter{
+    display: none;
+    padding: 15px;
+    background-color: #eaedf2;
+}
+.panel-filter .form-group.last,
+.panel-filter .form-group:last-child{
+    margin-bottom: 0px;
+}
+.panel-filter hr{
+    border-color: #ddd;
+    margin: 15px -15px;
+}
+.panel-results{
+    padding: 5px 15px;
+    background-color: #353b47;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+.panel-results .form-group{
+    margin-bottom: 0px;
+}
+.panel-results .form-inline .form-group.rows .form-control{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+}
+@media (max-width: 768px) {
+  .panel-results .form-inline .form-group.search{
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .panel-results .form-inline .form-group.rows label{
+    margin-bottom: 0px;
+  }
+}
+
+/* zmiana w pliku bootstrap*/
+.table > tbody > tr{
+    background-color: #FFF;
+}
+.table th{
+    background-color: #353b47;
+    color: #fff;
+}
+.panel{overflow:hidden}
+
+.panel-heading .panel-options{
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.panel-heading .panel-options-sm{
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.panel-heading .panel-options-xs{
+    margin-left: 5px;
+    margin-top: 8px;
+}
+.panel-heading .panel-form label{
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+@media (max-width: 768px) {
+    .panel-form .form-inline .form-group{
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 5px;
+    }
+    .panel-form .form-inline .form-group .form-control{
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0px;
+        width: auto;
+    }
+    .panel-form .form-inline .form-group.search .form-control{
+        width: 100%
+    }
+}

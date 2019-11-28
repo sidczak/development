@@ -1,0 +1,260 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/editors/ckeditors/ckeditors.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/editors/ckeditors/ckeditor.js') }}" type="text/javascript"></script>
+    
+	<script type="text/javascript">
+
+		// This code is generally not necessary, but it is here to demonstrate
+		// how to customize specific editor instances on the fly. This fits well
+		// this demo because we have editable elements (like headers) that
+		// require less features.
+
+		// The "instanceCreated" event is fired for every editor instance created.
+		CKEDITOR.on( 'instanceCreated', function( event ) {
+			var editor = event.editor,
+				element = editor.element;
+
+			// Customize editors for headers and tag list.
+			// These editors don't need features like smileys, templates, iframes etc.
+			if ( element.is( 'h1', 'h2', 'h3' ) || element.getAttribute( 'id' ) == 'taglist' ) {
+				// Customize the editor configurations on "configLoaded" event,
+				// which is fired after the configuration file loading and
+				// execution. This makes it possible to change the
+				// configurations before the editor initialization takes place.
+				editor.on( 'configLoaded', function() {
+
+					// Remove unnecessary plugins to make the editor simpler.
+					editor.config.removePlugins = 'colorbutton,find,flash,font,' +
+						'forms,iframe,image,newpage,removeformat,' +
+						'smiley,specialchar,stylescombo,templates';
+
+					// Rearrange the layout of the toolbar.
+					editor.config.toolbarGroups = [
+						{ name: 'editing',		groups: [ 'basicstyles', 'links' ] },
+						{ name: 'undo' },
+						{ name: 'clipboard',	groups: [ 'selection', 'clipboard' ] },
+						{ name: 'about' }
+					];
+				});
+			}
+		});
+
+	</script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    
+        <div class="row">
+            <div class="col-lg-12">
+            
+                <h1 class="page-header">Replace Textarea Elements by Class Name</h1>
+                <p>
+                	This sample shows how to automatically replace all <code>&lt;textarea&gt;</code> elements
+                	of a given class with a CKEditor instance.
+                </p>
+                <p>
+                	To replace a <code>&lt;textarea&gt;</code> element, simply assign it the <code>ckeditor</code>
+                	class, as in the code below:
+                </p>
+                <p><code>&lt;textarea <strong>class="ckeditor</strong>" name="editor1"&gt;&lt;/textarea&gt;</code></p>
+                <p>
+                	Note that other <code>&lt;textarea&gt;</code> attributes (like <code>id</code> or <code>name</code>) need to be adjusted to your document.
+                </p>
+                
+				<form>
+					<div class="form-group">
+						<label>Editor 1:</label>
+						<textarea class="ckeditor" cols="80" id="editor1" name="editor1" rows="10">
+							&lt;h1&gt;&lt;img alt=&quot;Saturn V carrying Apollo 11&quot; class=&quot;right&quot; src=&quot;{{ asset('bundles/applicationbootstrap/images/200x200.png') }}&quot;/&gt; Apollo 11&lt;/h1&gt; &lt;p&gt;&lt;b&gt;Apollo 11&lt;/b&gt; was the spaceflight that landed the first humans, Americans &lt;a href=&quot;http://en.wikipedia.org/wiki/Neil_Armstrong&quot; title=&quot;Neil Armstrong&quot;&gt;Neil Armstrong&lt;/a&gt; and &lt;a href=&quot;http://en.wikipedia.org/wiki/Buzz_Aldrin&quot; title=&quot;Buzz Aldrin&quot;&gt;Buzz Aldrin&lt;/a&gt;, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the lunar surface 6 hours later on July 21 at 02:56 UTC.&lt;/p&gt; &lt;p&gt;Armstrong spent about &lt;s&gt;three and a half&lt;/s&gt; two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&amp;nbsp;kg) of lunar material for return to Earth. A third member of the mission, &lt;a href=&quot;http://en.wikipedia.org/wiki/Michael_Collins_(astronaut)&quot; title=&quot;Michael Collins (astronaut)&quot;&gt;Michael Collins&lt;/a&gt;, piloted the &lt;a href=&quot;http://en.wikipedia.org/wiki/Apollo_Command/Service_Module&quot; title=&quot;Apollo Command/Service Module&quot;&gt;command&lt;/a&gt; spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for the trip back to Earth.&lt;/p&gt; &lt;h2&gt;Broadcasting and &lt;em&gt;quotes&lt;/em&gt; &lt;a id=&quot;quotes&quot; name=&quot;quotes&quot;&gt;&lt;/a&gt;&lt;/h2&gt; &lt;p&gt;Broadcast on live TV to a world-wide audience, Armstrong stepped onto the lunar surface and described the event as:&lt;/p&gt; &lt;blockquote&gt;&lt;p&gt;One small step for [a] man, one giant leap for mankind.&lt;/p&gt;&lt;/blockquote&gt; &lt;p&gt;Apollo 11 effectively ended the &lt;a href=&quot;http://en.wikipedia.org/wiki/Space_Race&quot; title=&quot;Space Race&quot;&gt;Space Race&lt;/a&gt; and fulfilled a national goal proposed in 1961 by the late U.S. President &lt;a href=&quot;http://en.wikipedia.org/wiki/John_F._Kennedy&quot; title=&quot;John F. Kennedy&quot;&gt;John F. Kennedy&lt;/a&gt; in a speech before the United States Congress:&lt;/p&gt; &lt;blockquote&gt;&lt;p&gt;[...] before this decade is out, of landing a man on the Moon and returning him safely to the Earth.&lt;/p&gt;&lt;/blockquote&gt; &lt;h2&gt;Technical details &lt;a id=&quot;tech-details&quot; name=&quot;tech-details&quot;&gt;&lt;/a&gt;&lt;/h2&gt; &lt;table align=&quot;right&quot; border=&quot;1&quot; bordercolor=&quot;#ccc&quot; cellpadding=&quot;5&quot; cellspacing=&quot;0&quot; style=&quot;border-collapse:collapse;margin:10px 0 10px 15px;&quot;&gt; &lt;caption&gt;&lt;strong&gt;Mission crew&lt;/strong&gt;&lt;/caption&gt; &lt;thead&gt; &lt;tr&gt; &lt;th scope=&quot;col&quot;&gt;Position&lt;/th&gt; &lt;th scope=&quot;col&quot;&gt;Astronaut&lt;/th&gt; &lt;/tr&gt; &lt;/thead&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td&gt;Commander&lt;/td&gt; &lt;td&gt;Neil A. Armstrong&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Command Module Pilot&lt;/td&gt; &lt;td&gt;Michael Collins&lt;/td&gt; &lt;/tr&gt; &lt;tr&gt; &lt;td&gt;Lunar Module Pilot&lt;/td&gt; &lt;td&gt;Edwin &amp;quot;Buzz&amp;quot; E. Aldrin, Jr.&lt;/td&gt; &lt;/tr&gt; &lt;/tbody&gt; &lt;/table&gt; &lt;p&gt;Launched by a &lt;strong&gt;Saturn V&lt;/strong&gt; rocket from &lt;a href=&quot;http://en.wikipedia.org/wiki/Kennedy_Space_Center&quot; title=&quot;Kennedy Space Center&quot;&gt;Kennedy Space Center&lt;/a&gt; in Merritt Island, Florida on July 16, Apollo 11 was the fifth manned mission of &lt;a href=&quot;http://en.wikipedia.org/wiki/NASA&quot; title=&quot;NASA&quot;&gt;NASA&lt;/a&gt;&amp;#39;s Apollo program. The Apollo spacecraft had three parts:&lt;/p&gt; &lt;ol&gt; &lt;li&gt;&lt;strong&gt;Command Module&lt;/strong&gt; with a cabin for the three astronauts which was the only part which landed back on Earth&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Service Module&lt;/strong&gt; which supported the Command Module with propulsion, electrical power, oxygen and water&lt;/li&gt; &lt;li&gt;&lt;strong&gt;Lunar Module&lt;/strong&gt; for landing on the Moon.&lt;/li&gt; &lt;/ol&gt; &lt;p&gt;After being sent to the Moon by the Saturn V&amp;#39;s upper stage, the astronauts separated the spacecraft from it and travelled for three days until they entered into lunar orbit. Armstrong and Aldrin then moved into the Lunar Module and landed in the &lt;a href=&quot;http://en.wikipedia.org/wiki/Mare_Tranquillitatis&quot; title=&quot;Mare Tranquillitatis&quot;&gt;Sea of Tranquility&lt;/a&gt;. They stayed a total of about 21 and a half hours on the lunar surface. After lifting off in the upper part of the Lunar Module and rejoining Collins in the Command Module, they returned to Earth and landed in the &lt;a href=&quot;http://en.wikipedia.org/wiki/Pacific_Ocean&quot; title=&quot;Pacific Ocean&quot;&gt;Pacific Ocean&lt;/a&gt; on July 24.&lt;/p&gt; &lt;hr/&gt; &lt;p style=&quot;text-align: right;&quot;&gt;&lt;small&gt;Source: &lt;a href=&quot;http://en.wikipedia.org/wiki/Apollo_11&quot;&gt;Wikipedia.org&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+						</textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+                
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Replace Textarea with Inline Editor</h1>
+				<div class="description">
+					<p>
+						You can also create an inline editor from a <code>textarea</code>
+						element. In this case the <code>textarea</code> will be replaced
+						by a <code>div</code> element with inline editing enabled.
+					</p>
+<pre class="samples">
+// "article-body" is the name of a textarea element.
+var editor = CKEDITOR.inline( 'article-body' );
+</pre>
+				</div>
+				<form>
+					<div class="form-group">
+						<label>Title:</label>
+						<input class="form-control" type="text" name="title" value="Sample Form">
+					</div>				
+					<div class="form-group">
+						<label>Article Body (Textarea converted to CKEditor):</label>
+						<textarea name="article-body" style="height: 200px">
+							&lt;h2&gt;Technical details &lt;a id="tech-details" name="tech-details"&gt;&lt;/a&gt;&lt;/h2&gt;
+			
+							&lt;table align="right" border="1" bordercolor="#ccc" cellpadding="5" cellspacing="0" style="border-collapse:collapse;margin:10px 0 10px 15px;"&gt;
+								&lt;caption&gt;&lt;strong&gt;Mission crew&lt;/strong&gt;&lt;/caption&gt;
+								&lt;thead&gt;
+								&lt;tr&gt;
+									&lt;th scope="col"&gt;Position&lt;/th&gt;
+									&lt;th scope="col"&gt;Astronaut&lt;/th&gt;
+								&lt;/tr&gt;
+								&lt;/thead&gt;
+								&lt;tbody&gt;
+								&lt;tr&gt;
+									&lt;td&gt;Commander&lt;/td&gt;
+									&lt;td&gt;Neil A. Armstrong&lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;tr&gt;
+									&lt;td&gt;Command Module Pilot&lt;/td&gt;
+									&lt;td&gt;Michael Collins&lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;tr&gt;
+									&lt;td&gt;Lunar Module Pilot&lt;/td&gt;
+									&lt;td&gt;Edwin &quot;Buzz&quot; E. Aldrin, Jr.&lt;/td&gt;
+								&lt;/tr&gt;
+								&lt;/tbody&gt;
+							&lt;/table&gt;
+			
+							&lt;p&gt;Launched by a &lt;strong&gt;Saturn V&lt;/strong&gt; rocket from &lt;a href="http://en.wikipedia.org/wiki/Kennedy_Space_Center" title="Kennedy Space Center"&gt;Kennedy Space Center&lt;/a&gt; in Merritt Island, Florida on July 16, Apollo 11 was the fifth manned mission of &lt;a href="http://en.wikipedia.org/wiki/NASA" title="NASA"&gt;NASA&lt;/a&gt;&#39;s Apollo program. The Apollo spacecraft had three parts:&lt;/p&gt;
+			
+							&lt;ol&gt;
+								&lt;li&gt;&lt;strong&gt;Command Module&lt;/strong&gt; with a cabin for the three astronauts which was the only part which landed back on Earth&lt;/li&gt;
+								&lt;li&gt;&lt;strong&gt;Service Module&lt;/strong&gt; which supported the Command Module with propulsion, electrical power, oxygen and water&lt;/li&gt;
+								&lt;li&gt;&lt;strong&gt;Lunar Module&lt;/strong&gt; for landing on the Moon.&lt;/li&gt;
+							&lt;/ol&gt;
+			
+							&lt;p&gt;After being sent to the Moon by the Saturn V&#39;s upper stage, the astronauts separated the spacecraft from it and travelled for three days until they entered into lunar orbit. Armstrong and Aldrin then moved into the Lunar Module and landed in the &lt;a href="http://en.wikipedia.org/wiki/Mare_Tranquillitatis" title="Mare Tranquillitatis"&gt;Sea of Tranquility&lt;/a&gt;. They stayed a total of about 21 and a half hours on the lunar surface. After lifting off in the upper part of the Lunar Module and rejoining Collins in the Command Module, they returned to Earth and landed in the &lt;a href="http://en.wikipedia.org/wiki/Pacific_Ocean" title="Pacific Ocean"&gt;Pacific Ocean&lt;/a&gt; on July 24.&lt;/p&gt;
+			
+							&lt;hr /&gt;
+							&lt;p style="text-align: right;"&gt;&lt;small&gt;Source: &lt;a href="http://en.wikipedia.org/wiki/Apollo_11"&gt;Wikipedia.org&lt;/a&gt;&lt;/small&gt;&lt;/p&gt;
+						</textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Massive inline editing</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+				<h2 id="sampleTitle" contenteditable="true">
+					CKEditor Goes Inline!
+				</h2>
+				<h3 contenteditable="true">
+					Lorem ipsum dolor sit amet dolor duis blandit vestibulum faucibus a, tortor.
+				</h3>
+            </div>
+            <div class="col-lg-6">
+				<div contenteditable="true">
+					<p>
+						Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies.
+					</p>
+					<p>
+						Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac.
+					</p>
+				</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4" contenteditable="true">
+				<h3>
+					Fusce vitae porttitor
+				</h3>
+				<p>
+					<strong>
+						Lorem ipsum dolor sit amet dolor. Duis blandit vestibulum faucibus a, tortor.
+					</strong>
+				</p>
+				<p>
+					Proin nunc justo felis mollis tincidunt, risus risus pede, posuere cubilia Curae, Nullam euismod, enim. Etiam nibh ultricies dolor ac dignissim erat volutpat. Vivamus fermentum <a href="http://ckeditor.com/">nisl nulla sem in</a> metus. Maecenas wisi. Donec nec erat volutpat.
+				</p>
+				<blockquote>
+					<p>
+						Fusce vitae porttitor a, euismod convallis nisl, blandit risus tortor, pretium.
+						Vehicula vitae, imperdiet vel, ornare enim vel sodales rutrum
+					</p>
+				</blockquote>
+				<blockquote>
+					<p>
+						Libero nunc, rhoncus ante ipsum non ipsum. Nunc eleifend pede turpis id sollicitudin fringilla. Phasellus ultrices, velit ac arcu.
+					</p>
+				</blockquote>
+				<p>Pellentesque nunc. Donec suscipit erat. Pellentesque habitant morbi tristique ullamcorper.</p>
+				<p><s>Mauris mattis feugiat lectus nec mauris. Nullam vitae ante.</s></p>
+            </div>
+            <div class="col-lg-4" contenteditable="true">
+				<h3>
+					Integer condimentum sit amet
+				</h3>
+				<p>
+					<strong>Aenean nonummy a, mattis varius. Cras aliquet.</strong>
+					Praesent <a href="http://ckeditor.com/">magna non mattis ac, rhoncus nunc</a>, rhoncus eget, cursus pulvinar mollis.</p>
+				<p>Proin id nibh. Sed eu libero posuere sed, lectus. Phasellus dui gravida gravida feugiat mattis ac, felis.</p>
+				<p>Integer condimentum sit amet, tempor elit odio, a dolor non ante at sapien. Sed ac lectus. Nulla ligula quis eleifend mi, id leo velit pede cursus arcu id nulla ac lectus. Phasellus vestibulum. Nunc viverra enim quis diam.</p>
+				
+				<h3>
+					Praesent wisi accumsan sit amet nibh
+				</h3>
+				<p>Donec ullamcorper, risus tortor, pretium porttitor. Morbi quam quis lectus non leo.</p>
+				<p style="margin-left: 40px; ">Integer faucibus scelerisque. Proin faucibus at, aliquet vulputate, odio at eros. Fusce <a href="http://ckeditor.com/">gravida, erat vitae augue</a>. Fusce urna fringilla gravida.</p>
+				<p>In hac habitasse platea dictumst. Praesent wisi accumsan sit amet nibh. Maecenas orci luctus a, lacinia quam sem, posuere commodo, odio condimentum tempor, pede semper risus. Suspendisse pede. In hac habitasse platea dictumst. Nam sed laoreet sit amet erat. Integer.</p>
+            </div>
+            <div class="col-lg-4" contenteditable="true">
+				<p>
+					<img src="{{ asset('bundles/applicationbootstrap/images/50x50.png') }}" alt="CKEditor logo" style="float:left">
+				</p>
+				<p>Quisque justo neque, mattis sed, fermentum ultrices <strong>posuere cubilia Curae</strong>, Vestibulum elit metus, quis placerat ut, lectus. Ut sagittis, nunc libero, egestas consequat lobortis velit rutrum ut, faucibus turpis. Fusce porttitor, nulla quis turpis. Nullam laoreet vel, consectetuer tellus suscipit ultricies, hendrerit wisi. Donec odio nec velit ac nunc sit amet, accumsan cursus aliquet. Vestibulum ante sit amet sagittis mi.</p>
+				<h3>
+					Nullam laoreet vel consectetuer tellus suscipit
+				</h3>
+				<ul>
+					<li>Ut sagittis, nunc libero, egestas consequat lobortis velit rutrum ut, faucibus turpis.</li>
+					<li>Fusce porttitor, nulla quis turpis. Nullam laoreet vel, consectetuer tellus suscipit ultricies, hendrerit wisi.</li>
+					<li>Mauris eget tellus. Donec non felis. Nam eget dolor. Vestibulum enim. Donec.</li>
+				</ul>
+				<p>Quisque justo neque, mattis sed, <a href="http://ckeditor.com/">fermentum ultrices posuere cubilia</a> Curae, Vestibulum elit metus, quis placerat ut, lectus.</p>
+				<p>Nullam laoreet vel, consectetuer tellus suscipit ultricies, hendrerit wisi. Ut sagittis, nunc libero, egestas consequat lobortis velit rutrum ut, faucibus turpis. Fusce porttitor, nulla quis turpis.</p>
+				<p>Donec odio nec velit ac nunc sit amet, accumsan cursus aliquet. Vestibulum ante sit amet sagittis mi. Sed in nonummy faucibus turpis. Mauris eget tellus. Donec non felis. Nam eget dolor. Vestibulum enim. Donec.</p>
+            </div>
+        </div>
+        
+    </div> <!-- /container -->
+    
+	<script type="text/javascript">
+		CKEDITOR.inline( 'article-body' );
+	</script>
+    
+{% endblock %}

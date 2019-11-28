@@ -1,0 +1,51 @@
+{% extends 'ApplicationToolsBundle::layout.html.twig' %}
+
+{% block title %}Notice{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/notice/jquery.notice.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationtools/js/notice/jquery.notice.js') }}" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready( function(){ 
+			
+			$('.but_error').click(function(){
+				jQuery.noticeAdd({
+					text: 'error text',
+					stay: true,
+					type: 'error'
+				});
+			});
+			
+			$('.but_succes').click(function(){
+				jQuery.noticeAdd({
+					text: 'error text',
+					stay: true,
+					type: 'succes'
+				});
+			});
+			
+			$('.but_info').click(function(){
+				jQuery.noticeAdd({
+					text: 'info text',
+					stay: false
+				});
+			});
+			
+		});
+	</script>
+{% endblock %}
+
+{% block body %}
+<div class="section">
+    <div class="grid_16">
+        <h4>Notice - help, critical, warning, information</h4>
+        <p><a class="but_error" href="#">Button error</a></p>
+		<p><a class="but_succes" href="#">Button succes</a></p>
+		<p><a class="but_info" href="#">Button info</a></p>
+    </div>
+    <div class="clear"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+application_expert:
+    resource: "@ApplicationExpertBundle/Resources/config/routing.yml"
+    prefix:   /
+
+application_bootstrap:
+    resource: "@ApplicationBootstrapBundle/Resources/config/routing.yml"
+    prefix:   /
+
+application_tools:
+    resource: "@ApplicationToolsBundle/Resources/config/routing.yml"
+    prefix:   /
+

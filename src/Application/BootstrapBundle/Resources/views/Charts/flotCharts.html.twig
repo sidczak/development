@@ -1,0 +1,108 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <style type="text/css">
+        .flot-chart{
+            height: 400px;
+        }
+        .flot-chart-content{
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+
+    <!-- Flot Charts JavaScript -->
+    <!--[if lte IE 8]><script src="{{ asset('bundles/applicationbootstrap/js/charts/flot/excanvas.min.js') }}" type="text/javascript"></script><![endif]-->
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/flot/jquery.flot.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/flot/jquery.flot.tooltip.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/flot/jquery.flot.resize.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/flot/jquery.flot.pie.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/flot/flot-data.js') }}" type="text/javascript"></script>
+    
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        
+        <!-- Morris Charts -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Flot Charts</h2>
+                <p class="lead">Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features. For full usage instructions and documentation for Flot Charts, visit <a target="_blank" href="http://www.flotcharts.org/">http://www.flotcharts.org/</a> <a class="btn btn-primary btn-sm btn-social-icon" href="https://github.com/flot/flot" target="_blank"><i class="fa fa-github"></i> GitHub</a>.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Line Graph Example with Tooltips</h3>
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="flot-line-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Pie Chart Example with Tooltips</h3>
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="flot-pie-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Multiple Axes Line Graph Example with Tooltips and Raw Data</h3>
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="flot-multiple-axes-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Moving Line Chart</h3>
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="flot-moving-line-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Bar Graph with Tooltips</h3>
+                <div class="flot-chart">
+                    <div class="flot-chart-content" id="flot-bar-chart"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+    </div> <!-- /container -->
+{% endblock %}

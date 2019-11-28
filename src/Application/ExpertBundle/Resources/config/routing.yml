@@ -1,0 +1,3 @@
+application_expert_start:
+    pattern:  /expert
+    defaults: { _controller: ApplicationExpertBundle:Start:index }

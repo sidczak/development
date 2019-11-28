@@ -1,0 +1,83 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/chartjs/Chart.js') }}" type="text/javascript"></script>
+	
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/chartjs/samples/bar.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/chartjs/samples/doughnut.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/chartjs/samples/line.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/chartjs/samples/pie.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/chartjs/samples/polar-area.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/charts/chartjs/samples/radar.js') }}" type="text/javascript"></script>
+	
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Chart.js</h2>
+            </div>
+        </div>
+        <!-- /.row -->
+     
+        <div class="row">
+        	<div class="col-lg-6">
+                <h3 class="page-header">Bar</h3>
+                <div><canvas id="bar" height="250" width="600"></canvas></div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="page-header">Doughnut</h3>
+                <div><canvas id="doughnut" height="250" width="600"></canvas></div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+        	<div class="col-lg-6">
+                <h3 class="page-header">Line</h3>
+                <div><canvas id="line" height="250" width="600"></canvas></div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="page-header">Pie</h3>
+                <div><canvas id="pie" height="250" width="600"></canvas></div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+        	<div class="col-lg-6">
+                <h3 class="page-header">Polar-area</h3>
+                <div><canvas id="polar-area" height="250" width="600"></canvas></div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="page-header">Radar</h3>
+                <div><canvas id="radar" height="250" width="600"></canvas></div>
+            </div>
+        </div>
+        <!-- /.row -->
+    
+    </div> <!-- /container -->
+{% endblock %}

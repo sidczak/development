@@ -1,0 +1,47 @@
+{% extends 'ApplicationToolsBundle::layoutException.html.twig' %}
+
+{% block title %}500 Error{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/animate/animate.min.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('bundles/applicationtools/css/exception/exception.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper_page">
+        <div class="grid_row">
+            <div class="grid_12">
+                <h1 class="code fadeInDown animated">
+                    <span>5</span>
+                    <span>0</span>
+                    <span>0</span>
+                </h1>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="grid_row">
+            <div class="grid_12">
+                <p class="message fadeInLeft animated">
+                    Ooops! Something went wrong.
+                    <br/>
+                    But don't worry - we'll fix that soon.
+                </p>
+                <a class="btn home fadeInRight animated" href="{{ path('application_tools_start') }}">Go to homepage</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="grid_row">
+            <div class="grid_12">
+                <h2 class="logo fadeInUp animated">
+                    <a href="{{ path('application_tools_start') }}">Logo</a>
+                </h2>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+{% endblock %}

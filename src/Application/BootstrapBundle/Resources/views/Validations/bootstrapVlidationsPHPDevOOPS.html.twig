@@ -1,0 +1,165 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% form_theme form _self %}
+ 
+{% block form_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+        {% for error in errors %}
+        	<i class="glyphicon glyphicon-remove form-control-feedback"></i>
+            <small class="help-block">{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</small>
+        {% endfor %}
+    {% endif %}
+{% endspaceless %}
+{% endblock form_errors %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Bootstrap vlidations PHP DevOOPS</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8">
+            
+                {% for flashMessage in app.session.flashbag.get('contact-error') %}
+                    <div class="alert alert-danger">
+                        <p>{{ flashMessage }}</p>
+                    </div>
+                {% endfor %}
+                
+                {% for flashMessage in app.session.flashbag.get('contact-success') %}
+                    <div class="alert alert-success">
+                        <p>{{ flashMessage }}</p>
+                    </div>
+                {% endfor %}
+            
+				<form class="form-horizontal" role="form" action="{{ path('_validations_bootstrap-vlidations-PHP-DevOOPS') }}" method="post" {{ form_enctype(form) }} novalidate>
+				    {{ form_errors(form) }}
+				    
+				    <div class="page-header">
+				        <h3>Not Empty validator</h3>
+				    </div>
+				    {# {{ dump(form_errors(form.username)) }} #}
+					<div class="form-group {% if form_errors(form.username) %} has-feedback has-error {% endif %}">
+					    {{ form_label(form.username, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					    <div class="col-sm-9">
+					        {{ form_widget(form.username, { 'attr': {'class': 'form-control'} }) }}
+					        {{ form_errors(form.username) }}
+					    </div>
+					</div>
+					<div class="form-group {% if form_errors(form.country) %} has-feedback has-error {% endif %}">
+					    {{ form_label(form.country, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					    <div class="col-sm-9">
+					        {{ form_widget(form.country, { 'attr': {'class': 'form-control'} }) }}
+					        {{ form_errors(form.country) }}
+					    </div>
+					</div>
+					<div class="form-group {% if form_errors(form.accept_terms) %} has-feedback has-error {% endif %}"">
+						<div class="col-sm-offset-3 col-sm-9">
+							<div class="checkbox">
+							    <label for="{{ form.accept_terms.vars.id }}">
+							        {{ form_widget(form.accept_terms) }}
+							        {{ form.accept_terms.vars.label }}
+							    </label>
+							</div>
+							{{ form_errors(form.accept_terms) }}
+						</div>
+					</div>
+					
+					<div class="page-header">
+						<h3>Regular expression based validators</h3>
+					</div>
+					<div class="form-group {% if form_errors(form.email) %} has-feedback has-error {% endif %}">
+					    {{ form_label(form.email, 'Email address', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					    <div class="col-sm-9">
+					        {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+					        {{ form_errors(form.email) }}
+					    </div>
+					</div>
+					<div class="form-group {% if form_errors(form.website) %} has-feedback has-error {% endif %}">
+					    {{ form_label(form.website, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					    <div class="col-sm-9">
+					        {{ form_widget(form.website, { 'attr': {'class': 'form-control'} }) }}
+					        {{ form_errors(form.website) }}
+					    </div>
+					</div>
+					<div class="form-group {% if form_errors(form.phone_number) %} has-feedback has-error {% endif %}">
+					    {{ form_label(form.phone_number, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					    <div class="col-sm-4">
+					        {{ form_widget(form.phone_number, { 'attr': {'class': 'form-control'} }) }}
+					        {{ form_errors(form.phone_number) }}
+					    </div>
+					</div>
+					<div class="form-group {% if form_errors(form.zip_code) %} has-feedback has-error {% endif %}">
+					    {{ form_label(form.zip_code, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					    <div class="col-sm-4">
+					        {{ form_widget(form.zip_code, { 'attr': {'class': 'form-control'} }) }}
+					        {{ form_errors(form.zip_code) }}
+					    </div>
+					</div>
+					
+					<div class="page-header">
+						<h3>Identical validator</h3>
+					</div>
+					<div class="form-group {% if form_errors(form.password.first) %} has-feedback has-error {% endif %}">
+					    {{ form_label(form.password.first, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					    <div class="col-sm-9">
+					        {{ form_widget(form.password.first, { 'attr': {'class': 'form-control'} }) }}
+					        {{ form_errors(form.password.first) }}
+					    </div>
+					</div>
+					<div class="form-group {% if form_errors(form.password.first) %} has-feedback has-error {% endif %}">
+					    {{ form_label(form.password.second, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					    <div class="col-sm-9">
+					        {{ form_widget(form.password.second, { 'attr': {'class': 'form-control'} }) }}
+					        {{ form_errors(form.password.first) }}
+					    </div>
+					</div>
+					
+					<div class="page-header">
+						<h3>Other validators</h3>
+					</div>
+					<div class="form-group {% if form_errors(form.age) %} has-feedback has-error {% endif %}">
+					    {{ form_label(form.age, 'Ages', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+					    <div class="col-sm-4">
+					        {{ form_widget(form.age, { 'attr': {'class': 'form-control'} }) }}
+					        {{ form_errors(form.age) }}
+					    </div>
+					</div>
+					
+					<div class="form-group">
+					    <div class="col-sm-offset-3 col-sm-9">
+					        <button type="submit" class="btn btn-primary">Submit</button>
+					    </div>
+					</div>
+					
+					{{ form_rest(form) }}
+				</form>
+				
+            </div>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,305 @@
+{% extends 'ApplicationToolsBundle::layout12.html.twig' %}
+
+{% block title %}Start{% endblock %}
+{#
+{% block head %}{% endblock %}
+#}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/slideshow/scrollable.css') }}" rel="stylesheet" type="text/css" media="all" />
+    
+    <style type="text/css">
+        #back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            margin-right: 50px;
+        }
+
+        #back-top a {
+            width: 108px;
+            display: block;
+            text-align: center;
+            font: 11px/100% Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #bbb;
+
+            /* transition */
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            transition: 1s;
+        }
+        #back-top a:hover {
+            color: #000;
+        }
+
+        /* arrow icon (span tag) */
+        #back-top span {
+            width: 108px;
+            height: 108px;
+            display: block;
+            margin-bottom: 7px;
+            background: #ddd url(../bundles/applicationtools/images/up-arrow.png) no-repeat center center;
+
+            /* rounded corners */
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+
+            /* transition */
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            transition: 1s;
+        }
+        #back-top a:hover span {
+            background-color: #777;
+        }
+    </style>
+    
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationtools/js/slideshow/scroll.js') }}" type="text/javascript"></script>
+
+    {# setInterval - dzięki jednej linice kodu możemy stworzyć prosty slideshow
+        <script type="text/javascript">
+            $(function(){
+                $('.items div:first').hide();
+                setInterval(function(){$('.items div:first').slideDown().next('div').slideUp().end().appendTo('.items');}, 1000);
+            });
+        </script>
+    #}
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // hide #back-top first
+            $("#back-top").hide();
+            
+            // fade in #back-top
+            $(function () {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 100) {
+                        $('#back-top').fadeIn();
+                    } else {
+                        $('#back-top').fadeOut();
+                    }
+                });
+
+                // scroll body to 0px on click
+                $('#back-top a').click(function () {
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 800);
+                    return false;
+                });
+            });
+
+        });
+    </script>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="grid_row">
+
+
+    <div class="grid_4">grid_4</div>
+    <div class="grid_4">grid_4</div>
+    <div class="grid_4">grid_4</div>
+    <div class="grid_4">grid_4</div>
+    <div class="clear"></div>
+    
+    <div class="grid_12">
+        <div class="row">
+            <div class="col_3">col_3</div>
+            <div class="col_3">col_3</div>
+            <div class="col_3">col_3</div>
+            <div class="col_3">col_3</div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+<div class="row">
+    <div class="col_4">col_4</div>
+    <div class="col_4">col_4</div>
+    <div class="col_4">col_4</div>
+    <div class="col_4">col_4</div>
+</div>
+
+<div class="grid_row">
+    <div class="grid_8">grid_8</div>
+    <div class="grid_8">grid_8</div>
+    <div class="clear"></div>
+    <div class="grid_8">
+        <div class="row">
+            <div class="col_4">col_4</div>
+            <div class="col_4">col_4</div>
+            <div class="col_4">col_4</div>
+            <div class="col_4">col_4</div>
+        </div>
+    </div>
+    <div class="grid_8">
+        <div class="row">
+            <div class="col_4">col_4</div>
+            <div class="col_4">col_4</div>
+            <div class="col_4">col_4</div>
+            <div class="col_4">col_4</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+<div class="grid_row">
+    <div class="grid_8">
+        <h4>Start</h4>
+        <div class="content_scrollable">
+            <div class="scrollable">
+                <div class="items">
+                    <div><img src="img/graphics/labels/lab_scrl_news.png" alt="news" title="news" />AAAAAAAAAA WWWWWWWWWW WWWWWWWWWW WWWWWWWWWW WWWWWWWWWW WWWWWWWWWW WWWWWWWWWW</div>
+                    <div><img src="img/graphics/labels/lab_scrl_tour.png" alt="tour" title="tour" />aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa aaaaaaaaaa</div>
+                    <div><img src="img/graphics/labels/lab_scrl_win.png" alt="win" title="win" />bbbbbbbbbb</div>
+                    <div><img src="img/graphics/labels/lab_scrl_news.png" alt="news" title="news" /><a href="#">Mens_Serena</a> has just won 5123TKN in <a>PP Tower Major Trophy (round 2)</a></div>  
+                    <div><img src="img/graphics/labels/lab_scrl_news.png" alt="news" title="news" /><i>Upcoming tournament:</i> <a href="#">PP Tower Major Trophy</a> 12:20 GMT, Prize Pool <b>10,000TKN</b></div>  
+                    <div><img src="img/graphics/labels/lab_scrl_news.png" alt="news" title="news" />Congratulations to manager <a href="#">Mens_Serena</a> for winning League 1 season 15. <a href="#">Full ranking &raquo;</a></div>  
+                    <div><img src="img/graphics/labels/lab_scrl_news.png" alt="news" title="news" />Don't miss our <a href="#">Special Kill 'Em All Competition</a> today at 21:00 pm, finish in top 10 and grab a whopping <b>1000PP</b>.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="grid_row">
+    <div class="grid_12">
+        <h2>Welcome</h2>
+        <div class="grid_row">
+            <div class="grid_5">
+                <img src="{{ asset('bundles/applicationtools/images/800x600.jpg') }}" alt="" />
+            </div>
+            <div class="grid_7">
+                <h3>Welcome</h3>
+                <p>ppp</p>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="grid_row">
+    <div class="grid_12">
+        <a href="http://snook.ca/archives/javascript/simplest-jquery-slideshow" target="_blank">simplest-jquery-slideshow</a>
+        <br/>
+        <a href="http://webdesignerwall.com/tutorials/animated-scroll-to-top" target="_blank">animated-scroll-to-top</a>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="grid_row">
+    <div class="grid_4">
+
+        <h3>biblioteki jQuery:</h3>
+        <p>1. jquerytools - scrollable</p>
+        <p>2. jquery.flot.js - wykresy</p>
+        <p>3. jquery.backstretch.min.js - duże tło body</p>
+        <p>4. jquery.fixedtableheader.js - odcięcie sekcji head od tabelki</p>
+        <p>5. validation forms</p>
+        <p>6. upload i download forms - narzędzie do wczytywania i pobierania plików na serwera</p>
+        <p>7. Shortcodes - FAQ</p>
+        <hr/>
+        <p>1. Strona startowa - slider</p>
+        <ul>
+            <li>flexslider - jednotka</li>
+            <li>sequence - edge</li>
+            <li>bootstrap.js</li>
+        </ul>
+        <p>2. Pages - 3 kolumny, 2kolumny, autodopasowanie {#(Portfolio, Galery, 404Error)#}</p>
+        <p>3. Contact - form, GoogleMaps</p>
+        <p>4. Blog</p>
+        <p>5. AJAX</p>
+        <hr/>
+        <p>1. Platrorm 4.0</p>
+        <p>2. Jobeet</p>
+        <p>3. symblog</p>
+        
+        <hr/>
+
+        <h3>SYMFONY</h3>
+        <p>jQuery</p>
+        <p>AJAX</p>
+        <p>Richeditor</p>
+        <p>TinyMCE</p>
+        <p>ExtJS</p>
+        <hr/>
+        
+        <p>ORM - Doctrine</p>
+        <hr/>
+        
+        <p>Internationalization (i18n, i10n)</p>
+        <hr/>
+        
+        <p>HTML CSS</p>
+        <p><a href="http://bootswatch.com/" target="_blank">bootswatch</a></p>
+        <p>Bootstrap, 960gs</p>
+        
+        <hr/>
+        <h3>Themes & Templates</h3>
+        <p>Bootstrap:
+            <a href="http://getbootstrap.com/" target="_blank">getbootstrap.com</a>,
+            <a href="https://github.com/twbs/bootstrap/" target="_blank">github</a>
+        </p>
+        <p>Bootswatch: 
+            <a href="http://bootswatch.com/" target="_blank">bootswatch.com</a>,
+            <a href="https://github.com/thomaspark/bootswatch" target="_blank">github</a>
+        </p>
+        <p>Start Bootstrap:
+            <a href="http://startbootstrap.com/" target="_blank">startbootstrap.com</a>,
+            <a href="https://github.com/ironsummitmedia/startbootstrap" target="_blank">github</a>
+        </p>
+        <p>Bootstrap Zero:
+            <a href="http://www.bootstrapzero.com/" target="_blank">www.bootstrapzero.com</a>,
+            <a href="https://github.com/iatek/bootstrap-zero" target="_blank">github</a>
+        </p>
+        <hr/>
+        <h3>Fonts</h3>
+        <p>Bootstrap:
+            <a href="http://getbootstrap.com/components/" target="_blank">getbootstrap.com</a>,
+            <a href="https://github.com/twbs/bootstrap/" target="_blank">github</a>
+        </p>
+        <p>Font Awesome:
+            <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a>,
+            <a href="https://github.com/FortAwesome/Font-Awesome/" target="_blank">github</a>
+        </p>
+        <p>flaticon:
+            <a href="http://www.flaticon.com/" target="_blank">flaticon</a>
+        </p>
+        <hr/>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="grid_row">
+    <div class="grid_4">
+        <h3>SYMFONY2 - PROJECTS</h3>
+        <p>Personal</p>
+        <p>Company</p>
+        <p>Blog</p>
+        <p>Shop</p>
+        <p>ENG</p>
+        <p>Hobby (bike, swimming, climbing, sailing, diving)</p>
+        <hr/>
+        
+    </div>
+    <div class="clear"></div>
+</div>
+
+<p id="back-top">
+    <a href="#top"><span></span>Back to Top</a>
+</p>
+
+{% endblock %}

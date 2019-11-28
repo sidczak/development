@@ -1,0 +1,140 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Round About - Start Bootstrap Template{% endblock %}
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contact
+                    <small>Subheading</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('application_bootstrap_start') }}">Home</a>
+                    </li>
+                    <li class="active">Contact</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <!-- Map Column -->
+            <div class="col-md-8">
+                <!-- Embedded Google Map -->
+                <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+            </div>
+            <!-- Contact Details Column -->
+            <div class="col-md-4">
+                <h3>Contact Details</h3>
+                <p>
+                    3481 Melrose Place<br>Beverly Hills, CA 90210<br>
+                </p>
+                <p><i class="fa fa-phone"></i> 
+                    <abbr title="Phone">P</abbr>: (123) 456-7890</p>
+                <p><i class="fa fa-envelope-o"></i> 
+                    <abbr title="Email">E</abbr>: <a href="mailto:name@example.com">name@example.com</a>
+                </p>
+                <p><i class="fa fa-clock-o"></i> 
+                    <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+                <ul class="list-unstyled list-inline list-social-icons">
+                    <li>
+                        <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Contact Form -->
+        <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+        <div class="row">
+            <div class="col-md-8">
+    
+                <h3>Send us a Message</h3>
+                
+                <form class="contact_from" action="{{ path('_starter-template_contact') }}" method="post" {{ form_enctype(form) }} novalidate>   
+                    {{ form_errors(form) }}
+                    <div class="control-group form-group">
+                        <div class="controls {% if form_errors(form.name) %} has-error {% endif %}">
+                            {{ form_label(form.name, 'Full Name:') }}
+                            {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
+                            <div class="help-block">{{ form_errors(form.name) }}</div>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls {% if form_errors(form.phone) %} has-error {% endif %}">
+                            {{ form_label(form.phone, 'Phone Number:') }}
+                            {{ form_widget(form.phone, { 'attr': {'class': 'form-control'} }) }}
+                            <div class="help-block">{{ form_errors(form.phone) }}</div>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls {% if form_errors(form.email) %} has-error {% endif %}">
+                            {{ form_label(form.email, 'Email Address:') }}
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+                            <div class="help-block">{{ form_errors(form.email) }}</div>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls {% if form_errors(form.message) %} has-error {% endif %}">
+                            {{ form_label(form.message, 'Message:') }}
+                            {{ form_widget(form.message, { 'attr': {'class': 'form-control'} }) }}
+                            <div class="help-block">{{ form_errors(form.message) }}</div>
+                        </div>
+                    </div>
+                    {{ form_rest(form) }}
+                    
+                    {% for flashMessage in app.session.flashbag.get('contact-success') %}
+                        <div class="alert alert-dismissable alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>{{ flashMessage }}</strong>
+                        </div>
+                    {% endfor %}
+                
+                    <div class="center_but">
+                        <button class="btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr/>
+
+    </div> <!-- /container -->
+{% endblock %}

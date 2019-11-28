@@ -1,0 +1,1049 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('bundles/applicationbootstrap/css/forms/checkbox_radio/checkbox_radio_web-font.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+
+<script>
+$(document).ready(function() {
+
+    $("input[type=checkbox]:checked").parent().addClass("check");
+    $("input[type=checkbox]").click(function () {
+        if ($(this).is(":checked")) {
+            $(this).parent().addClass("check");
+        } else {
+            $(this).parent().removeClass("check");
+        }
+    });
+    
+    $("input[type=radio]:checked").parent().addClass('check');
+    $("input[type=radio]").click(function () {
+        if ($(this).is(":checked")) {
+            var name = $(this).attr("name");
+            $("input[type=radio][name=" + name + "]").parent().removeClass('check');
+            $(this).parent().addClass('check');
+        }
+    });
+
+
+});
+</script>
+
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Sticky footer with fixed navbar</h1>
+        </div>
+        <div class="row">
+        	<div class="col-lg-6">
+        		<h2>Checkboxes</h2>
+        		<form role="form">
+        			<h3 class="page-header">Checkboxes in columns</h3>
+					<div class="row form-group">
+						<div class="col-lg-4">
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value=""> One
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="" checked> Two
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox disabled">
+							  <label>
+							    <input type="checkbox" value="" disabled> Three
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox disabled">
+							  <label>
+							    <input type="checkbox" value="" disabled checked> Four
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Five
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Six
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Seven
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Eight
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Nine
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+						</div>
+					</div>
+					<h3 class="page-header">Checkboxes inline</h3>
+					<div class="row form-group">
+						<div class="col-lg-12">
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option1"> One
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option2" checked> Two
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline disabled">
+							  <input type="checkbox" value="option3" disabled> Three
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline disabled">
+							  <input type="checkbox" value="option4" disabled checked> Four
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option5"> Five
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option6"> Six
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option7"> Seven
+							  <i class="fa fa-square-o"></i>
+							</label>
+						</div>
+					</div>
+        		</form>
+        	</div>
+        	<div class="col-lg-6">
+        		<h2>Radios</h2>
+        		<form role="form">
+        			<h3 class="page-header">Radios in columns</h3>
+					<div class="row form-group">
+						<div class="col-lg-4">
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> One
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios" checked> Two
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio disabled">
+							  <label>
+							    <input type="radio" name="" disabled> Three
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio disabled">
+							  <label>
+							    <input type="radio" name="" disabled checked> Four
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Five
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Six
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Seven
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Eight
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Nine
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+						</div>
+					</div>
+					<h3 class="page-header">Radios inline</h3>
+					<div class="row form-group">
+						<div class="col-lg-12">
+							<label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions"> One
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions" checked> Two
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline disabled">
+						      <input type="radio" name="" disabled> Three
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline disabled">
+						      <input type="radio" name="" disabled checked> Four
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions"> Five
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions"> Six
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions"> Seven
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						</div>
+					</div>
+	
+        		</form>
+        	</div>
+        	
+        </div>
+        <hr/>
+        <div class="row">
+        
+        	<div class="col-lg-6">
+        		<h2>Checkboxes</h2>
+        		<form role="form" class="web-font">
+        			<h3 class="page-header">Checkboxes in columns</h3>
+					<div class="row form-group">
+						<div class="col-lg-4">
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value=""> One
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="" checked> Two
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox disabled">
+							  <label>
+							    <input type="checkbox" value="" disabled> Three
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox disabled">
+							  <label>
+							    <input type="checkbox" value="" disabled checked> Four
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Five
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Six
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Seven
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Eight
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="checkbox">
+							  <label>
+							    <input type="checkbox" value="">Nine
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+						</div>
+					</div>
+					<h3 class="page-header">Checkboxes inline</h3>
+					<div class="row form-group">
+						<div class="col-lg-12">
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option1"> One
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option2" checked> Two
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline disabled">
+							  <input type="checkbox" value="option3" disabled> Three
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline disabled">
+							  <input type="checkbox" value="option4" disabled checked> Four
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option5"> Five
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option6"> Six
+							  <i class="fa fa-square-o"></i>
+							</label>
+							<label class="checkbox-inline">
+							  <input type="checkbox" value="option7"> Seven
+							  <i class="fa fa-square-o"></i>
+							</label>
+						</div>
+					</div>
+					<h3 class="page-header">Small sizes</h3>
+					<div class="row form-group">
+						<div class="col-lg-4">
+							<div class="checkbox size-sm">
+							  <label>
+							    <input type="checkbox" value="" checked> One
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox size-sm">
+							  <label>
+							    <input type="checkbox" value=""> Two
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox size-sm disabled">
+							  <label>
+							    <input type="checkbox" value="" disabled> Three
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="checkbox size-sm">
+							  <label>
+							    <input type="checkbox" value=""> Four
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox size-sm">
+							  <label>
+							    <input type="checkbox" value=""> Five
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox size-sm disabled">
+							  <label>
+							    <input type="checkbox" value="" disabled> Six
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="checkbox size-sm">
+							  <label>
+							    <input type="checkbox" value=""> Seven
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox size-sm">
+							  <label>
+							    <input type="checkbox" value=""> Eight
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+							<div class="checkbox size-sm disabled">
+							  <label>
+							    <input type="checkbox" value="" disabled> Nine
+							    <i class="fa fa-square-o"></i>
+							  </label>
+							</div>
+						</div>
+					</div>
+                    <h3 class="page-header">Checkboxes inline</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <label class="checkbox-inline size-sm">
+                              <input type="checkbox" value="option1"> One
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-sm">
+                              <input type="checkbox" value="option2" checked> Two
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-sm disabled">
+                              <input type="checkbox" value="option3" disabled> Three
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-sm disabled">
+                              <input type="checkbox" value="option4" disabled checked> Four
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-sm">
+                              <input type="checkbox" value="option5"> Five
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-sm">
+                              <input type="checkbox" value="option6"> Six
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-sm">
+                              <input type="checkbox" value="option7"> Seven
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <h3 class="page-header">Big sizes</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-4">
+                            <div class="checkbox size-lg">
+                              <label>
+                                <input type="checkbox" value="" checked> One
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg">
+                              <label>
+                                <input type="checkbox" value=""> Two
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg disabled">
+                              <label>
+                                <input type="checkbox" value="" disabled> Three
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="checkbox size-lg">
+                              <label>
+                                <input type="checkbox" value=""> Four
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg">
+                              <label>
+                                <input type="checkbox" value=""> Five
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg disabled">
+                              <label>
+                                <input type="checkbox" value="" disabled> Six
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="checkbox size-lg">
+                              <label>
+                                <input type="checkbox" value=""> Seven
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg">
+                              <label>
+                                <input type="checkbox" value=""> Eight
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg disabled">
+                              <label>
+                                <input type="checkbox" value="" disabled> Nine
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="page-header">Checkboxes inline</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <label class="checkbox-inline size-lg">
+                              <input type="checkbox" value="option1"> One
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg">
+                              <input type="checkbox" value="option2" checked> Two
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg disabled">
+                              <input type="checkbox" value="option3" disabled> Three
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg disabled">
+                              <input type="checkbox" value="option4" disabled checked> Four
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg">
+                              <input type="checkbox" value="option5"> Five
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg">
+                              <input type="checkbox" value="option6"> Six
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg">
+                              <input type="checkbox" value="option7"> Seven
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <h3 class="page-header">Big sizes - color</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-4">
+                            <div class="checkbox size-lg purple">
+                              <label>
+                                <input type="checkbox" value="" checked> One
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg purple">
+                              <label>
+                                <input type="checkbox" value=""> Two
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg purple disabled">
+                              <label>
+                                <input type="checkbox" value="" disabled> Three
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="checkbox size-lg purple">
+                              <label>
+                                <input type="checkbox" value=""> Four
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg purple">
+                              <label>
+                                <input type="checkbox" value=""> Five
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg purple disabled">
+                              <label>
+                                <input type="checkbox" value="" disabled> Six
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="checkbox size-lg purple">
+                              <label>
+                                <input type="checkbox" value=""> Seven
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg purple">
+                              <label>
+                                <input type="checkbox" value=""> Eight
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                            <div class="checkbox size-lg purple disabled">
+                              <label>
+                                <input type="checkbox" value="" disabled> Nine
+                                <i class="fa fa-square-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="page-header">Checkboxes inline</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <label class="checkbox-inline size-lg purple">
+                              <input type="checkbox" value="option1"> One
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg purple">
+                              <input type="checkbox" value="option2" checked> Two
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg purple disabled">
+                              <input type="checkbox" value="option3" disabled> Three
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg purple disabled">
+                              <input type="checkbox" value="option4" disabled checked> Four
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg purple">
+                              <input type="checkbox" value="option5"> Five
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg purple">
+                              <input type="checkbox" value="option6"> Six
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                            <label class="checkbox-inline size-lg purple">
+                              <input type="checkbox" value="option7"> Seven
+                              <i class="fa fa-square-o"></i>
+                            </label>
+                        </div>
+                    </div>
+        		</form>
+        	</div>
+        	<div class="col-lg-6">
+        		<h2>Radios</h2>
+        		<form role="form" class="web-font">
+        			<h3 class="page-header">Radios in columns</h3>
+					<div class="row form-group">
+						<div class="col-lg-4">
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> One
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios" checked> Two
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio disabled">
+							  <label>
+							    <input type="radio" name="" disabled> Three
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio disabled">
+							  <label>
+							    <input type="radio" name="" disabled checked> Four
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Five
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Six
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Seven
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Eight
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="optionsRadios"> Nine
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+						</div>
+					</div>
+					<h3 class="page-header">Radios inline</h3>
+					<div class="row form-group">
+						<div class="col-lg-12">
+							<label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions"> One
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions" checked> Two
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline disabled">
+						      <input type="radio" name="" disabled> Three
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline disabled">
+						      <input type="radio" name="" disabled checked> Four
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions"> Five
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions"> Six
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						    <label class="radio-inline">
+						      <input type="radio" name="inlineRadioOptions"> Seven
+						      <i class="fa fa-circle-o"></i>
+						    </label>
+						</div>
+					</div>
+					<h3 class="page-header">Small sizes</h3>
+					<div class="row form-group">
+						<div class="col-lg-4">
+							<div class="radio size-sm">
+							  <label>
+							    <input type="radio" name="smallRadioOptions" checked> One
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio size-sm">
+							  <label>
+							    <input type="radio" name="smallRadioOptions"> Two
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio size-sm disabled">
+							  <label>
+							    <input type="radio" name="smallRadioOptions" disabled> Three
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="radio size-sm">
+							  <label>
+							    <input type="radio" name="smallRadioOptions"> Four
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio size-sm">
+							  <label>
+							    <input type="radio" name="smallRadioOptions"> Five
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio size-sm disabled">
+							  <label>
+							    <input type="radio" name="smallRadioOptions" disabled> Six
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="radio size-sm">
+							  <label>
+							    <input type="radio" name="smallRadioOptions"> Seven
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio size-sm">
+							  <label>
+							    <input type="radio" name="smallRadioOptions"> Eight
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+							<div class="radio size-sm disabled">
+							  <label>
+							    <input type="radio" name="smallRadioOptions" disabled> Nine
+							    <i class="fa fa-circle-o"></i>
+							  </label>
+							</div>
+						</div>
+					</div>
+                    <h3 class="page-header">Radios inline</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <label class="radio-inline size-sm">
+                              <input type="radio" name="smallInlineRadioOptions"> xOne
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-sm">
+                              <input type="radio" name="smallInlineRadioOptions" checked> Two
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-sm disabled">
+                              <input type="radio" name="" disabled> Three
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-sm disabled">
+                              <input type="radio" name="" disabled checked> Four
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-sm">
+                              <input type="radio" name="smallInlineRadioOptions"> Five
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-sm">
+                              <input type="radio" name="smallInlineRadioOptions"> Six
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-sm">
+                              <input type="radio" name="smallInlineRadioOptions"> Seven
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <h3 class="page-header">Big sizes</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-4">
+                            <div class="radio size-lg">
+                              <label>
+                                <input type="radio" name="bigRadioOptions" checked> One
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg">
+                              <label>
+                                <input type="radio" name="bigRadioOptions"> Two
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg disabled">
+                              <label>
+                                <input type="radio" name="bigRadioOptions" disabled> Three
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="radio size-lg">
+                              <label>
+                                <input type="radio" name="bigRadioOptions"> Four
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg">
+                              <label>
+                                <input type="radio" name="bigRadioOptions"> Five
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg disabled">
+                              <label>
+                                <input type="radio" name="bigRadioOptions" disabled> Six
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="radio size-lg">
+                              <label>
+                                <input type="radio" name="bigRadioOptions"> Seven
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg">
+                              <label>
+                                <input type="radio" name="bigRadioOptions"> Eight
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg disabled">
+                              <label>
+                                <input type="radio" name="bigRadioOptions" disabled> Nine
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="page-header">Radios inline</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <label class="radio-inline size-lg">
+                              <input type="radio" name="bigInlineRadioOptions"> One
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg">
+                              <input type="radio" name="bigInlineRadioOptions" checked> Two
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg disabled">
+                              <input type="radio" name="" disabled> Three
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg disabled">
+                              <input type="radio" name="" disabled checked> Four
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg">
+                              <input type="radio" name="bigInlineRadioOptions"> Five
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg">
+                              <input type="radio" name="bigInlineRadioOptions"> Six
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg">
+                              <input type="radio" name="bigInlineRadioOptions"> Seven
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <h3 class="page-header">Big sizes - color</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-4">
+                            <div class="radio size-lg purple">
+                              <label>
+                                <input type="radio" name="colorbigRadioOptions" checked> One
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg purple">
+                              <label>
+                                <input type="radio" name="colorbigRadioOptions"> Two
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg purple disabled">
+                              <label>
+                                <input type="radio" name="colorbigRadioOptions" disabled> Three
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="radio size-lg purple">
+                              <label>
+                                <input type="radio" name="colorbigRadioOptions"> Four
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg purple">
+                              <label>
+                                <input type="radio" name="colorbigRadioOptions"> Five
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg purple disabled">
+                              <label>
+                                <input type="radio" name="colorbigRadioOptions" disabled> Six
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="radio size-lg purple">
+                              <label>
+                                <input type="radio" name="colorbigRadioOptions"> Seven
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg purple">
+                              <label>
+                                <input type="radio" name="colorbigRadioOptions"> Eight
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                            <div class="radio size-lg purple disabled">
+                              <label>
+                                <input type="radio" name="colorbigRadioOptions" disabled> Nine
+                                <i class="fa fa-circle-o"></i>
+                              </label>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="page-header">Radios inline</h3>
+                    <div class="row form-group">
+                        <div class="col-lg-12">
+                            <label class="radio-inline size-lg purple">
+                              <input type="radio" name="colorbigInlineRadioOptions"> One
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg purple">
+                              <input type="radio" name="colorbigInlineRadioOptions" checked> Two
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg purple disabled">
+                              <input type="radio" name="" disabled> Three
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg purple disabled">
+                              <input type="radio" name="" disabled checked> Four
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg purple">
+                              <input type="radio" name="colorbigInlineRadioOptions"> Five
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg purple">
+                              <input type="radio" name="colorbigInlineRadioOptions"> Six
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                            <label class="radio-inline size-lg purple">
+                              <input type="radio" name="colorInlineRadioOptions"> Seven
+                              <i class="fa fa-circle-o"></i>
+                            </label>
+                        </div>
+                    </div>
+        		</form>
+        	</div>
+        	
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,7 @@
+#wrap-left div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  color: white;
+  float: left;
+}

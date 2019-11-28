@@ -1,0 +1,79 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/charts/morris.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+
+    <!-- Morris Charts JavaScript -->
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/morris/raphael.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/morris/morris.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/morris/morris-data.js') }}" type="text/javascript"></script>
+
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        
+        <!-- Morris Charts -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">Morris Charts</h2>
+                <p class="lead">Morris.js is a very simple API for drawing line, bar, area and donut charts. For full usage instructions and documentation for Morris.js charts, visit <a target="_blank" href="http://morrisjs.github.io/morris.js/">http://morrisjs.github.io/morris.js/</a> <a class="btn btn-primary btn-sm btn-social-icon" href="https://github.com/morrisjs/morris.js" target="_blank"><i class="fa fa-github"></i> GitHub</a>.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Area Line Graph Example with Tooltips</h3>
+                <div id="morris-area-chart"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Line Graph Example with Tooltips</h3>
+                <div id="morris-line-chart"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Bar Graph Example</h3>
+                <div id="morris-bar-chart"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="page-header">Donut Chart Example</h3>
+                <div id="morris-donut-chart"></div>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+    </div> <!-- /container -->
+{% endblock %}

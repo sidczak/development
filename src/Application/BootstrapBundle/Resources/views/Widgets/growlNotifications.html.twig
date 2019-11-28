@@ -1,0 +1,479 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Notifications bootstrap-growl{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('bundles/applicationbootstrap/js/notifications/bootstrap-growl/animate.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <style type="text/css">
+        .growl-animated{
+            -webkit-transition:all .5s ease-in-out;
+            -moz-transition:all .5s ease-in-out;
+            -o-transition:all .5s ease-in-out;
+            -ms-transition:all .5s ease-in-out;
+            transition:all .5s ease-in-out}
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/notifications/bootstrap-growl/bootstrap-growl.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(function() {
+
+        $.growl({
+            icon: "fa fa-check-circle",
+            title: ' <strong>Bootstrap Growl</strong><br/> ',
+            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+            url: 'https://github.com/mouse0270/bootstrap-growl'
+        },{
+            type: 'success',
+            placement: {
+                from: "top",
+                align: "center"
+            },
+            animate: {
+                enter: 'animated zoomInDown',
+                exit: 'animated zoomOutUp'
+            }
+        });
+
+        $.growl({
+            icon: "fa fa-info-circle",
+            title: ' <strong>Bootstrap Growl</strong><br/> ',
+            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+            url: 'https://github.com/mouse0270/bootstrap-growl'
+        },{
+            type: 'info',
+            placement: {
+                from: "top",
+                align: "center"
+            },
+            animate: {
+                enter: 'animated zoomInDown',
+                exit: 'animated zoomOutUp'
+            }
+        });
+
+        $.growl({
+            icon: "fa fa-warning",
+            title: ' <strong>Bootstrap Growl</strong><br/> ',
+            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+            url: 'https://github.com/mouse0270/bootstrap-growl'
+        },{
+            type: 'warning',
+            placement: {
+                from: "top",
+                align: "center"
+            },
+            animate: {
+                enter: 'animated zoomInDown',
+                exit: 'animated zoomOutUp'
+            }
+        });
+
+        $.growl({
+            icon: "fa fa-exclamation-circle",
+            title: ' <strong>Bootstrap Growl</strong><br/> ',
+            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+            url: 'https://github.com/mouse0270/bootstrap-growl'
+        },{
+            type: 'danger',
+            placement: {
+                from: "top",
+                align: "center"
+            },
+            animate: {
+                enter: 'animated zoomInDown',
+                exit: 'animated zoomOutUp'
+            }
+        });
+
+    });
+    </script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Notifications bootstrap-growl</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Example 1 - allow_dismiss: false</h2>
+            
+                <button class="btn btn-success example1_success">Success</button>
+                <script type="text/javascript">
+                    $(".example1_success").click(function () {
+                        $.growl("I'll use Bootstrap Success Alert Styling!", {
+                            type: "success",
+                            allow_dismiss: false
+                        });
+                    });
+                </script>
+            
+                <button class="btn btn-info example1_info">Info</button>
+                <script type="text/javascript">
+                    $(".example1_info").click(function () {
+                        $.growl("I'll use Bootstrap Success Alert Styling!", {
+                            type: "info",
+                            allow_dismiss: false
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-warning example1_warning">Warning</button>
+                <script type="text/javascript">
+                    $(".example1_warning").click(function () {
+                        $.growl("I'll use Bootstrap Success Alert Styling!", {
+                            type: "warning",
+                            allow_dismiss: false
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-danger example1_danger">Danger</button>
+                <script type="text/javascript">
+                    $(".example1_danger").click(function () {
+                        $.growl("I'll use Bootstrap Success Alert Styling!", {
+                            type: "danger",
+                            allow_dismiss: false
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Example 2 - allow_dismiss: true</h2>
+            
+                <button class="btn btn-success example2_success">Success</button>
+                <script type="text/javascript">
+                    $(".example2_success").click(function () {
+                        $.growl("I'll use Bootstrap Success Alert Styling!", {
+                            type: "success"
+                        });
+                    });
+                </script>
+            
+                <button class="btn btn-info example2_info">Info</button>
+                <script type="text/javascript">
+                    $(".example2_info").click(function () {
+                        $.growl("I'll use Bootstrap Success Alert Styling!", {
+                            type: "info"
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-warning example2_warning">Warning</button>
+                <script type="text/javascript">
+                    $(".example2_warning").click(function () {
+                        $.growl("I'll use Bootstrap Success Alert Styling!", {
+                            type: "warning"
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-danger example2_danger">Danger</button>
+                <script type="text/javascript">
+                    $(".example2_danger").click(function () {
+                        $.growl("I'll use Bootstrap Success Alert Styling!", {
+                            type: "danger"
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Example 3 - Icons, Title, Message, Url</h2>
+            
+                <button class="btn btn-success example3_success">Success</button>
+                <script type="text/javascript">
+                    $(".example3_success").click(function () {
+                        $.growl({
+                            icon: "fa fa-check-circle",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'success',
+                            placement: {
+                                from: "top",
+                                align: "right"
+                            }
+                        });
+                    });
+                </script>
+            
+                <button class="btn btn-info example3_info">Info</button>
+                <script type="text/javascript">
+                    $(".example3_info").click(function () {
+                        $.growl({
+                            icon: "fa fa-info-circle",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'info',
+                            placement: {
+                                from: "top",
+                                align: "right"
+                            }
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-warning example3_warning">Warning</button>
+                <script type="text/javascript">
+                    $(".example3_warning").click(function () {
+                        $.growl({
+                            icon: "fa fa-warning",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'warning',
+                            placement: {
+                                from: "top",
+                                align: "right"
+                            }
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-danger example3_danger">Danger</button>
+                <script type="text/javascript">
+                    $(".example3_danger").click(function () {
+                        $.growl({
+                            icon: "fa fa-exclamation-circle",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'danger',
+                            placement: {
+                                from: "top",
+                                align: "right"
+                            }
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Example 4 - Animate</h2>
+            
+                <button class="btn btn-success example4_success">Success</button>
+                <script type="text/javascript">
+                    $(".example4_success").click(function () {
+                        $.growl({
+                            icon: "fa fa-check-circle",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'success',
+                            placement: {
+                                from: "top",
+                                align: "right"
+                            },
+                            animate: {
+                                enter: 'animated fadeInRight',
+                                exit: 'animated fadeOutRight'
+                            },
+                            delay: 0
+                        });
+                    });
+                </script>
+            
+                <button class="btn btn-info example4_info">Info</button>
+                <script type="text/javascript">
+                    $(".example4_info").click(function () {
+                        $.growl({
+                            icon: "fa fa-info-circle",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'info',
+                            placement: {
+                                from: "top",
+                                align: "right"
+                            },
+                            animate: {
+                                enter: 'animated fadeInRight',
+                                exit: 'animated fadeOutRight'
+                            },
+                            delay: 5000
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-warning example4_warning">Warning</button>
+                <script type="text/javascript">
+                    $(".example4_warning").click(function () {
+                        $.growl({
+                            icon: "fa fa-warning",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'warning',
+                            placement: {
+                                from: "top",
+                                align: "right"
+                            },
+                            animate: {
+                                enter: 'animated fadeInRight',
+                                exit: 'animated fadeOutRight'
+                            },
+                            delay: 5000
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-danger example4_danger">Danger</button>
+                <script type="text/javascript">
+                    $(".example4_danger").click(function () {
+                        $.growl({
+                            icon: "fa fa-exclamation-circle",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'danger',
+                            placement: {
+                                from: "top",
+                                align: "right"
+                            },
+                            animate: {
+                                enter: 'animated fadeInRight',
+                                exit: 'animated fadeOutRight'
+                            },
+                            delay: 5000
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Example 5 - Animate, Center</h2>
+            
+                <button class="btn btn-success example5_success">Success</button>
+                <script type="text/javascript">
+                    $(".example5_success").click(function () {
+                        $.growl({
+                            icon: "fa fa-check-circle",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'success',
+                            placement: {
+                                from: "top",
+                                align: "center"
+                            },
+                            animate: {
+                                enter: 'animated zoomInDown',
+                                exit: 'animated zoomOutUp'
+                            },
+                            delay: 5000
+                        });
+                    });
+                </script>
+            
+                <button class="btn btn-info example5_info">Info</button>
+                <script type="text/javascript">
+                    $(".example5_info").click(function () {
+                        $.growl({
+                            icon: "fa fa-info-circle",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'info',
+                            placement: {
+                                from: "top",
+                                align: "center"
+                            },
+                            animate: {
+                                enter: 'animated fadeInRight',
+                                exit: 'animated fadeOutRight'
+                            },
+                            delay: 5000
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-warning example5_warning">Warning</button>
+                <script type="text/javascript">
+                    $(".example5_warning").click(function () {
+                        $.growl({
+                            icon: "fa fa-warning",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'warning',
+                            placement: {
+                                from: "top",
+                                align: "center"
+                            },
+                            animate: {
+                                enter: 'animated fadeInRight',
+                                exit: 'animated fadeOutRight'
+                            },
+                            delay: 5000
+                        });
+                    });
+                </script>
+
+                <button class="btn btn-danger example5_danger">Danger</button>
+                <script type="text/javascript">
+                    $(".example5_danger").click(function () {
+                        $.growl({
+                            icon: "fa fa-exclamation-circle",
+                            title: ' <strong>Bootstrap Growl</strong><br/> ',
+                            message: 'Turning standard Bootstrap alerts into "Growl-like" notifications. Turning standard Bootstrap alerts into "Growl-like" notifications.',
+                            url: 'https://github.com/mouse0270/bootstrap-growl'
+                        },{
+                            type: 'danger',
+                            placement: {
+                                from: "top",
+                                align: "center"
+                            },
+                            animate: {
+                                enter: 'animated fadeInRight',
+                                exit: 'animated fadeOutRight'
+                            },
+                            delay: 5000
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+        
+        
+    </div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,235 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% form_theme form _self %}
+ 
+{% block form_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+        {% for error in errors %}
+            <i class="glyphicon glyphicon-remove form-control-feedback"></i>
+            <small class="help-block">{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</small>
+        {% endfor %}
+    {% endif %}
+{% endspaceless %}
+{% endblock form_errors %}
+
+{% block choice_widget_expanded %}
+{% spaceless %}
+    <div {{ block('widget_container_attributes') }} class="my-form-choices">
+    {% for child in form %}
+        {{ form_widget(child) }}
+    {% endfor %}
+    </div>
+{% endspaceless %}
+{% endblock choice_widget_expanded %}
+
+{% block checkbox_widget %}
+{% spaceless %}
+    <div class="checkbox">
+        <label for="{{ id }}"><input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />{{ label|trans({}, translation_domain) }}</label>
+    </div>
+{% endspaceless %}
+{% endblock checkbox_widget %}
+
+{% block radio_widget %}
+{% spaceless %}
+    <div class="radio">
+        <label for="{{ id }}"><input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />{{ label|trans({}, translation_domain) }}</label>
+    </div>
+{% endspaceless %}
+{% endblock radio_widget %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Bootstrap vlidations PHP</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-2 col-sm-8">
+                <form class="form-horizontal" role="form" action="{{ path('_validations_bootstrap-vlidations-PHP') }}" method="post" {{ form_enctype(form) }} novalidate>
+                    {{ form_errors(form) }}
+                    
+                    <div class="form-group">
+                        <div class="group {% if form_errors(form.first_name) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.first_name, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-4">
+                            {{ form_widget(form.first_name, { 'attr': {'class': 'form-control', 'placeholder': 'First name'} }) }}
+                            {{ form_errors(form.first_name) }}
+                        </div>
+                        </div>
+                        <div class="group {% if form_errors(form.last_name) %} has-feedback has-error {% endif %}">
+                        <div class="col-sm-4">
+                            {{ form_widget(form.last_name, { 'attr': {'class': 'form-control', 'placeholder': 'Last name'} }) }}
+                            {{ form_errors(form.last_name) }}
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group {% if form_errors(form.username) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.username, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.username, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.username) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.email) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.email, 'Email address', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.website) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.website, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.website, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.website) }}
+                        </div>
+                    </div>
+                    {#
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Range</label>
+                        <div class="col-sm-5">
+                            <input type="range" name="points" min="0" max="10" class="form-control">
+                        </div>
+                    </div>
+                    #}
+                    <div class="form-group {% if form_errors(form.password.first) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.password.first, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.password.first, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.password.first) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.password.first) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.password.second, null, {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.password.second, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.password.first) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.gender) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.gender, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                        {#
+                            {% for gr in form.gender.vars.form.children %}
+                            <div class="radio">
+                                <label>
+                                  <input type="radio" value="{{ gr.vars.value }}" name="{{ gr.vars.full_name }}" id="{{ gr.vars.id }}">
+                                  {{ gr.vars.label }}
+                                </label>
+                            </div>
+                            {% endfor %}
+                        #}
+                            {{ form_widget(form.gender) }}
+                            {{ form_errors(form.gender) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.age) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.age, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-3">
+                            {{ form_widget(form.age, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.age) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.birthday) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.birthday, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.birthday, { 'attr': {'class': 'form-control', 'placeholder': 'YYYY/MM/DD'} }) }}
+                            <small class="text-muted">The required date format (YYYY/MM/DD)</small>
+                            {{ form_errors(form.birthday) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.internet_browsers) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.internet_browsers, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.internet_browsers, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.internet_browsers) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.operating_system) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.operating_system, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.operating_system, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.operating_system) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.languages) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.languages, 'Languages', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                        {#
+                            {% for lang in form.languages.vars.form.children %}
+                            <div class="checkbox">
+                                <label>
+                                  <input type="checkbox" value="{{ lang.vars.value }}" name="{{ lang.vars.full_name }}" id="{{ lang.vars.id }}">
+                                  {{ lang.vars.label }}
+                                </label>
+                            </div>
+                            {% endfor %}
+                        #}
+                            {{ form_widget(form.languages) }}
+                            {{ form_errors(form.languages) }}
+                        </div>
+                    </div>
+                    <div class="form-group {% if form_errors(form.programming_languages) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.programming_languages, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-5">
+                            {{ form_widget(form.programming_languages) }}
+                            {{ form_errors(form.programming_languages) }}
+                        </div>
+                    </div>
+                    
+                    <div class="form-group {% if form_errors(form.comment) %} has-feedback has-error {% endif %}">
+                        {{ form_label(form.comment, '', {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+                        <div class="col-sm-8">
+                            {{ form_widget(form.comment, { 'attr': {'class': 'form-control'} }) }}
+                            {{ form_errors(form.comment) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-9 col-lg-offset-3">
+                            <button type="submit" class="btn btn-primary">Sign up</button>
+                            <button type="button" class="btn btn-primary">Sign up 2</button>
+                            <button type="reset" class="btn btn-info">Reset form</button>
+                        </div>
+                    </div>
+                    
+                    {{ form_rest(form) }}
+                </form>
+        		
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="alert alert-success">
+                    <p>Podstawowe typy znacznika input: text, radio, checkbox, password, email, number, url, range, file, reset, submit, file, hidden, image</p>
+                </div>
+            </div>
+        </div>
+        
+    </div> <!-- /container -->
+{% endblock %}

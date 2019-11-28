@@ -1,0 +1,700 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}iCheck{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/forms/iCheck/skins/all.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <style type="text/css">
+        /*
+        .skin .radio label,
+		.skin .checkbox label{
+			padding-left: 0px;
+		}
+	   */
+	
+        /* Minimal skin */		
+        .skin.skin-minimal .radio label,
+		.skin.skin-minimal .checkbox label{
+		    padding-left: 25px;
+		    min-height: 20px;
+		}
+		label .iradio_minimal-green,
+		label .icheckbox_minimal-green{
+		    position: absolute;
+		    top: 1px;
+		    left: 0px;
+		}
+		
+		/* Square skin */
+		.skin.skin-square .radio label,
+		.skin.skin-square .checkbox label{
+		    padding-left: 30px;
+		    min-height: 24px;
+		}
+		label .iradio_square-yellow,
+        label .icheckbox_square-yellow{
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		}
+		
+		/*Flat skin*/
+		.skin.skin-flat .radio label,
+		.skin.skin-flat .checkbox label{
+		    padding-left: 28px;
+		    min-height: 22px;
+		}
+		label .iradio_flat-red,
+        label .icheckbox_flat-red{
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		}
+		
+		/*Polaris skin*/
+		.skin.skin-polaris .row{
+		    background: #2c323c;
+		    color: #7a828b;
+		}
+		.skin.skin-polaris .radio label,
+		.skin.skin-polaris .checkbox label{
+		    padding-left: 32px;
+		    min-height: 32px;
+		    line-height: 30px;
+		}
+		label .iradio_polaris,
+        label .icheckbox_polaris{
+		    position: absolute;
+		    top: 0px;
+		    left: 0px;
+		}
+		
+		/*Futurico skin*/
+		.skin.skin-futurico .row{
+            background: #2e3035;
+            color:#888;
+		}
+		.skin.skin-futurico .radio label,
+		.skin.skin-futurico .checkbox label{
+		    padding-left: 19px;
+		    min-height: 19px;
+		}
+		label .iradio_futurico,
+        label .icheckbox_futurico{
+		    position: absolute;
+		    top: 2px;
+		    left: 0px;
+		}
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('bundles/applicationbootstrap/js/forms/iCheck/icheck.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>iCheck</h1>
+        </div>
+        <form role="form">
+            <div class="row">
+                <div class="col-lg-12">
+                	<h3>Basic Bootstrap</h3>
+                </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Checkbox</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"/>
+                                Checkbox 1
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked/>
+                                Checkbox 2
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" disabled/>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked disabled/>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Radio</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option1">
+                                Radio button 1
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option2" checked>
+                                Radio button 2
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option3" disabled>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option4" checked disabled>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-12">
+        	    	<div class="form-group">
+        	    	    <button type="submit" class="btn btn-primary">Submit</button>
+        	    	    <button type="reset" class="btn btn-default">Reset Button</button>
+        	    	</div>
+        	    </div>
+            </div>
+        </form>
+        <hr/>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $('.skin-minimal input').iCheck({
+			    checkboxClass: 'icheckbox_minimal-green',
+			    radioClass: 'iradio_minimal-green',
+			    increaseArea: '20%' // optional
+			  });
+			});
+		</script>
+        <form role="form" class="skin skin-minimal">
+            <div class="row">
+                <div class="col-lg-12">
+                	<h3>Minimal skin</h3>
+                </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Checkbox</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"/>
+                                Checkbox 1
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked/>
+                                Checkbox 2
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" disabled/>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked disabled/>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Radio</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option1">
+                                Radio button 1
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option2" checked>
+                                Radio button 2
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option3" disabled>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option4" checked disabled>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+        	    	<label>States</label>
+        	    	<div class="form-group">
+						<div class="state icheckbox_minimal-green"></div>
+                  		<div class="state iradio_minimal-green"></div>
+                  		Normal
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_minimal-green hover"></div>
+                        <div class="state iradio_minimal-green hover"></div>
+                        Hover
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_minimal-green checked"></div>
+                        <div class="state iradio_minimal-green checked"></div>
+                        Checked
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_minimal-green disabled"></div>
+                        <div class="state iradio_minimal-green disabled"></div>
+                        Disabled
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_minimal-green checked disabled"></div>
+                        <div class="state iradio_minimal-green checked disabled"></div>
+                        Disabled &amp; checked
+        	    	</div>
+        	    </div>
+            </div>
+        </form>
+        <hr/>
+        
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $('.skin-square input').iCheck({
+			    checkboxClass: 'icheckbox_square-yellow',
+			    radioClass: 'iradio_square-yellow',
+			    increaseArea: '20%' // optional
+			  });
+			});
+		</script>
+        <form role="form" class="skin skin-square">
+            <div class="row">
+                <div class="col-lg-12">
+                	<h3>Square skin</h3>
+                </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Checkbox</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"/>
+                                Checkbox 1
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked/>
+                                Checkbox 2
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" disabled/>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked disabled/>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Radio</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option1">
+                                Radio button 1
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option2" checked>
+                                Radio button 2
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option3" disabled>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option4" checked disabled>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+        	    	<label>States</label>
+        	    	<div class="form-group">
+						<div class="state icheckbox_square-yellow"></div>
+                  		<div class="state iradio_square-yellow"></div>
+                  		Normal
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_square-yellow hover"></div>
+                        <div class="state iradio_square-yellow hover"></div>
+                        Hover
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_square-yellow checked"></div>
+                        <div class="state iradio_square-yellow checked"></div>
+                        Checked
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_square-yellow disabled"></div>
+                        <div class="state iradio_square-yellow disabled"></div>
+                        Disabled
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_square-yellow checked disabled"></div>
+                        <div class="state iradio_square-yellow checked disabled"></div>
+                        Disabled &amp; checked
+        	    	</div>
+        	    </div>
+            </div>
+        </form>
+        <hr/>
+        
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $('.skin-flat input').iCheck({
+			    checkboxClass: 'icheckbox_flat-red',
+			    radioClass: 'iradio_flat-red',
+			    increaseArea: '20%' // optional
+			  });
+			});
+		</script>
+        <form role="form" class="skin skin-flat">
+            <div class="row">
+                <div class="col-lg-12">
+                	<h3>Flat skin</h3>
+                </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Checkbox</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"/>
+                                Checkbox 1
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked/>
+                                Checkbox 2
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" disabled/>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked disabled/>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Radio</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option1">
+                                Radio button 1
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option2" checked>
+                                Radio button 2
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option3" disabled>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option4" checked disabled>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+        	    	<label>States</label>
+        	    	<div class="form-group">
+						<div class="state icheckbox_flat-red"></div>
+                  		<div class="state iradio_flat-red"></div>
+                  		Normal
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_flat-red checked"></div>
+                        <div class="state iradio_flat-red checked"></div>
+                        Checked
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_flat-red disabled"></div>
+                        <div class="state iradio_flat-red disabled"></div>
+                        Disabled
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_flat-red checked disabled"></div>
+                        <div class="state iradio_flat-red checked disabled"></div>
+                        Disabled &amp; checked
+        	    	</div>
+        	    </div>
+            </div>
+        </form>
+        <hr/>
+        
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $('.skin-polaris input').iCheck({
+			    checkboxClass: 'icheckbox_polaris',
+			    radioClass: 'iradio_polaris',
+			    increaseArea: '20%' // optional
+			  });
+			});
+		</script>
+        <form role="form" class="skin skin-polaris">
+            <div class="row">
+                <div class="col-lg-12">
+                	<h3>Polaris skin</h3>
+                </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Checkbox</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"/>
+                                Checkbox 1
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked/>
+                                Checkbox 2
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" disabled/>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked disabled/>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Radio</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option1">
+                                Radio button 1
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option2" checked>
+                                Radio button 2
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option3" disabled>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option4" checked disabled>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+        	    	<label>States</label>
+        	    	<div class="form-group">
+						<div class="state icheckbox_polaris"></div>
+                  		<div class="state iradio_polaris"></div>
+                  		Normal
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_polaris hover"></div>
+                        <div class="state iradio_polaris hover"></div>
+                        Hover
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_polaris checked"></div>
+                        <div class="state iradio_polaris checked"></div>
+                        Checked
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_polaris disabled"></div>
+                        <div class="state iradio_polaris disabled"></div>
+                        Disabled
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_polaris checked disabled"></div>
+                        <div class="state iradio_polaris checked disabled"></div>
+                        Disabled &amp; checked
+        	    	</div>
+        	    </div>
+            </div>
+        </form>
+        <hr/>
+        
+		<script type="text/javascript">
+			$(document).ready(function(){
+			  $('.skin-futurico input').iCheck({
+			    checkboxClass: 'icheckbox_futurico',
+			    radioClass: 'iradio_futurico',
+			    increaseArea: '20%' // optional
+			  });
+			});
+		</script>
+        <form role="form" class="skin skin-futurico">
+            <div class="row">
+                <div class="col-lg-12">
+                	<h3>Futurico skin</h3>
+                </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Checkbox</label>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"/>
+                                Checkbox 1
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked/>
+                                Checkbox 2
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" disabled/>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" checked disabled/>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+                    <div class="form-group">
+                        <label>Radio</label>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option1">
+                                Radio button 1
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" value="option2" checked>
+                                Radio button 2
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option3" disabled>
+                                Disabled
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" value="option4" checked disabled>
+                                Disabled &amp; checked
+                            </label>
+                        </div>
+                    </div>
+        	    </div>
+        	    <div class="col-lg-4">
+        	    	<label>States</label>
+        	    	<div class="form-group">
+						<div class="state icheckbox_futurico"></div>
+                  		<div class="state iradio_futurico"></div>
+                  		Normal
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_futurico checked"></div>
+                        <div class="state iradio_futurico checked"></div>
+                        Checked
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_futurico disabled"></div>
+                        <div class="state iradio_futurico disabled"></div>
+                        Disabled
+        	    	</div>
+        	    	<div class="form-group">
+                        <div class="state icheckbox_futurico checked disabled"></div>
+                        <div class="state iradio_futurico checked disabled"></div>
+                        Disabled &amp; checked
+        	    	</div>
+        	    </div>
+            </div>
+        </form>
+        <hr/>
+        
+        
+    </div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,8 @@
+<div class="bs-tabs">
+  <ul class="nav nav-tabs">
+	<li class="{{ app.request.get('_route') == '_file-upload-jquery-ui-bootstrop-basic' ? 'active' : '' }}"><a href="{{ path('_file-upload-jquery-ui-bootstrop-basic') }}">Basic</a></li>
+	<li class="{{ app.request.get('_route') == '_file-upload-jquery-ui-bootstrop-basic-plus' ? 'active' : '' }}"><a href="{{ path('_file-upload-jquery-ui-bootstrop-basic-plus') }}">Basic Plus</a></li>
+	<li class="{{ app.request.get('_route') == '_file-upload-jquery-ui-bootstrop-basic-plus-ui' ? 'active' : '' }}"><a href="{{ path('_file-upload-jquery-ui-bootstrop-basic-plus-ui') }}">Basic Plus UI</a></li>
+	<li class="{{ app.request.get('_route') == '_file-upload-jquery-ui-bootstrop-angularjs' ? 'active' : '' }}"><a href="{{ path('_file-upload-jquery-ui-bootstrop-angularjs') }}">AngularJS</a></li>
+  </ul>
+</div>

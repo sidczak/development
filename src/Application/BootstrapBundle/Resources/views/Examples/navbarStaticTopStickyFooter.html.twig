@@ -1,0 +1,37 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Static Top Navbar Example for Bootstrap{% endblock %}
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_static_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+{% block stylesheets %}
+  <style type="text/css">
+    /*body {
+      padding-top: 0px;
+    }*/
+  </style>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+            <div class="container">
+            
+                {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+                
+            </div>
+        </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Sticky footer with static navbar</h1>
+        </div>
+        <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body > .container</code>.</p>
+        <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+    </div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,36 @@
+.container > .row > div .cell{
+    background: #c90d50;
+    text-align: center;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    color: #fff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 2px;
+}
+.container:first-child > .row > div .cell{
+    background: #76ad14;
+}
+.container > .row > div:first-child .cell{
+    background: #262422;
+}
+.container > .row > div .cell:hover{
+    background: #262422;
+
+    -webkit-transition: background 240ms ease;
+    -moz-transition: background 240ms ease;
+    -o-transition: background 240ms ease;
+    -ms-transition: background 240ms ease;
+    transition: background 240ms ease;
+}
+.container > .row > div .cell:active{
+    /*margin-top: 2px;*/
+    /*margin-bottom: 10px;*/
+    background: #33312f;
+
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    -ms-transition: none;
+    transition: none;
+}

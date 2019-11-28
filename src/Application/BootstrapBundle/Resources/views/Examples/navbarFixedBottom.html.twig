@@ -1,0 +1,43 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Fixed Top Navbar Example for Bootstrap{% endblock %}
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+{% block stylesheets %}
+  <style type="text/css">
+    /*body {
+      padding-top: 71px;
+    }*/
+  </style>  
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <!-- Main component for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <h1>Navbar example</h1>
+            <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+            <p>To see the difference between static and fixed top navbars, just scroll.</p>
+            <p>
+              <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+            </p>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}
+
+{% block footer %}{% endblock %}

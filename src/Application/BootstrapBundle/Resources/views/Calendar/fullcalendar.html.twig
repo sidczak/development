@@ -1,0 +1,229 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/calendar/fullcalendar/fullcalendar.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <style>
+		#external-events {
+			padding: 0 10px;
+			border: 1px solid #ccc;
+			background: #eee;
+			text-align: left;
+		}
+			
+		#external-events h4 {
+			font-size: 16px;
+			margin-top: 0;
+			padding-top: 1em;
+		}
+			
+		#external-events .fc-event {
+			margin: 10px 0;
+			cursor: pointer;
+		}
+			
+		#external-events p {
+			margin: 1.5em 0;
+			font-size: 11px;
+			color: #666;
+		}
+			
+		#external-events p input {
+			margin: 0;
+			vertical-align: middle;
+		}
+    </style>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/calendar/fullcalendar/lib/moment.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/calendar/fullcalendar/lib/jquery-ui.custom.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/calendar/fullcalendar/fullcalendar.min.js') }}" type="text/javascript"></script>
+
+	<script type="text/javascript">
+	
+		$(document).ready(function() {
+
+
+			/* initialize the external events
+			-----------------------------------------------------------------*/
+		
+			$('#external-events .fc-event').each(function() {
+			
+				// create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+				// it doesn't need to have a start or end
+				var eventObject = {
+					title: $.trim($(this).text()) // use the element's text as the event title
+				};
+				
+				// store the Event Object in the DOM element so we can get to it later
+				$(this).data('eventObject', eventObject);
+				
+				// make the event draggable using jQuery UI
+				$(this).draggable({
+					zIndex: 999,
+					revert: true,      // will cause the event to go back to its
+					revertDuration: 0  //  original position after the drag
+				});
+				
+			});
+		
+		
+			/* initialize the calendar
+			-----------------------------------------------------------------*/
+			
+			$('#calendar').fullCalendar({
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay'
+				},
+				defaultDate: '2014-09-12',
+				selectable: true,
+				selectHelper: true,
+				select: function(start, end) {
+					var title = prompt('Event Title:');
+					var eventData;
+					if (title) {
+						eventData = {
+							title: title,
+							start: start,
+							end: end
+						};
+						$('#calendar').fullCalendar('renderEvent', eventData, true); // stick? = true
+					}
+					$('#calendar').fullCalendar('unselect');
+				},
+				weekNumbers: true,
+				editable: true,
+
+				droppable: true, // this allows things to be dropped onto the calendar !!!
+				drop: function(date) { // this function is called when something is dropped
+				
+					// retrieve the dropped element's stored Event Object
+					var originalEventObject = $(this).data('eventObject');
+					
+					// we need to copy it, so that multiple events don't have a reference to the same object
+					var copiedEventObject = $.extend({}, originalEventObject);
+					
+					// assign it the date that was reported
+					copiedEventObject.start = date;
+					
+					// render the event on the calendar
+					// the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+					$('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+					
+					// is the "remove after drop" checkbox checked?
+					if ($('#drop-remove').is(':checked')) {
+						// if so, remove the element from the "Draggable Events" list
+						$(this).remove();
+					}
+					
+				},
+				
+				eventLimit: true, // allow "more" link when too many events
+				events: [
+					{
+						title: 'All Day Event',
+						start: '2014-09-01'
+					},
+					{
+						title: 'Long Event',
+						start: '2014-09-07',
+						end: '2014-09-10'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2014-09-09T16:00:00'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2014-09-16T16:00:00'
+					},
+					{
+						title: 'Conference',
+						start: '2014-09-11',
+						end: '2014-09-13'
+					},
+					{
+						title: 'Meeting',
+						start: '2014-09-12T10:30:00',
+						end: '2014-09-12T12:30:00'
+					},
+					{
+						title: 'Lunch',
+						start: '2014-09-12T12:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2014-09-12T14:30:00'
+					},
+					{
+						title: 'Happy Hour',
+						start: '2014-09-12T17:30:00'
+					},
+					{
+						title: 'Dinner',
+						start: '2014-09-12T20:00:00'
+					},
+					{
+						title: 'Birthday Party',
+						start: '2014-09-13T07:00:00'
+					},
+					{
+						title: 'Click for Google',
+						url: 'http://google.com/',
+						start: '2014-09-28'
+					}
+				]
+			});
+			
+		});
+	
+	</script>
+	
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    
+        <div class="row">
+            <div class="col-lg-3">
+				<div id='external-events'>
+					<h4>Draggable Events</h4>
+					<div class='fc-event'>My Event 1</div>
+					<div class='fc-event'>My Event 2</div>
+					<div class='fc-event'>My Event 3</div>
+					<div class='fc-event'>My Event 4</div>
+					<div class='fc-event'>My Event 5</div>
+					<p>
+						<input type='checkbox' id='drop-remove' />
+						<label for='drop-remove'>remove after drop</label>
+					</p>
+				</div>
+        	</div>
+            <div class="col-lg-9">
+        		<div id="calendar"></div>
+        	</div>
+        </div>
+        
+    </div> <!-- /container -->
+{% endblock %}

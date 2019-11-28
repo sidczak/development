@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset={{ _charset }}"/>
+        <meta name="robots" content="noindex,nofollow" />
+        
+        <!-- znacznik meta dla responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <title>{% block title %}Bootstrap Page{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('xfavicon.ico') }}" />
+        
+        {% if app.session.get('theme') is empty %}
+            <link href="{{ asset('bundles/applicationbootstrap/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'bootstrap-theme' %}
+            <link href="{{ asset('bundles/applicationbootstrap/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+            <link href="{{ asset('bundles/applicationbootstrap/css/bootstrap-theme.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'amelia' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/amelia/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'cerulean' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/cerulean/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'cosmo' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/cosmo/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'cyborg' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/cyborg/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'darkly' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/darkly/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'flatly' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/flatly/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'journal' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/journal/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'lumen' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/lumen/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'paper' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/paper/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'readable' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/readable/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'sandstone' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/sandstone/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'simplex' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/simplex/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'slate' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/slate/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />        
+        {% elseif app.session.get('theme') == 'spacelab' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/spacelab/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'superhero' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/superhero/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'united' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/united/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% elseif app.session.get('theme') == 'yeti' %}
+            <link href="{{ asset('bundles/applicationtools/css/bootswatch/yeti/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% endif %}
+        
+        {% block layoutstyle %}
+          <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+        {% endblock %}
+        
+        {% block stylesheets %}{% endblock %}
+        
+        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+        <!--[if lt IE 9]><script src="{{ asset('bundles/applicationbootstrap/js/assets/js/ie8-responsive-file-warning.js') }}" type="text/javascript"></script><![endif]-->
+        <script src="{{ asset('bundles/applicationbootstrap/js/assets/js/ie-emulation-modes-warning.js') }}" type="text/javascript"></script>
+        
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" type="text/javascript"></script>
+        <![endif]-->
+
+        {% block jquery_version %}
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+        {% endblock %}
+        
+        {#
+        <script type="text/javascript">
+          if (typeof jQuery == 'undefined'){
+            document.write(unescape('%3Cscript src="../../scripts/jquery-min.js" %3E%3C/script%3E'));
+          }
+        </script>
+        #}
+
+        <script src="{{ asset('bundles/applicationbootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
+        
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{{ asset('bundles/applicationbootstrap/js/assets/js/ie10-viewport-bug-workaround.js') }}" type="text/javascript"></script>
+
+        {% block javascripts %}{% endblock %}
+
+    </head>
+    <body>
+    
+        {% block navigation %}
+            <!-- Static navbar -->
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                
+                    {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+                    
+                </div>
+            </nav>
+        {% endblock %}
+        
+        {% block body %}{% endblock %}
+        
+        {% block footer %}
+            <div class="footer">
+              <div class="container">
+                  <p class="text-muted">Place sticky footer content here.</p>
+              </div>
+            </div>
+        {% endblock %}
+        
+    </body>
+</html>

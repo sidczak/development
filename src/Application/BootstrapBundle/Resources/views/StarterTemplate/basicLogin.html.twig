@@ -1,0 +1,109 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Login</h1>
+        </div>
+        <div class="row">
+	      <div class="col-md-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                	<div class="panel-title"><h3>Please sign in</h3></div>
+                </div>
+                <div class="panel-body">
+			        <form class="form-login" role="form">
+				        <div class="form-group has-feedback">
+				            <input type="text" class="form-control first" placeholder="Username">
+				            <span class="fa fa-user form-control-feedback"></span>
+				        </div>
+				        <div class="form-group has-feedback">
+				            <input type="password" class="form-control last" placeholder="Password">
+				            <span class="fa fa-lock form-control-feedback"></span>
+				        </div>
+				        <div class="form-group has-feedback">
+					        <div class="checkbox">
+					          <label>
+					            <input type="checkbox" value="remember-me"> Remember me
+					          </label>
+					        </div>
+				        </div>
+				        <div class="text-center">
+				          <button class="btn btn-primary" type="submit">Sign in</button>
+				        </div>
+			        </form>
+
+                </div>
+                <div class="panel-footer">
+			        <div class="login-links">
+				        <p><a href="{{ path('_starter-template_basic-remind') }}">Forgot password?</a></p>
+					    <p><a href="{{ path('_starter-template_basic-register') }}">Don't have an account? <b>Sign Up</b></a></p>
+			        </div>
+                </div>
+              </div>
+	      </div>
+
+	      <div class="col-md-6">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                	<div class="panel-title"><h3>Please sign in</h3></div>
+                </div>
+                <div class="panel-body">
+			        <form class="form-login" role="form">
+				        <div class="form-group has-error has-feedback">
+				            <input type="text" class="form-control first" placeholder="Username">
+				            <span class="fa fa-user form-control-feedback"></span>
+				        </div>
+				        <div class="form-group has-error has-feedback">
+				            <input type="password" class="form-control last" placeholder="Password">
+				            <span class="fa fa-lock form-control-feedback"></span>
+				            <small class="help-block">Your username or password is wrong!</small>
+				        </div>
+				        <div class="form-group has-feedback">
+					        <div class="checkbox">
+					          <label>
+					            <input type="checkbox" value="remember-me"> Remember me
+					          </label>
+					        </div>
+				        </div>
+				        <div class="text-center">
+				          <button class="btn btn-primary" type="submit">Sign in</button>
+				        </div>
+			        </form>
+
+                </div>
+                <div class="panel-footer">
+			        <div class="login-links">
+				        <p><a href="{{ path('_starter-template_basic-remind') }}">Forgot password?</a></p>
+					    <p><a href="{{ path('_starter-template_basic-register') }}">Don't have an account? <b>Sign Up</b></a></p>
+			        </div>
+                </div>
+              </div>
+	      </div>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

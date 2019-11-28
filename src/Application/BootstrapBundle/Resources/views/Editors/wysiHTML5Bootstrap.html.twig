@@ -1,0 +1,55 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/editors/wysihtml5bootstrap/bootstrap3-wysiwyg5.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/editors/wysihtml5bootstrap/lib/wysihtml5-0.3.0.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/editors/wysihtml5bootstrap/src/bootstrap3-wysihtml5.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+            //bootstrap WYSIHTML5 - text editor
+            $(".textarea").wysihtml5({
+                stylesheets: ["{{ asset('bundles/applicationbootstrap/css/editors/wysihtml5bootstrap/bootstrap3-wysiwyg5-color.css') }}"],
+                "html": true,
+                "color": true
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+        
+            <div class="col-lg-12">
+                <h1 class="page-header">bootstrap-wysihtml5 <small>Simple, beautiful wysiwyg editors</small></h1>
+                <form>
+                    <div class="form-group">
+                        <textarea class="textarea form-control" placeholder="Enter text ..." style="width: 100%; height: 200px"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

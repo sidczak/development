@@ -1,0 +1,150 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+	<script src="{{ asset('bundles/applicationbootstrap/js/forms/jquery.inputmask/dist/inputmask/jquery.inputmask.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/forms/jquery.inputmask/dist/inputmask/jquery.inputmask.date.extensions.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('bundles/applicationbootstrap/js/forms/jquery.inputmask/dist/inputmask/jquery.inputmask.extensions.js') }}" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+		$(function() {
+			
+			$("[data-mask]").inputmask();
+
+			//Datemask dd/mm/yyyy
+	        $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
+	        //Datemask2 mm/dd/yyyy
+	        $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+
+	        $("#zip_code").inputmask("99-999", {"placeholder": "__-___"});
+		});
+	</script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Input masks
+          <a class="btn btn-primary btn-xs" href="http://robinherbots.github.io/jquery.inputmask" target="_blank"><i class="fa fa-link"></i></a>
+          <a class="btn btn-primary btn-xs" href="https://github.com/RobinHerbots/jquery.inputmask" target="_blank"><i class="fa fa-github"></i></a>
+          </h1>
+          <p>Dzięki bibliotece jquery.inputmask, możemy tworzyć własne wzorce danych wpisywanych do formularza lub wykorzystwać już zdefiniowane w bibliotekach.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+        		<h2>Input masks HTML</h2>
+        		
+        		<form role="form">
+        			<div class="form-group">
+        				<label>Date masks:</label>
+        				<p><code>&lt;input type="text" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask&gt;</code></p>
+        				<div class="input-group">
+        				  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+        				  <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+        				</div>
+        			</div>
+        			<div class="form-group">
+        				<label>Date masks:</label>
+        				<p><code>&lt;input type="text" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask&gt;</code></p>
+        				<div class="input-group">
+        				  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+        				  <input type="text" class="form-control" data-inputmask="'alias': 'mm/dd/yyyy'" data-mask>
+        				</div>
+        			</div>
+        			<div class="form-group">
+        				<label>US phone mask:</label>
+        				<p><code>&lt;input type="text" data-inputmask='"mask": "(999) 999-9999"' data-mask&gt;</code></p>
+        				<div class="input-group">
+        				  <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+        				  <input type="text" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
+        				</div>
+        			</div>
+        			<div class="form-group">
+        				<label>Intl US phone mask:</label>
+        				<p><code>&lt;input type="text" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask&gt;</code></p>
+        				<div class="input-group">
+        				  <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+        				  <input type="text" class="form-control" data-inputmask="'mask': ['999-999-9999 [x99999]', '+099 99 99 9999[9]-9999']" data-mask>
+        				</div>
+        			</div>
+        			<div class="form-group">
+        				<label>IP mask:</label>
+        				<p><code>&lt;input type="text" data-inputmask="'alias': 'ip'" data-mask&gt;</code></p>
+        				<div class="input-group">
+        				  <span class="input-group-addon"><i class="fa fa-laptop"></i></span>
+        				  <input type="text" class="form-control" data-inputmask="'alias': 'ip'" data-mask>
+        				</div>
+        			</div>
+        		</form>
+            </div>
+            <div class="col-lg-6">
+                <h2>Input masks JS</h2>
+        		<form role="form">
+        			<div class="form-group">
+        				<label>Date masks (id="datemask"):</label>
+        				<p><code>$("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});</code></p>
+        				<div class="input-group">
+        				  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+        				  <input type="text" class="form-control" id="datemask">
+        				</div>
+        			</div>
+        			<div class="form-group">
+        				<label>Date masks (id="datemask2"):</label>
+        				<p><code>$("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});</code></p>
+        				<div class="input-group">
+        				  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+        				  <input type="text" class="form-control" id="datemask2">
+        				</div>
+        			</div>
+        			<hr/>
+        			<div class="form-group">
+	        			<p>Przykład wzorca kodu pocztowego wywołany ze skrytptu:</p>
+        				<label>zip code (id="zip_code"):</label>
+        				<p><code>$("#zip_code").inputmask("99-999", {"placeholder": "__-___"});</code></p>
+        				<div class="input-group">
+        				  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        				  <input type="text" class="form-control" id="zip_code">
+        				</div>
+        			</div>
+        			<div class="form-group">
+        			    <p>lub przykład wzorca zapisany w html<br/>
+        			    	<code>
+		        				&lt;input type="text" data-inputmask='"mask": "99-999"' data-mask&gt;
+		        			</code><br/>
+		        			
+		        			i wywołanie skryptu<br/>
+        			        <code>
+        			            $("[data-mask]").inputmask();
+        			        </code>
+		        		</p>
+        				<label>zip code:</label>
+        				<div class="input-group">
+        				  <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        				  <input type="text" class="form-control" data-inputmask='"mask": "99-999"' data-mask>
+        				</div>
+        			</div>
+        		</form>
+            </div>        
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

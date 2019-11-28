@@ -1,0 +1,255 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <style type="text/css">
+		.ex-tooltip{position:absolute;z-index:1000}
+		.ex-tooltip{
+		    border-radius: 4px;
+		    padding: 6px 10px;
+		    color: #666;
+		    background:rgba(255,255,255,0.8);
+		    border:solid 2px rgba(230,230,230,0.8);
+		    font-family:sans-serif;
+		    font-size:12px;
+		    text-align:center;
+		}
+    </style>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/charts/xcharts/xcharts.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/xcharts/d3/d3.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/charts/xcharts/xcharts.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">xCharts</h2>
+            </div>
+        </div>
+        <!-- /.row -->
+     
+        <div class="row">
+        	<div class="col-lg-6">
+                <h3 class="page-header">Your Basic Bar Chart</h3>
+                
+                <figure style="width: 100%; height: 300px;" id="example1"></figure>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="page-header">Multi-Series Bar Chart</h3>
+                
+                <figure style="width: 100%; height: 300px;" id="example2"></figure>
+            </div>
+        </div>
+        <!-- /.row -->
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 class="page-header">Time-Series Line</h3>
+                
+                <figure style="width: 100%; height: 300px;" id="example3"></figure>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="page-header">Interacting With Points</h3>
+                
+                <figure style="width: 100%; height: 300px;" id="example4"></figure>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div> <!-- /container -->
+    
+    <script type="text/javascript">
+
+		//example1 Your Basic Bar Chart
+		var data = {
+    		  "xScale": "ordinal",
+    		  "yScale": "linear",
+    		  "main": [
+    		    {
+    		      "className": ".pizza",
+    		      "data": [
+    		        {
+    		          "x": "Pepperoni",
+    		          "y": 4
+    		        },
+    		        {
+    		          "x": "Cheese",
+    		          "y": 8
+    		        }
+    		      ]
+    		    }
+    		  ]
+    		};
+		var myChart = new xChart('bar', data, '#example1');
+    
+    	//example2 Multi-Series Bar Chart
+		var data = {
+    		  "xScale": "ordinal",
+    		  "yScale": "linear",
+    		  "main": [
+    		    {
+    		      "className": ".pizza",
+    		      "data": [
+    		        {
+    		          "x": "Pepperoni",
+    		          "y": 4
+    		        },
+    		        {
+    		          "x": "Cheese",
+    		          "y": 8
+    		        }
+    		      ]
+    		    },
+    		    {
+    		      "className": ".pizza",
+    		      "data": [
+    		        {
+    		          "x": "Pepperoni",
+    		          "y": 6
+    		        },
+    		        {
+    		          "x": "Cheese",
+    		          "y": 5
+    		        }
+    		      ]
+    		    }
+    		  ]
+    		};
+		var myChart = new xChart('bar', data, '#example2');
+    
+        //example3 Time-Series Line
+		var data = {
+		  "xScale": "time",
+		  "yScale": "linear",
+		  "type": "line",
+		  "main": [
+		    {
+		      "className": ".pizza",
+		      "data": [
+		        {
+		          "x": "2012-11-05",
+		          "y": 1
+		        },
+		        {
+		          "x": "2012-11-06",
+		          "y": 6
+		        },
+		        {
+		          "x": "2012-11-07",
+		          "y": 13
+		        },
+		        {
+		          "x": "2012-11-08",
+		          "y": -3
+		        },
+		        {
+		          "x": "2012-11-09",
+		          "y": -4
+		        },
+		        {
+		          "x": "2012-11-10",
+		          "y": 9
+		        },
+		        {
+		          "x": "2012-11-11",
+		          "y": 6
+		        }
+		      ]
+		    }
+		  ]
+		};
+		var opts = {
+		  "dataFormatX": function (x) { return d3.time.format('%Y-%m-%d').parse(x); },
+		  "tickFormatX": function (x) { return d3.time.format('%A')(x); }
+		};
+		var myChart = new xChart('line', data, '#example3', opts);
+
+
+
+
+		//example4 Interacting With Points
+		var tt = document.createElement('div'),
+		  leftOffset = -(~~$('html').css('padding-left').replace('px', '') + ~~$('body').css('margin-left').replace('px', '')),
+		  topOffset = -32;
+		tt.className = 'ex-tooltip';
+		document.body.appendChild(tt);
+		
+		var data = {
+		  "xScale": "time",
+		  "yScale": "linear",
+		  "main": [
+		    {
+		      "className": ".pizza",
+		      "data": [
+		        {
+		          "x": "2012-11-05",
+		          "y": 6
+		        },
+		        {
+		          "x": "2012-11-06",
+		          "y": 6
+		        },
+		        {
+		          "x": "2012-11-07",
+		          "y": 8
+		        },
+		        {
+		          "x": "2012-11-08",
+		          "y": 3
+		        },
+		        {
+		          "x": "2012-11-09",
+		          "y": 4
+		        },
+		        {
+		          "x": "2012-11-10",
+		          "y": 9
+		        },
+		        {
+		          "x": "2012-11-11",
+		          "y": 6
+		        }
+		      ]
+		    }
+		  ]
+		};
+		var opts = {
+		  "dataFormatX": function (x) { return d3.time.format('%Y-%m-%d').parse(x); },
+		  "tickFormatX": function (x) { return d3.time.format('%A')(x); },
+		  "mouseover": function (d, i) {
+		    var pos = $(this).offset();
+		    $(tt).text(d3.time.format('%A')(d.x) + ': ' + d.y)
+		      .css({top: topOffset + pos.top, left: pos.left + leftOffset})
+		      .show();
+		  },
+		  "mouseout": function (x) {
+		    $(tt).hide();
+		  }
+		};
+		var myChart = new xChart('line-dotted', data, '#example4', opts);
+    	
+    
+    </script>
+    
+{% endblock %}

@@ -1,0 +1,149 @@
+application_bootstrap_start:
+    pattern:  /bootstrap
+    defaults: { _controller: ApplicationBootstrapBundle:Start:index }
+
+application_bootstrap_examples:
+    resource: "@ApplicationBootstrapBundle/Controller/ExamplesController.php"
+    type:     annotation
+    prefix:   /examples
+    
+application_bootstrap_themes:
+    resource: "@ApplicationBootstrapBundle/Controller/ThemesController.php"
+    type:     annotation
+    prefix:   /themes
+    
+application_bootstrap_navigation-menus:
+    resource: "@ApplicationBootstrapBundle/Controller/NavigationMenusController.php"
+    type:     annotation
+    prefix:   /navigation-menus
+    
+application_bootstrap_multilevel-menu:
+    resource: "@ApplicationBootstrapBundle/Controller/MultilevelMenuController.php"
+    type:     annotation
+    prefix:   /multilevel-menu
+    
+application_bootstrap_blog:
+    resource: "@ApplicationBootstrapBundle/Controller/BlogController.php"
+    type:     annotation
+    prefix:   /blog
+    
+application_bootstrap_ecommerce:
+    resource: "@ApplicationBootstrapBundle/Controller/EcommerceController.php"
+    type:     annotation
+    prefix:   /ecommerce
+    
+application_bootstrap_business:
+    resource: "@ApplicationBootstrapBundle/Controller/BusinessController.php"
+    type:     annotation
+    prefix:   /business
+    
+application_bootstrap_portfolio:
+    resource: "@ApplicationBootstrapBundle/Controller/PortfolioController.php"
+    type:     annotation
+    prefix:   /portfolio
+    
+application_bootstrap_starter-template:
+    resource: "@ApplicationBootstrapBundle/Controller/StarterTemplateController.php"
+    type:     annotation
+    prefix:   /starter-template
+    
+application_bootstrap_full-banner:
+    resource: "@ApplicationBootstrapBundle/Controller/FullBannerController.php"
+    type:     annotation
+    prefix:   /full-banner
+    
+application_bootstrap_admin-dashboard:
+    resource: "@ApplicationBootstrapBundle/Controller/AdminDashboardController.php"
+    type:     annotation
+    prefix:   /admin-dashboard
+    
+application_bootstrap_admin-dashboard2:
+    resource: "@ApplicationBootstrapBundle/Controller/AdminDashboard2Controller.php"
+    type:     annotation
+    prefix:   /admin-dashboard2
+    
+application_bootstrap_one-page-websites:
+    resource: "@ApplicationBootstrapBundle/Controller/OnePageWebsitesController.php"
+    type:     annotation
+    prefix:   /one-page-websites
+
+application_bootstrap_charts:
+    resource: "@ApplicationBootstrapBundle/Controller/ChartsController.php"
+    type:     annotation
+    prefix:   /charts
+
+application_bootstrap_editors:
+    resource: "@ApplicationBootstrapBundle/Controller/EditorsController.php"
+    type:     annotation
+    prefix:   /editors
+
+application_bootstrap_calendar:
+    resource: "@ApplicationBootstrapBundle/Controller/CalendarController.php"
+    type:     annotation
+    prefix:   /calendar
+    
+application_bootstrap_tables:
+    resource: "@ApplicationBootstrapBundle/Controller/TablesController.php"
+    type:     annotation
+    prefix:   /tables
+    
+application_bootstrap_scrollbars:
+    resource: "@ApplicationBootstrapBundle/Controller/ScrollbarsController.php"
+    type:     annotation
+    prefix:   /scrollbars
+    
+application_bootstrap_widgets:
+    resource: "@ApplicationBootstrapBundle/Controller/WidgetsController.php"
+    type:     annotation
+    prefix:   /widgets
+    
+application_bootstrap_sliders:
+    resource: "@ApplicationBootstrapBundle/Controller/SlidersController.php"
+    type:     annotation
+    prefix:   /sliders
+    
+application_bootstrap_maps:
+    resource: "@ApplicationBootstrapBundle/Controller/MapsController.php"
+    type:     annotation
+    prefix:   /maps
+    
+application_bootstrap_forms:
+    resource: "@ApplicationBootstrapBundle/Controller/FormsController.php"
+    type:     annotation
+    prefix:   /forms
+
+application_bootstrap_validations:
+    resource: "@ApplicationBootstrapBundle/Controller/ValidationsController.php"
+    type:     annotation
+    prefix:   /validations
+    
+application_bootstrap_timeline:
+    resource: "@ApplicationBootstrapBundle/Controller/TimelineController.php"
+    type:     annotation
+    prefix:   /timeline
+    
+application_bootstrap_mailbox:
+    resource: "@ApplicationBootstrapBundle/Controller/MailboxController.php"
+    type:     annotation
+    prefix:   /mailbox
+    
+application_bootstrap_chat:
+    resource: "@ApplicationBootstrapBundle/Controller/ChatController.php"
+    type:     annotation
+    prefix:   /chat
+    
+application_bootstrap_file-upload:
+    resource: "@ApplicationBootstrapBundle/Controller/FileUploadController.php"
+    type:     annotation
+    prefix:   /file-upload
+    
+application_bootstrap_wizard:
+    resource: "@ApplicationBootstrapBundle/Controller/WizardController.php"
+    type:     annotation
+    prefix:   /wizard
+    
+application_bootstrap_error-pages:
+    resource: "@ApplicationBootstrapBundle/Controller/ErrorPagesController.php"
+    type:     annotation
+    prefix:   /error-pages
+    

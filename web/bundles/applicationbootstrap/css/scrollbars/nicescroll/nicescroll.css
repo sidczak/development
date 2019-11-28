@@ -1,0 +1,25 @@
+#boxscroll1 {
+    height: 300px;
+    border: 2px solid #00F;
+    overflow: auto;
+}
+#boxscroll2 {
+    height: 300px;
+    border: 2px solid #F00;
+    overflow: auto;
+}
+
+#boxscroll3 {}
+#boxframe {
+    height: 300px;
+    border: 2px solid #0F0;
+    overflow:auto;
+    margin-top: 40px;
+}
+#boxscroll4 {
+    height: 300px;
+    background-color: #F1F1F1;
+    overflow: auto;
+    margin-top: 40px;
+    padding: 20px;
+}

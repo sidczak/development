@@ -1,0 +1,13 @@
+{% extends 'ApplicationToolsBundle::layoutBootswatch.html.twig' %}
+
+{% block title %}Bootswatch - Spacelab{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/bootswatch/spacelab/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block body %}
+
+    {% include 'ApplicationToolsBundle:Bootswatch:_body.html.twig' %}
+    
+{% endblock %}

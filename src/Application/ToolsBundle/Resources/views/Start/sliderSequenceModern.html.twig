@@ -1,0 +1,51 @@
+{% extends 'ApplicationToolsBundle::layout12.html.twig' %}
+
+{% block title %}Slider Simple Animation{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationtools/css/sequence/sequence-modern-slide-in.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationtools/js/sequence/jquery.sequence.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationtools/js/sequence/sequence-modern-slide-in.js') }}" type="text/javascript"></script>
+{% endblock %}
+    
+{% block body %}
+
+		<div class="sequence-theme">
+			<div id="sequence">
+
+				<img class="sequence-prev" src="{{ asset('bundles/applicationtools/images/sequence/modern-slide-in/bt-prev.png') }}" alt="Previous Frame" />
+				<img class="sequence-next" src="{{ asset('bundles/applicationtools/images/sequence/modern-slide-in/bt-next.png') }}" alt="Next Frame" />
+
+				<ul class="sequence-canvas">
+					<li class="animate-in">
+						<h2 class="title">Built using Sequence.js</h2>
+						<h3 class="subtitle">The Responsive Slider with Advanced CSS3 Transitions</h3>
+						<img class="model" src="{{ asset('bundles/applicationtools/images/sequence/modern-slide-in/model1.png') }}" alt="Model 1" />
+					</li>
+					<li>
+						<h2 class="title">Creative Control</h2>
+						<h3 class="subtitle">Create unique sliders using CSS3 transitions</h3>
+						<img class="model" src="{{ asset('bundles/applicationtools/images/sequence/modern-slide-in/model2.png') }}" alt="Model 2" />
+					</li>
+					<li>
+						<h2 class="title">Cutting Edge</h2>
+						<h3 class="subtitle">Supports modern browsers, old browsers (IE7+), touch devices and responsive designs</h3>
+						<img class="model" src="{{ asset('bundles/applicationtools/images/sequence/modern-slide-in/model3.png') }}" alt="Model 3" />
+					</li>
+				</ul>
+
+				<ul class="sequence-pagination">
+					<li><img src="{{ asset('bundles/applicationtools/images/sequence/modern-slide-in/tn-model1.png') }}" alt="Model 1" /></li>
+					<li><img src="{{ asset('bundles/applicationtools/images/sequence/modern-slide-in/tn-model2.png') }}" alt="Model 2" /></li>
+					<li><img src="{{ asset('bundles/applicationtools/images/sequence/modern-slide-in/tn-model3.png') }}" alt="Model 3" /></li>
+				</ul>
+
+			</div>
+		</div>
+		<p>Template Edge.</p>
+		<p>Powyższy slider znajdziemy na stronie <a href="http://www.sequencejs.com/themes/" target="_blank">http://www.sequencejs.com/themes/</a></p>
+
+{% endblock %}

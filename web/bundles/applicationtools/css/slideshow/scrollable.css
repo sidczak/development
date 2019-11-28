@@ -1,0 +1,41 @@
+/* minimal settings */
+.content_scrollable{
+	margin-top: 2px;
+	height: 30px;
+}
+.scrollable {
+	/* required settings for the root element */
+	position:relative;
+	overflow:hidden;
+	/* configurable styling */
+	line-height:22px;
+	height:22px;
+}
+.scrollable .items { 	
+	position:relative;
+}
+.scrollable .items div {
+	padding:0px 4px;
+	text-shadow: 1px 1px 1px #FFF;
+	font-weight: bold;
+}
+.scrollable .items img{
+	margin-top:4px;
+	margin-right:4px;
+	float:left;
+}
+.navi {
+	height:30px;	
+	margin-bottom:20px;	
+}
+.navi a {
+	width:20px;
+	height: 20px;
+	background-color:blue;
+	display:block;
+	float:left;
+	margin-right:10px;
+}
+.navi a.active {
+	background-color:yellow;		
+}

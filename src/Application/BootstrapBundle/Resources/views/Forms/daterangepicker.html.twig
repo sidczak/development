@@ -1,0 +1,254 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/forms/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('bundles/applicationbootstrap/css/fonts/font-awesome/font-awesome.css') }}" rel="stylesheet" type="text/css" media="all" />
+    
+    <link href="{{ asset('bundles/applicationbootstrap/css/forms/timepicker/bootstrap-timepicker.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('bundles/applicationbootstrap/js/forms/daterangepicker/moment.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/applicationbootstrap/js/forms/daterangepicker/daterangepicker.js') }}" type="text/javascript"></script>
+    
+    <script src="{{ asset('bundles/applicationbootstrap/js/forms/timepicker/bootstrap-timepicker.js') }}" type="text/javascript"></script>
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h1>Date Range Picker for Bootstrap <small>Preview</small></h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <h2>Date picker</h2>
+                <p>Podobna biblioteka:
+                <a class="btn btn-primary btn-xs" href="http://bootstrap-datepicker.readthedocs.org/en/latest/index.html" target="_blank"><i class="fa fa-link"></i></a>
+                <a class="btn btn-primary btn-xs" href="https://github.com/eternicode/bootstrap-datepicker" target="_blank"><i class="fa fa-github"></i></a></p>
+                
+                <form role="form">
+                
+        			<div class="form-group">
+        				<h4>Basic Single Date Picker:</h4>
+        				<div class="input-group">
+        					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <input type="text" class="form-control" id="birthday">
+        				</div>
+        			</div>
+	               	<script type="text/javascript">
+		                $(document).ready(function() {
+		                	$('#birthday').daterangepicker({
+			                	singleDatePicker: true,
+			                    startDate: moment().startOf('day'),
+			                    format: 'DD/MM/YYYY'
+			                });
+		                });
+	                </script>
+                
+        			<div class="form-group">
+        				<h4>Basic Date Range Picker:</h4>
+        				<div class="input-group">
+        					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <input type="text" class="form-control" id="reservation">
+        				</div>
+        			</div>
+				    <script type="text/javascript">
+					    $(document).ready(function() {
+					        $('#reservation').daterangepicker({format: 'DD/MM/YYYY'});
+					     });
+				    </script>
+				    
+        			<div class="form-group">
+        				<h4>Basic Date Range Picker (right):</h4>
+        				<div class="input-group">
+        					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <input type="text" class="form-control pull-right" id="reservation2">
+        				</div>
+        			</div>
+				    <script type="text/javascript">
+					    $(document).ready(function() {
+					        $('#reservation2').daterangepicker({format: 'DD/MM/YYYY'});
+					     });
+				    </script>
+				    
+        			<div class="form-group">
+        				<h4>Date Range &amp; Time Picker with 30 Minute Increments:</h4>
+        				<div class="input-group">
+        					<span class="input-group-addon"><i class="fa fa-calendar"></i>&nbsp;<i class="fa fa-clock-o"></i></span>
+                            <input type="text" class="form-control" id="reservationdatetime">
+        				</div>
+        			</div>
+	                <script type="text/javascript">
+		                $(document).ready(function() {
+		                   $('#reservationdatetime').daterangepicker({
+		                       timePicker: true,
+		                       timePickerIncrement: 30,
+		                       format: 'DD/MM/YYYY h:mm A'
+		                   });
+		                });
+	                </script>
+
+                </form>
+            </div>
+            <div class="col-lg-6">
+        		<h2>Date picker buttons</h2>
+        		<form role="form">
+        			<div class="form-group">
+        			    <h4>Options Usage:</h4>
+        			    <div class="input-group">
+        			        <a id="reportrange1" class="btn btn-default">
+                                <i class="fa fa-calendar"></i> <span>Date range picker</span>
+                                <i class="fa fa-caret-down"></i>
+                                
+        			        </a>
+        			    </div>
+        			</div>
+        			<script type="text/javascript">
+		                $(document).ready(function() {
+
+		                	var cb = function(start, end, label) {
+		                        console.log(start.toISOString(), end.toISOString(), label);
+		                        $('#reportrange1 span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+		                        //alert("Callback has fired: [" + start.format('MMMM D, YYYY') + " to " + end.format('MMMM D, YYYY') + ", label = " + label + "]");
+		                    };
+		                    
+		                	var optionSet1 = {
+		                        startDate: moment().subtract(29, 'days'),
+		                        endDate: moment(),
+		                        minDate: '01/01/2012',
+		                        maxDate: '12/31/2014',
+		                        dateLimit: { days: 60 },
+		                        showDropdowns: true,
+		                        showWeekNumbers: true,
+		                        timePicker: false,
+		                        timePickerIncrement: 1,
+		                        timePicker12Hour: true,
+		                        ranges: {
+		                            'Today': [moment(), moment()],
+		                            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+		                            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+		                            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+		                            'This Month': [moment().startOf('month'), moment().endOf('month')],
+		                            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+		                        },
+		                        opens: 'left',
+		                        buttonClasses: ['btn btn-default'],
+		                        applyClass: 'btn-small btn-primary',
+		                        cancelClass: 'btn-small',
+		                        format: 'MM/DD/YYYY',
+		                        separator: ' to ',
+		                        locale: {
+		                            applyLabel: 'Submit',
+		                            cancelLabel: 'Clear',
+		                            fromLabel: 'From',
+		                            toLabel: 'To',
+		                            customRangeLabel: 'Custom',
+		                            daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+		                            monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		                            firstDay: 1
+		                        }
+		                    };
+		                      
+		                	$('#reportrange1 span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+		                	$('#reportrange1').daterangepicker(optionSet1, cb);
+		                	
+		                });
+	                </script>
+	                
+        			<div class="form-group">
+        			    <h4>Plays nicely with Bootstrap dropdowns:</h4>
+        			    <div class="input-group">
+        			        <a id="reportrange2" class="btn btn-default">
+                                <i class="fa fa-calendar"></i> <span>Date range picker</span>
+                                <i class="fa fa-caret-down"></i>
+                                
+        			        </a>
+        			    </div>
+        			</div>
+        			<script type="text/javascript">
+		                $(document).ready(function() {
+
+		                	var cb2 = function(start, end, label) {
+		                        console.log(start.toISOString(), end.toISOString(), label);
+		                        $('#reportrange2 span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+		                        //alert("Callback has fired: [" + start.format('MMMM D, YYYY') + " to " + end.format('MMMM D, YYYY') + ", label = " + label + "]");
+		                    };
+		                    
+		                	var optionSet2 = {
+		                        startDate: moment().subtract(29, 'days'),
+		                        endDate: moment(),
+		                        minDate: '01/01/2012',
+		                        maxDate: '12/31/2014',
+		                        dateLimit: { days: 60 },
+		                        showDropdowns: true,
+		                        showWeekNumbers: true,
+		                        timePicker: false,
+		                        timePickerIncrement: 1,
+		                        timePicker12Hour: true,
+		             
+		                        opens: 'center',
+		                        buttonClasses: ['btn btn-default'],
+		                        applyClass: 'btn-small btn-primary',
+		                        cancelClass: 'btn-small',
+		                        format: 'MM/DD/YYYY',
+		                        separator: ' to ',
+		                        locale: {
+		                            applyLabel: 'Submit',
+		                            cancelLabel: 'Clear',
+		                            fromLabel: 'From',
+		                            toLabel: 'To',
+		                            customRangeLabel: 'Custom',
+		                            daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+		                            monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+		                            firstDay: 1
+		                        }
+		                    };
+		                    
+		                	//$('#reportrange2 span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+		                	$('#reportrange2').daterangepicker(optionSet2, cb2);
+		                	
+		                });
+	                </script>
+        		</form>
+        		<h2>Timepicker 
+        		<a class="btn btn-primary btn-xs" href="http://jdewit.github.io/bootstrap-timepicker/index.html" target="_blank"><i class="fa fa-link"></i></a>
+        		<a class="btn btn-primary btn-xs" href="https://github.com/jdewit/bootstrap-timepicker" target="_blank"><i class="fa fa-github"></i></a>
+        		</h2>
+        		<form role="form">
+        			<div class="form-group">
+        				<div class="input-group">
+        					<span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                            <input type="text" class="form-control timepicker">
+        				</div>
+        			</div>
+        			<script type="text/javascript">
+		                $(document).ready(function() {
+		                    //Timepicker
+		                    $(".timepicker").timepicker({
+		                        showInputs: false
+		                    });
+		                });
+		            </script>
+        		</form>
+
+            </div>
+        </div>
+    </div> <!-- /container -->
+{% endblock %}

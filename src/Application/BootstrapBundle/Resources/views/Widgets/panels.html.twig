@@ -1,0 +1,226 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Sticky Footer and Fixed Top Navbar Example for Bootstrap{% endblock %}
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/starter-template/pricing.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+          <h2>Panels</h2>
+        </div>
+        
+        <div class="row">
+            
+            <div class="col-lg-3">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  Basic panel
+                </div>
+              </div>
+            </div> 
+            <div class="col-lg-3">
+              <div class="panel panel-default">
+                <div class="panel-heading">Panel heading</div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div> 
+            <div class="col-lg-3">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  Panel content
+                </div>
+                <div class="panel-footer">Panel footer</div>
+              </div>
+            </div> 
+            <div class="col-lg-3">
+              <div class="panel panel-default">
+                <div class="panel-heading">Panel heading</div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+                <div class="panel-footer">Panel footer</div>
+              </div>
+            </div>
+
+        </div>
+        
+        <div class="row">
+        
+            <div class="col-lg-4">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel default</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel primary</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel success</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel info</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-warning">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel warning</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="panel panel-danger">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel danger</h3>
+                </div>
+                <div class="panel-body">
+                  Panel content
+                </div>
+              </div>
+            </div>
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4">
+				<div class="well">
+				  <h4>
+				    Normal Well
+				  </h4>
+				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+				</div>
+            </div>
+            
+            <div class="col-lg-4">
+				<div class="well well-lg">
+				  <h4>
+				    Large Well
+				  </h4>
+				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+				</div>
+            </div>
+            
+            <div class="col-lg-4">
+				<div class="well well-sm">
+				  <h4>
+				    Small Well
+				  </h4>
+				  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+				</div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Basic</h3>
+                    </div>
+                    <div class="panel-body">
+                        <span class="price"><sup>$</sup>19<sup>99</sup></span>
+                        <span class="period">per month</span>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>1</strong> User</li>
+                        <li class="list-group-item"><strong>5</strong> Projects</li>
+                        <li class="list-group-item"><strong>Unlimited</strong> Email Accounts</li>
+                        <li class="list-group-item"><strong>10GB</strong> Disk Space</li>
+                        <li class="list-group-item"><strong>100GB</strong> Monthly Bandwidth</li>
+                        <li class="list-group-item"><a href="#" class="btn btn-primary">Sign Up!</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-primary text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Plus <span class="label label-success">Best Value</span></h3>
+                    </div>
+                    <div class="panel-body">
+                        <span class="price"><sup>$</sup>39<sup>99</sup></span>
+                        <span class="period">per month</span>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>10</strong> User</li>
+                        <li class="list-group-item"><strong>500</strong> Projects</li>
+                        <li class="list-group-item"><strong>Unlimited</strong> Email Accounts</li>
+                        <li class="list-group-item"><strong>1000GB</strong> Disk Space</li>
+                        <li class="list-group-item"><strong>10000GB</strong> Monthly Bandwidth</li>
+                        <li class="list-group-item"><a href="#" class="btn btn-primary">Sign Up!</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Ultra</h3>
+                    </div>
+                    <div class="panel-body">
+                        <span class="price"><sup>$</sup>159<sup>99</sup></span>
+                        <span class="period">per month</span>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Unlimted</strong> Users</li>
+                        <li class="list-group-item"><strong>Unlimited</strong> Projects</li>
+                        <li class="list-group-item"><strong>Unlimited</strong> Email Accounts</li>
+                        <li class="list-group-item"><strong>10000GB</strong> Disk Space</li>
+                        <li class="list-group-item"><strong>Unlimited</strong> Monthly Bandwidth</li>
+                        <li class="list-group-item"><a href="#" class="btn btn-primary">Sign Up!</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- /container -->
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'ApplicationBootstrapBundle::layout.html.twig' %}
+
+{% block title %}Full Width Pics - Start Bootstrap Template{% endblock %}
+{% block layoutstyle %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/examples/navbar_fixed_sticky_footer.css') }}" rel="stylesheet" type="text/css" media="all" />
+{% endblock %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/applicationbootstrap/css/full-banner/full-width-pics.css') }}" rel="stylesheet" type="text/css" media="all" />  
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block navigation %}
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+        
+            {% include 'ApplicationBootstrapBundle::_navbar.html.twig' %}
+        
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}
+
+    <!-- Full Width Image Header with Logo -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+    <header class="image-bg-fluid-height">
+        <img class="img-responsive img-center" src="{{ asset('bundles/applicationbootstrap/images/200x200.png') }}" alt="">
+    </header>
+
+    <!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="section-heading">Section Heading</h1>
+                    <p class="lead section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p class="section-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed Height Image Aside -->
+    <!-- Image backgrounds are set within the full-width-pics.css file. -->
+    <aside class="image-bg-fixed-height"></aside>
+
+    <!-- Content Section -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="section-heading">Section Heading</h1>
+                    <p class="lead section-lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <p class="section-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, suscipit, rerum quos facilis repellat architecto commodi officia atque nemo facere eum non illo voluptatem quae delectus odit vel itaque amet.</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+{% endblock %}

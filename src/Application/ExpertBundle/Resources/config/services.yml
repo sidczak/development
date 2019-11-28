@@ -1,0 +1,7 @@
+parameters:
+#    application_expert.example.class: Application\ExpertBundle\Example
+
+services:
+#    application_expert.example:
+#        class: %application_expert.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
